@@ -40,13 +40,15 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <Img
-              fixed={data.fileName.childImageSharp.fixed}
-              objectFit="cover"
-              objectPosition="50% 50%"
-              alt=""
-              className="mx-auto w-full"
-            />
+          <Link to="amarente">
+            <Img
+                fixed={data.fileName.childImageSharp.fixed}
+                objectFit="cover"
+                objectPosition="50% 50%"
+                alt=""
+                className="mx-auto w-full"
+              />
+          </Link>
         </section>
 
         {/* Intro Poem */}
