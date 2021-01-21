@@ -23,7 +23,7 @@ export default function HomePage() {
      <div className="w-11/12 mx-auto">
         <section className="grid">
           <h1 className="mx-auto pt-5 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">What is a weed?</h1>
-          <div className="grid md:grid-cols-2 gap-12 mx-12 mt-4 text-justify">
+          <div className="grid md:grid-cols-2 md:gap-12 mx-6 sm:mx-12 mt-4 text-justify">
             <div className="max-w-prose">
               <p className="mb-4">On camera, famed British gardener Bannerman asks this seemingly simple question whilst walking in his Trematon Castle garden in Cornwall, with a spiky giant Gunnera in hand, the leaves acting as an oversized umbrella over the imposing man. Yet, he spent months removing the invasive petasites from the grounds of the garden when he first started working on it.</p>
               
@@ -50,7 +50,7 @@ export default function HomePage() {
         </section>
 
         {/* Intro Poem */}
-        <section className="space-y-6">
+        <section className="space-y-6 pt-12">
           <p className="">Is a weed</p>
           <p className="ml-24">A <span className="tracking-widest">displaced</span> plant</p>
           <p className="text-right sm:text-left sm:ml-96">a plant out of place</p>
@@ -187,23 +187,23 @@ export default function HomePage() {
           </div>
         </section>
 
-      {/* 0.3 Title Mobile */}        
-      <div className="text-rose text-right md:hidden">
-         <Link to="IndexPage1">
-            <h2 className="text-5xl md:text-7xl">0.3</h2>
-            <h3 className="text-xl uppercase tracking-wide md:hidden">Plants as Witnesses</h3>
-          </Link>
-        </div>
-       
-        {/* 0.3 Title Desktop */}
-        <div className="text-rose text-right hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+        {/* 0.3 Title Mobile */}        
+        <div className="text-rose text-right md:hidden">
           <Link to="IndexPage1">
-            <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">0.3</h2>
-            <div className="z-auto absolute bottom-4 right-4">
-              <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
-            </div>
-          </Link>
-        </div>
+              <h2 className="text-5xl md:text-7xl">0.3</h2>
+              <h3 className="text-xl uppercase tracking-wide md:hidden">Plants as Witnesses</h3>
+            </Link>
+          </div>
+        
+          {/* 0.3 Title Desktop */}
+          <div className="text-rose text-right hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+            <Link to="IndexPage1">
+              <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">0.3</h2>
+              <div className="z-auto absolute bottom-4 right-4">
+                <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
+              </div>
+            </Link>
+          </div>
 
 
       
