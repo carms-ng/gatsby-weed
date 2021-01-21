@@ -19,7 +19,7 @@ export default function HomePage() {
 
   return (
     <Layout>
-     {/* First S */}
+     {/* Intro Statement */}
      <div className="w-11/12 mx-auto">
         <section className="grid">
           <h1 className="mx-auto pt-5 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">What is a weed?</h1>
