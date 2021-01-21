@@ -56,10 +56,28 @@ export default function HomePage() {
           <p className="ml-96">a plant out of place</p>
           <p className="ml-80">In a not no place</p>
           <p className="ml-36">Is a weed</p>
-          <p className="ml-60">A (vegetal) being holding <em>ground</em></p>
-          
+          <p className="ml-60">A (vegetal) being holding <em>ground</em></p>        
         </section>
-        
+
+        {/* 0.1 Title */}        
+        <div className="text-rose lg:hidden">
+         <a href="IndexPage1" className="">
+            <h2 className="text-5xl lg:text-7xl">0.1</h2>
+            <h3 className="text-xl lg:hidden">Concrete & Plant Relationships</h3>
+          </a>
+        </div>
+
+        <div className="text-rose hidden lg:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+          <a href="IndexPage1" className="">
+            <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
+            <div className="z-auto absolute bottom-4 left-4">
+              <h3 className="text-5xl text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
+            </div>
+          </a>
+        </div>
+
+
+
         <div className="grid">
           <div className="">
             <h1 className="pt-5">What is a weed?</h1>
