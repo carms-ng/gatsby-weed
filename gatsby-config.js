@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/what-is-a-weed`,
   siteMetadata: {
     title: "What is a weed?",
   },
