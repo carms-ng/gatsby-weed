@@ -1,7 +1,7 @@
 // import { Link } from 'gatsby';
 import React from 'react';
 import Layout from '../components/Layout';
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link} from "gatsby"
 import Img from "gatsby-image"
 
 export default function HomePage() {
@@ -61,10 +61,10 @@ export default function HomePage() {
 
         {/* 0.1 Title */}        
         <div className="text-rose lg:hidden">
-         <a href="IndexPage1" className="">
+         <Link to="IndexPage1">
             <h2 className="text-5xl lg:text-7xl">0.1</h2>
             <h3 className="text-xl lg:hidden">Concrete & Plant Relationships</h3>
-          </a>
+          </Link>
         </div>
 
         <div className="text-rose hidden lg:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
