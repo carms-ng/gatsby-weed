@@ -23,7 +23,7 @@ export default function HomePage() {
      <div className="w-11/12 mx-auto">
         <section className="grid">
           <h1 className="mx-auto pt-5 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">What is a weed?</h1>
-          <div className="grid md:grid-cols-2 gap-12 mx-12 mt-4">
+          <div className="grid md:grid-cols-2 gap-12 mx-12 mt-4 text-justify">
             <div className="max-w-prose">
               <p className="mb-4">On camera, famed British gardener Bannerman asks this seemingly simple question whilst walking in his Trematon Castle garden in Cornwall, with a spiky giant Gunnera in hand, the leaves acting as an oversized umbrella over the imposing man. Yet, he spent months removing the invasive petasites from the grounds of the garden when he first started working on it.</p>
               
@@ -48,10 +48,6 @@ export default function HomePage() {
               className="mx-auto w-full"
             />
         </section>
-        
-
-        
-        
         <div className="grid">
           <div className="">
             <h1 className="pt-5">What is a weed?</h1>
