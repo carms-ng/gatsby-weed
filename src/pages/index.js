@@ -48,6 +48,18 @@ export default function HomePage() {
               className="mx-auto w-full"
             />
         </section>
+
+        {/* Intro Poem */}
+        <section className="space-y-6">
+          <p className="">Is a weed</p>
+          <p className="ml-24">A <span className="tracking-widest">displaced</span> plant</p>
+          <p className="ml-96">a plant out of place</p>
+          <p className="ml-80">In a not no place</p>
+          <p className="ml-36">Is a weed</p>
+          <p className="ml-60">A (vegetal) being holding <em>ground</em></p>
+          
+        </section>
+        
         <div className="grid">
           <div className="">
             <h1 className="pt-5">What is a weed?</h1>
