@@ -60,15 +60,15 @@ export default function HomePage() {
         </section>
 
         {/* 0.1 Title Mobile */}        
-        <div className="text-rose lg:hidden">
+        <div className="text-rose md:hidden">
          <Link to="IndexPage1">
-            <h2 className="text-5xl lg:text-7xl">0.1</h2>
-            <h3 className="text-xl uppercase  tracking-wide  lg:hidden">Concrete & Plant Relationships</h3>
+            <h2 className="text-5xl md:text-7xl">0.1</h2>
+            <h3 className="text-xl uppercase  tracking-wide  md:hidden">Concrete & Plant Relationships</h3>
           </Link>
         </div>
        
         {/* 0.1 Title Desktop */}
-        <div className="text-rose hidden lg:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+        <div className="text-rose hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
           <Link to="IndexPage1">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
             <div className="z-auto absolute bottom-4 left-4">
@@ -138,15 +138,15 @@ export default function HomePage() {
         </section>
 
         {/* 0.2 Title Mobile */}        
-        <div className="text-rose lg:hidden">
+        <div className="text-rose md:hidden">
          <Link to="IndexPage1">
-            <h2 className="text-5xl lg:text-7xl">0.2</h2>
-            <h3 className="text-xl uppercase tracking-wide lg:hidden">Conditioned Nature</h3>
+            <h2 className="text-5xl md:text-7xl">0.2</h2>
+            <h3 className="text-xl uppercase tracking-wide md:hidden">Conditioned Nature</h3>
           </Link>
         </div>
        
         {/* 0.2 Title Desktop */}
-        <div className="text-rose hidden lg:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+        <div className="text-rose hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
           <Link to="IndexPage1">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.2</h2>
             <div className="z-auto absolute bottom-4 left-4">
@@ -156,7 +156,7 @@ export default function HomePage() {
         </div>
 
         {/* 0.2 Poem */}
-        <section className="flex flex-col mt-12">
+        <section className="flex flex-col my-12">
           <div className="space-y-2 pb-12 leading-loose">
             <p className="">Weeds,</p>
             <p className="ml-12">Show us how to be in the presence of discomfort, of <span className="pl-4 tracking-widest">disruptions</span></p>
@@ -186,6 +186,24 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+      {/* 0.3 Title Mobile */}        
+      <div className="text-rose text-right md:hidden">
+         <Link to="IndexPage1">
+            <h2 className="text-5xl md:text-7xl">0.3</h2>
+            <h3 className="text-xl uppercase tracking-wide md:hidden">Plants as Witnesses</h3>
+          </Link>
+        </div>
+       
+        {/* 0.3 Title Desktop */}
+        <div className="text-rose text-right hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+          <Link to="IndexPage1">
+            <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">0.3</h2>
+            <div className="z-auto absolute bottom-4 right-4">
+              <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
+            </div>
+          </Link>
+        </div>
 
 
       
