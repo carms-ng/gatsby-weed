@@ -69,12 +69,12 @@ export default function HomePage() {
        
         {/* 0.1 Title Desktop */}
         <div className="text-rose hidden lg:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-          <a href="IndexPage1" className="">
+          <Link to="IndexPage1">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
             <div className="z-auto absolute bottom-4 left-4">
               <h3 className="text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* 0.1 Poem */}
@@ -87,7 +87,7 @@ export default function HomePage() {
             <p className="ml-48">Is a weed</p>      
           </div>
           
-          <Link>
+          <Link to="">
             <Img
                 fixed={data.fileName.childImageSharp.fixed}
                 objectFit="cover"
@@ -112,7 +112,7 @@ export default function HomePage() {
                 <p className="">A resistance to laboriously curated, easily manageable and predictable urban spaces</p>
               </div>
           </div>
-          <Link>
+          <Link to="">
             <Img
                 fixed={data.fileName.childImageSharp.fixed}
                 objectFit="cover"
@@ -147,16 +147,45 @@ export default function HomePage() {
        
         {/* 0.2 Title Desktop */}
         <div className="text-rose hidden lg:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-          <a href="IndexPage1" className="">
+          <Link to="IndexPage1">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.2</h2>
             <div className="z-auto absolute bottom-4 left-4">
               <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Conditioned Nature</h3>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* 0.2 Poem */}
-        <section className="flex flex-col"></section>
+        <section className="flex flex-col mt-12">
+          <div className="space-y-2 pb-12 leading-loose">
+            <p className="">Weeds,</p>
+            <p className="ml-12">Show us how to be in the presence of discomfort, of <span className="pl-4 tracking-widest">disruptions</span></p>
+            <p className="pt-24 ml-12">Is a weed</p>
+            <p className="ml-32">A pioneer</p>
+            {/* Modal 1 */}
+            <p className="underline text-right sm:text-left sm:ml-32">
+              <Link to="">An opportunistic germinator</Link>
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2">
+            <div className="overflow-hidden mx-auto">
+              <Link to="" >
+                <Img
+                    fixed={data.fileName.childImageSharp.fixed}
+                    objectFit="cover"
+                    objectPosition="50% 50%"
+                    alt=""
+                  />
+              </Link>
+            </div>
+            <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-start">
+              <p className="">Is a weed</p>
+              <p className="ml-16">What is yet to come</p>
+              <p className="ml-28 pt-8">Is a weed</p>
+              <p className="sm:ml-28">A history maker, a storyteller, a punctuator</p>
+            </div>
+          </div>
+        </section>
 
 
       
