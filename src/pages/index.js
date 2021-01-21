@@ -52,7 +52,7 @@ export default function HomePage() {
         {/* Intro Poem */}
         <section className="space-y-6">
           <p className="">Is a weed</p>
-          <p className="ml-24">A <span className="tracking-wide">displaced</span> plant</p>
+          <p className="ml-24">A <span className="tracking-widest">displaced</span> plant</p>
           <p className="text-right sm:text-left sm:ml-96">a plant out of place</p>
           <p className="text-right sm:text-left sm:ml-80">In a not no place</p>
           <p className="ml-36">Is a weed</p>
@@ -63,7 +63,7 @@ export default function HomePage() {
         <div className="text-rose lg:hidden">
          <Link to="IndexPage1">
             <h2 className="text-5xl lg:text-7xl">0.1</h2>
-            <h3 className="text-xl lg:hidden">Concrete & Plant Relationships</h3>
+            <h3 className="text-xl uppercase  tracking-wide  lg:hidden">Concrete & Plant Relationships</h3>
           </Link>
         </div>
        
@@ -72,7 +72,7 @@ export default function HomePage() {
           <a href="IndexPage1" className="">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
             <div className="z-auto absolute bottom-4 left-4">
-              <h3 className="text-5xl text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
+              <h3 className="text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
             </div>
           </a>
         </div>
@@ -99,17 +99,17 @@ export default function HomePage() {
 
           <div className="mt-12 space-y-2 md:align-right self-center">
             <p className="">Is a weed</p>
-            <p className="ml-8 sm:ml-16">A plant negotiating concrete <span className="pl-1 tracking-wide">rup</span></p>
-            <p className="text-right sm:text-left sm:ml-80"><span className="tracking-wide">ture</span></p>
+            <p className="ml-8 sm:ml-16">A plant negotiating concrete <span className="pl-1 tracking-widest">rup</span></p>
+            <p className="text-right sm:text-left sm:ml-80"><span className="tracking-widest">ture</span></p>
             <p className="py-6 text-right sm:text-left sm:ml-96">s</p>
 
-            <div className="space-y-2 pb-12 leading-loose">
-              <p className="text-right">Are weeds pushing their way out of every crack,</p>
-              <p className="text-right">nature’s proof of her will to resist the human’s urge to control it?</p>
-              <p className="pt-12 text-right">A reminder that every built environment must exist in</p>
-              <p className="">negotiation — ideally in harmony — with its natural one.</p>
-              <p className="pt-12">Is a weed then,</p>
-              <p className="">A resistance to laboriously curated, easily manageable and predictable urban spaces</p>
+              <div className="space-y-2 pb-12 leading-loose">
+                <p className="text-right">Are weeds pushing their way out of every crack,</p>
+                <p className="text-right">nature’s proof of her will to resist the human’s urge to control it?</p>
+                <p className="pt-12 text-right">A reminder that every built environment must exist in</p>
+                <p className="">negotiation — ideally in harmony — with its natural one.</p>
+                <p className="pt-12">Is a weed then,</p>
+                <p className="">A resistance to laboriously curated, easily manageable and predictable urban spaces</p>
               </div>
           </div>
           <Link>
@@ -121,7 +121,42 @@ export default function HomePage() {
                 className="float-right sm:mr-16 md:mr-32 lg:mr-48"
               />
           </Link>
+          <div className="my-12 space-y-2 self-center">
+            <p className="">Weeds,</p>
+            <p className="ml-12">Blurring seductively clear</p>
+            <div className="space-y-2 pt-4 sm:ml-56">
+              <p className="">P</p>
+              <p className="ml-4">A</p>
+              <p className="ml-8">T</p>
+              <p className="ml-12">H</p>
+              <p className="ml-16">W</p>
+              <p className="ml-20">A</p>
+              <p className="ml-24">Y</p>
+              <p className="ml-28">S , roads, tidy delineations</p>
+            </div>  
+          </div>
         </section>
+
+        {/* 0.2 Title Mobile */}        
+        <div className="text-rose lg:hidden">
+         <Link to="IndexPage1">
+            <h2 className="text-5xl lg:text-7xl">0.2</h2>
+            <h3 className="text-xl uppercase tracking-wide lg:hidden">Conditioned Nature</h3>
+          </Link>
+        </div>
+       
+        {/* 0.2 Title Desktop */}
+        <div className="text-rose hidden lg:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+          <a href="IndexPage1" className="">
+            <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.2</h2>
+            <div className="z-auto absolute bottom-4 left-4">
+              <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Conditioned Nature</h3>
+            </div>
+          </a>
+        </div>
+
+        {/* 0.2 Poem */}
+        <section className="flex flex-col"></section>
 
 
       
