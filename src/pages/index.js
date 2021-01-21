@@ -52,21 +52,22 @@ export default function HomePage() {
         {/* Intro Poem */}
         <section className="space-y-6">
           <p className="">Is a weed</p>
-          <p className="ml-24">A <span className="tracking-widest">displaced</span> plant</p>
+          <p className="ml-24">A <span className="tracking-wide">displaced</span> plant</p>
           <p className="text-right sm:text-left sm:ml-96">a plant out of place</p>
           <p className="text-right sm:text-left sm:ml-80">In a not no place</p>
           <p className="ml-36">Is a weed</p>
           <p className="text-right sm:text-left sm:ml-60">A (vegetal) being holding <em>ground</em></p>        
         </section>
 
-        {/* 0.1 Title */}        
+        {/* 0.1 Title Mobile */}        
         <div className="text-rose lg:hidden">
          <Link to="IndexPage1">
             <h2 className="text-5xl lg:text-7xl">0.1</h2>
             <h3 className="text-xl lg:hidden">Concrete & Plant Relationships</h3>
           </Link>
         </div>
-
+       
+        {/* 0.1 Title Desktop */}
         <div className="text-rose hidden lg:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
           <a href="IndexPage1" className="">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
@@ -76,19 +77,54 @@ export default function HomePage() {
           </a>
         </div>
 
-
-
-        <div className="grid">
-          <div className="">
-            <h1 className="pt-5">What is a weed?</h1>
-            <Img
-              fixed={data.fileName.childImageSharp.fixed}
-              objectFit="cover"
-              objectPosition="50% 50%"
-              alt=""
-            />
+        {/* 0.1 Poem */}
+        <section className="flex flex-col">
+          <div className="my-12 space-y-2">
+            <p className="my-12 md:text-center"><em>Landing ground — to land on the ground — to come through </em></p>
+            <p className="">A weed is</p>
+            <p className="ml-16">Is a weed</p>
+            <p className="ml-32">Is a weed</p>
+            <p className="ml-48">Is a weed</p>      
           </div>
-        </div>
+          
+          <Link>
+            <Img
+                fixed={data.fileName.childImageSharp.fixed}
+                objectFit="cover"
+                objectPosition="50% 50%"
+                alt=""
+                className="float-right sm:mr-16 md:mr-32 lg:mr-48"
+              />
+          </Link>
+
+          <div className="mt-12 space-y-2 md:align-right self-center">
+            <p className="">Is a weed</p>
+            <p className="ml-8 sm:ml-16">A plant negotiating concrete <span className="pl-1 tracking-wide">rup</span></p>
+            <p className="text-right sm:text-left sm:ml-80"><span className="tracking-wide">ture</span></p>
+            <p className="py-6 text-right sm:text-left sm:ml-96">s</p>
+
+            <div className="space-y-2 pb-12 leading-loose">
+              <p className="text-right">Are weeds pushing their way out of every crack,</p>
+              <p className="text-right">nature’s proof of her will to resist the human’s urge to control it?</p>
+              <p className="pt-12 text-right">A reminder that every built environment must exist in</p>
+              <p className="">negotiation — ideally in harmony — with its natural one.</p>
+              <p className="pt-12">Is a weed then,</p>
+              <p className="">A resistance to laboriously curated, easily manageable and predictable urban spaces</p>
+              </div>
+          </div>
+          <Link>
+            <Img
+                fixed={data.fileName.childImageSharp.fixed}
+                objectFit="cover"
+                objectPosition="50% 50%"
+                alt=""
+                className="float-right sm:mr-16 md:mr-32 lg:mr-48"
+              />
+          </Link>
+        </section>
+
+
+      
       </div>
     </Layout>
   );
