@@ -69,7 +69,7 @@ export default function HomePage() {
 
         {/* 0.1 Title Mobile */}        
         <div className="text-rose md:hidden">
-         <Link to="IndexPage1">
+          <Link to="index-concrete-plant">
             <h2 className="text-5xl md:text-7xl">0.1</h2>
             <h3 className="text-xl uppercase  tracking-wide  md:hidden">Concrete & Plant Relationships</h3>
           </Link>
@@ -77,10 +77,10 @@ export default function HomePage() {
        
         {/* 0.1 Title Desktop */}
         <div className="text-rose hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-          <Link to="IndexPage1">
+          <Link to="index-concrete-plant">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
             <div className="z-auto absolute bottom-4 left-4">
-              <h3 className="text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
+              <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
             </div>
           </Link>
         </div>
@@ -95,7 +95,7 @@ export default function HomePage() {
             <p className="ml-48">Is a weed</p>      
           </div>
           
-          <Link to="">
+          <Link to="concrete-plant">
             <Img
                 fixed={data.fileName.childImageSharp.fixed}
                 objectFit="cover"
@@ -120,7 +120,7 @@ export default function HomePage() {
                 <p className="">A resistance to laboriously curated, easily manageable and predictable urban spaces</p>
               </div>
           </div>
-          <Link to="">
+          <Link to="conditioned-nature">
             <Img
                 fixed={data.fileName.childImageSharp.fixed}
                 objectFit="cover"
@@ -147,18 +147,18 @@ export default function HomePage() {
 
         {/* 0.2 Title Mobile */}        
         <div className="text-rose md:hidden">
-         <Link to="IndexPage1">
+         <Link to="index-conditioned-nature">
             <h2 className="text-5xl md:text-7xl">0.2</h2>
-            <h3 className="text-xl uppercase tracking-wide md:hidden">Conditioned Nature</h3>
+            <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">Conditioned Nature</h3>
           </Link>
         </div>
        
         {/* 0.2 Title Desktop */}
         <div className="text-rose hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-          <Link to="IndexPage1">
+          <Link to="index-conditioned-nature">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.2</h2>
             <div className="z-auto absolute bottom-4 left-4">
-              <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Conditioned Nature</h3>
+              <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Conditioned Nature</h3>
             </div>
           </Link>
         </div>
@@ -177,14 +177,12 @@ export default function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2">
             <div className="overflow-hidden mx-auto">
-              <Link to="" >
-                <Img
-                    fixed={data.fileName.childImageSharp.fixed}
-                    objectFit="cover"
-                    objectPosition="50% 50%"
-                    alt=""
-                  />
-              </Link>
+              <Img
+                  fixed={data.fileName.childImageSharp.fixed}
+                  objectFit="cover"
+                  objectPosition="50% 50%"
+                  alt=""
+                />
             </div>
             <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-start">
               <p className="">Is a weed</p>
@@ -197,7 +195,7 @@ export default function HomePage() {
 
         {/* 0.3 Title Mobile */}        
         <div className="text-rose text-right md:hidden">
-          <Link to="IndexPage1">
+          <Link to="index-plants-witness">
               <h2 className="text-5xl md:text-7xl">0.3</h2>
               <h3 className="text-xl uppercase tracking-wide md:hidden">Plants as Witnesses</h3>
             </Link>
@@ -205,10 +203,10 @@ export default function HomePage() {
         
           {/* 0.3 Title Desktop */}
           <div className="text-rose text-right hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-            <Link to="IndexPage1">
+            <Link to="index-plants-witness">
               <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">0.3</h2>
               <div className="z-auto absolute bottom-4 right-4">
-                <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
+              <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
               </div>
             </Link>
           </div>

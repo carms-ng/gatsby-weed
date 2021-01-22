@@ -37,8 +37,6 @@ export default function Nav() {
       <div className="btns-lang">
         <button type="button" className="btn-lang text-2xl md:text-4xl p-2" href="#">EN</button>
         <button type="button" className="btn-lang text-2xl md:text-4xl p-2" href="#">FR</button>
-        {/* <a className="btn-lang text-2xl md:text-4xl p-2" href="#">EN</a> */}
-        {/* <a className="btn-lang text-2xl md:text-4xl p-2" href="#">FR</a> */}
       </div>
       <Link to="/" className="grid grid-cols-1 grid-rows-1 text-brown place-content-center place-items-center">
         <Img 
@@ -46,7 +44,7 @@ export default function Nav() {
           style={{width: "40vw", maxWidth: "250px" }}
           className="col-span-full row-span-full"
         />
-        <p className="col-span-full row-span-full text-1xl md:text-3xl pb-5 pr-5 uppercase" >Home</p>
+        <p className="col-span-full row-span-full text-1xl md:text-3xl pb-5 pr-5 md:pb-8 md:pr-10 uppercase" >Home</p>
         
       </Link>
     </NavStyles>

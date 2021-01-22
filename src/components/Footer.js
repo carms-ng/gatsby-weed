@@ -7,10 +7,11 @@ const FooterStyles = styled.nav`
 
   hr {
     border: 2px solid var(--green);
+    background-color: var(--green);
   }
   p {
     text-transform: uppercase;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     font-size: 1.25rem;
   }
   li {
@@ -20,12 +21,6 @@ const FooterStyles = styled.nav`
     list-style: none;
     margin-right: 100px;
   }
-  ol {
-    list-style: auto;
-  }
-  ol li {
-    margin-left: 20px;
-  }
 `;
 
 export default function Nav() {
@@ -33,38 +28,38 @@ export default function Nav() {
   return (
     <FooterStyles>
       <hr/>
-      <section className="md:flex">
+      <section className="md:flex mt-8">
         
         <ul>
           <p>overview</p>
           <li>
-            <Link to="concrete-plant">0.1 CONCRETE & PLANT RELATIONSHIPS</Link>
+            <Link to="index-concrete-plant">0.1 CONCRETE & PLANT RELATIONSHIPS</Link>
           </li>
           <li>
-            <Link to="conditioned-nature">0.2 CONDITIONED NATURE</Link>
+            <Link to="index-conditioned-nature">0.2 CONDITIONED NATURE</Link>
           </li>
           <li>
-            <Link to="plants-witness">0.3 PLANTS AS WITNESSES</Link>
+            <Link to="index-plants-witness">0.3 PLANTS AS WITNESSES</Link>
           </li>
           <li>
-            <Link to="third-landscape">0.4 THIRD LANDSCAPE</Link>
+            <Link to="index-third-landscape">0.4 THIRD LANDSCAPE</Link>
           </li>
           <li>
-            <Link to="displace-migrate">0.5 DISPLACEMENT / MIGRATION</Link>
+            <Link to="index-displace-migrate">0.5 DISPLACEMENT / MIGRATION</Link>
           </li>
           <li>
-            <Link to="body-landscape">0.6 BODY IN / AS LANDSCAPE</Link>
+            <Link to="index-body-landscape">0.6 BODY IN / AS LANDSCAPE</Link>
           </li>
           <li>
-            <Link to="furthermore">0.7 FURTHERMORE</Link>
+            <Link to="index-furthermore">0.7 FURTHERMORE</Link>
           </li>
         </ul>
         <ol>
           <p>footnotes</p>
-          <li>Nowness</li>
+          <li>1. Nowness</li>
           <li>
             <a href="https://www.nytimes.com/2016/09/23/t-magazine/design/isabel-julian-bannerman-garden-designer-cornwall-norman-castle.html">
-              Richardson, Tim, NY Times
+              2. Richardson, Tim, NY Times
             </a>
           </li>
         </ol>
