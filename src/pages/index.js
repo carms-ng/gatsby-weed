@@ -1,4 +1,3 @@
-// import { Link } from 'gatsby';
 import React from 'react';
 import Layout from '../components/Layout';
 import { useStaticQuery, graphql, Link} from "gatsby"
