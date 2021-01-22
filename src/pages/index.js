@@ -4,13 +4,13 @@ import { useStaticQuery, graphql, Link} from "gatsby"
 import Img from "gatsby-image"
 
 const applyLineDropEffect = () => {
-  section = document.getElementById("intro");
+  const section = document.getElementById("intro");
   console.log(section);
-  // pTags = section.querySelectorAll("p");
+  const pTags = section.querySelectorAll("p");
 
-  // pTags.forEach((tag) => {
-  //   tag.setAttribute("data-sal","slide-down");
-  // })
+  pTags.forEach((tag) => {
+    tag.setAttribute("data-sal","slide-down");
+  })
 }
 
 
