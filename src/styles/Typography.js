@@ -14,14 +14,14 @@ const Typography = createGlobalStyle`
   }
   html {
     font-family: Din, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: var(--black);
+    color: var(--green-dark);
   }
   p, li {
     letter-spacing: 0.5px;
   }
   h1 {
     font-family: MonetaSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: var(--dark-green);
+    color: var(--green);
   }
   h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
