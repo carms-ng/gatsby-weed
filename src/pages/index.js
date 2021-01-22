@@ -73,7 +73,7 @@ export default function HomePage() {
           <Link to="IndexPage1">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
             <div className="z-auto absolute bottom-4 left-4">
-              <h3 className="text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
+              <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
             </div>
           </Link>
         </div>
@@ -151,7 +151,7 @@ export default function HomePage() {
           <Link to="IndexPage1">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.2</h2>
             <div className="z-auto absolute bottom-4 left-4">
-              <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Conditioned Nature</h3>
+              <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Conditioned Nature</h3>
             </div>
           </Link>
         </div>
@@ -201,7 +201,7 @@ export default function HomePage() {
             <Link to="IndexPage1">
               <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">0.3</h2>
               <div className="z-auto absolute bottom-4 right-4">
-                <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
+                <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
               </div>
             </Link>
           </div>
