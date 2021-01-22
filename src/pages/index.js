@@ -3,6 +3,18 @@ import Layout from '../components/Layout';
 import { useStaticQuery, graphql, Link} from "gatsby"
 import Img from "gatsby-image"
 
+const applyLineDropEffect = () => {
+  section = document.getElementById("intro");
+  console.log(section);
+  // pTags = section.querySelectorAll("p");
+
+  // pTags.forEach((tag) => {
+  //   tag.setAttribute("data-sal","slide-down");
+  // })
+}
+
+
+
 export default function HomePage() {
   const data = useStaticQuery(graphql`
     query {
@@ -21,16 +33,12 @@ export default function HomePage() {
     console.log('entering', detail.target);
   });
 
-  // Get all p tags to apply animation
-  
-  var poetry = document.getElementsByName("p");
-
   // Apply slide-down animation to all p tags
-
-  // Carms, I need your help!
+  // var poetry = document.querySelectorAll("p");
+  // poetry.setAttribute("data-sal", "slide-down");
 
   return (
-    <Layout>
+    <Layout onScroll={applyLineDropEffect}> 
      {/* Intro Statement */}
      <div className="w-11/12 mx-auto">
         <section className="grid">
@@ -39,7 +47,7 @@ export default function HomePage() {
           >
               What is a weed?
           </h1>
-          <div className="grid md:grid-cols-2 md:gap-12 mx-6 sm:mx-12 mt-4 text-justify">
+          <div id="intro" className="grid md:grid-cols-2 md:gap-12 mx-6 sm:mx-12 mt-4 text-justify">
             <div className="max-w-prose">
               <p className="mb-4">On camera, famed British gardener Bannerman asks this seemingly simple question whilst walking in his Trematon Castle garden in Cornwall, with a spiky giant Gunnera in hand, the leaves acting as an oversized umbrella over the imposing man. Yet, he spent months removing the invasive petasites from the grounds of the garden when he first started working on it.</p>
               
@@ -71,8 +79,8 @@ export default function HomePage() {
         <section className="space-y-6 pt-12">
           <p 
             data-sal="slide-down"
-            data-sal-duration="700"
-            data-sal-delay="100"
+            data-sal-duration="1000"
+            data-sal-delay="1000"
             data-sal-easing="ease"
             >Is a weed</p>
           <p 
