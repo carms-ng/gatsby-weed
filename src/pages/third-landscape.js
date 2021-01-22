@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function SubPageFive() {
+export default function SubPageFour() {
   return (
     <div>
-      <h1>0.5</h1>
+      <h1>SubPageFour - Randomized</h1>
     </div>
   );
 }
