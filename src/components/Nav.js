@@ -35,8 +35,10 @@ export default function Nav() {
   return (
     <NavStyles>
       <div className="btns-lang">
-        <a className="btn-lang text-2xl md:text-4xl p-2" href="#">EN</a>
-        <a className="btn-lang text-2xl md:text-4xl p-2" href="#">FR</a>
+        <button type="button" className="btn-lang text-2xl md:text-4xl p-2" href="#">EN</button>
+        <button type="button" className="btn-lang text-2xl md:text-4xl p-2" href="#">FR</button>
+        {/* <a className="btn-lang text-2xl md:text-4xl p-2" href="#">EN</a> */}
+        {/* <a className="btn-lang text-2xl md:text-4xl p-2" href="#">FR</a> */}
       </div>
       <Link to="/" className="grid grid-cols-1 grid-rows-1 text-brown place-content-center place-items-center">
         <Img 
