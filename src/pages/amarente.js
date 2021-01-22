@@ -17,7 +17,7 @@ const ExplodeStyles = styled.div`
     }
   `;
 
-export default function AmarentePage() {
+export default function SubPageOne() {
   const data = useStaticQuery(graphql`
     query myQuery {
       allFile(filter: {name: {regex: "/^01.+/"}}) {
