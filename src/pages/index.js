@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { useStaticQuery, graphql, Link} from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 export default function HomePage() {
@@ -18,9 +18,13 @@ export default function HomePage() {
 
   return (
     <Layout>
-     {/* Intro Statement */}
-     <div className="w-11/12 mx-auto">
-        <section className="grid">
+      <div className="w-11/12 mx-auto">
+        {/* TODO: Intro Statement to be refined */}
+        <section className="pt-32 pl-6 md:pt-60 md:pl-12 md:-ml-half-width" style={{ maxWidth: "80vw", fontFamily: "MonetaSans"}}>
+          <p className="mb-4 italic">"What is a weed?<br/>What is a weed?"</p>
+          <p className="italic">- Julian Bannerman, Great Gardens: Trematon Castle, Nowness</p>
+        </section>
+        <section className="grid pt-8">
           <h1 className="mx-auto pt-5 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">What is a weed?</h1>
           <div className="grid md:grid-cols-2 md:gap-12 mx-6 sm:mx-12 mt-4 text-justify">
             <div className="max-w-prose">
@@ -73,7 +77,7 @@ export default function HomePage() {
           <Link to="IndexPage1">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
             <div className="z-auto absolute bottom-4 left-4">
-              <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
+              <h3 className="text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
             </div>
           </Link>
         </div>
@@ -151,7 +155,7 @@ export default function HomePage() {
           <Link to="IndexPage1">
             <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.2</h2>
             <div className="z-auto absolute bottom-4 left-4">
-              <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Conditioned Nature</h3>
+              <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Conditioned Nature</h3>
             </div>
           </Link>
         </div>
@@ -201,7 +205,7 @@ export default function HomePage() {
             <Link to="IndexPage1">
               <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">0.3</h2>
               <div className="z-auto absolute bottom-4 right-4">
-                <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
+                <h3 className="text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
               </div>
             </Link>
           </div>

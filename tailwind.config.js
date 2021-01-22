@@ -22,7 +22,12 @@ module.exports = {
       wider: '.3em',
       widest: '.5em',
      },
-    extend: {},
+    extend: {
+      margin: {
+        '-half-screen': '50vw',
+        '-half-width': '50%',
+      },
+    },
   },
   variants: {
     extend: {
