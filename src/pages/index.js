@@ -3,6 +3,8 @@ import Layout from '../components/Layout';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
+import Footer from '../components/Footer';
+
 export default function HomePage() {
   const data = useStaticQuery(graphql`
     query {
@@ -17,6 +19,7 @@ export default function HomePage() {
   `)
 
   return (
+
     <Layout>
       <div className="w-11/12 mx-auto">
         {/* TODO: Intro Statement to be refined */}
@@ -213,6 +216,7 @@ export default function HomePage() {
 
       
       </div>
+      <Footer />
     </Layout>
   );
 }
