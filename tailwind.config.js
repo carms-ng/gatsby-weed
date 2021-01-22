@@ -17,6 +17,11 @@ module.exports = {
         DEFAULT: '#FFFAF3'
       },
     },
+    letterSpacing: {
+      wide: '.025em',
+      wider: '.3em',
+      widest: '.5em',
+     },
     extend: {},
   },
   variants: {
