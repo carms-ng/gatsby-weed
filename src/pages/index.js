@@ -16,12 +16,29 @@ export default function HomePage() {
     }
   `)
 
+  // Add sal listener for every element that enters viewport
+  document.addEventListener('sal:in', ({ detail }) => {
+    console.log('entering', detail.target);
+  });
+
+  // Get all p tags to apply animation
+  
+  var poetry = document.getElementsByName("p");
+
+  // Apply slide-down animation to all p tags
+
+  // Carms, I need your help!
+
   return (
     <Layout>
      {/* Intro Statement */}
      <div className="w-11/12 mx-auto">
         <section className="grid">
-          <h1 className="mx-auto pt-5 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">What is a weed?</h1>
+          <h1 
+            className="mx-auto pt-5 text-5xl sm:text-6xl md:text-7xl lg:text-8xl"       
+          >
+              What is a weed?
+          </h1>
           <div className="grid md:grid-cols-2 md:gap-12 mx-6 sm:mx-12 mt-4 text-justify">
             <div className="max-w-prose">
               <p className="mb-4">On camera, famed British gardener Bannerman asks this seemingly simple question whilst walking in his Trematon Castle garden in Cornwall, with a spiky giant Gunnera in hand, the leaves acting as an oversized umbrella over the imposing man. Yet, he spent months removing the invasive petasites from the grounds of the garden when he first started working on it.</p>
@@ -52,12 +69,47 @@ export default function HomePage() {
 
         {/* Intro Poem */}
         <section className="space-y-6 pt-12">
-          <p className="">Is a weed</p>
-          <p className="ml-24">A <span className="tracking-widest">displaced</span> plant</p>
-          <p className="text-right sm:text-left sm:ml-96">a plant out of place</p>
-          <p className="text-right sm:text-left sm:ml-80">In a not no place</p>
-          <p className="ml-36">Is a weed</p>
-          <p className="text-right sm:text-left sm:ml-60">A (vegetal) being holding <em>ground</em></p>        
+          <p 
+            data-sal="slide-down"
+            data-sal-duration="700"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            >Is a weed</p>
+          <p 
+            data-sal="slide-down"
+            data-sal-duration="700"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            className="ml-24"
+            >A <span className="tracking-widest">displaced</span> plant</p>
+          <p 
+            data-sal="slide-down"
+            data-sal-duration="700"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            className="text-right sm:text-left sm:ml-96"
+            >a plant out of place</p>
+          <p 
+            data-sal="slide-down"
+            data-sal-duration="700"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            className="text-right sm:text-left sm:ml-80"
+            >In a not no place</p>
+          <p 
+            data-sal="slide-down"
+            data-sal-duration="700"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            className="ml-36"
+            >Is a weed</p>
+          <p 
+            data-sal="slide-down"
+            data-sal-duration="700"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            className="text-right sm:text-left sm:ml-60"
+            >A (vegetal) being holding <em>ground</em></p>        
         </section>
 
         {/* 0.1 Title Mobile */}        
@@ -78,7 +130,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* 0.1 Poem */}
+        {/* 0.1 Poem */}        
         <section className="flex flex-col">
           <div className="my-12 space-y-2">
             <p className="my-12 md:text-center"><em>Landing ground — to land on the ground — to come through </em></p>
