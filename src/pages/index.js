@@ -32,10 +32,10 @@ export default function HomePage() {
 
     <Layout>
         {/* TODO: Intro Statement to be refined */}
-        <section className="pt-32 pl-6 md:pt-60 md:pl-12 md:-ml-half-width" style={{ maxWidth: "80vw", fontFamily: "MonetaSans"}}>
+        <div className="pt-32 pl-6 md:pt-60 md:pl-12 md:-ml-half-width" style={{ maxWidth: "80vw", fontFamily: "MonetaSans"}}>
           <p className="mb-4 italic">"What is a weed?<br/>What is a weed?"</p>
           <p className="italic">- Julian Bannerman, Great Gardens: Trematon Castle, Nowness</p>
-        </section>
+        </div>
         <section className="grid pt-8">
           <h1 className="mx-auto pt-5 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">What is a weed?</h1>
           <div className="grid md:grid-cols-2 md:gap-12 mx-6 sm:mx-12 mt-4 text-justify">
@@ -57,7 +57,7 @@ export default function HomePage() {
           </div>
           <Link 
             to="amarente"
-            style={{ padding: "200px 10vw 0 10vw"}}
+            style={{ padding: "200px 15vw 0 15vw"}}
           >
             <Img
               fluid={jpgs[0].node.childImageSharp.fluid}
@@ -109,7 +109,8 @@ export default function HomePage() {
             </div>
             <Link 
               to="concrete-plant"
-              style={{ maxWidth: "30vw", marginLeft: "15vw"}}
+              className="container justify-self-end md:justify-self-center px-4 max-w-1/2 md:max-w-3/10"
+              // style={{ maxWidth: "30vw", marginLeft: "15vw"}}
             >
               <Img
                 fluid={jpgs[1].node.childImageSharp.fluid}
@@ -135,22 +136,31 @@ export default function HomePage() {
               <p className="">A resistance to laboriously curated, easily manageable and predictable urban spaces</p>
             </div>
           </div>
-          <Link to="conditioned-nature">
-            <img src={gif_2} alt=""/>
-          </Link>
-          <div className="my-12 space-y-2 self-center">
-            <p className="">Weeds,</p>
-            <p className="ml-12">Blurring seductively clear</p>
-            <div className="space-y-2 pt-4 sm:ml-56">
-              <p className="">P</p>
-              <p className="ml-4">A</p>
-              <p className="ml-8">T</p>
-              <p className="ml-12">H</p>
-              <p className="ml-16">W</p>
-              <p className="ml-20">A</p>
-              <p className="ml-24">Y</p>
-              <p className="ml-28">S , roads, tidy delineations</p>
-            </div>  
+          <div className="grid">
+            <div className="my-12 space-y-2 self-center">
+              <p className="">Weeds,</p>
+              <p className="ml-12">Blurring seductively clear</p>
+              <div className="space-y-2 pt-4 sm:ml-56 lg:ml-24">
+                <div className="flex flex-row-reverse">
+                  <div className="container px-4 max-w-1/2">
+                    <Link to="conditioned-nature">
+                      <img src={gif_2} alt=""/>
+                    </Link>
+                  </div>
+                  <div className="space-y-2 flex-grow">
+                    <p className="">P</p>
+                    <p className="ml-4">A</p>
+                    <p className="ml-8">T</p>
+                    <p className="ml-12">H</p>
+                    <p className="ml-16">W</p>
+                    <p className="ml-20">A</p>
+                    <p className="ml-24">Y</p>
+                    <p className="ml-28 hidden lg:inline">S , roads, tidy delineations</p>
+                  </div>
+               </div>
+                <p className="ml-28 lg:hidden">S , roads, tidy delineations</p>
+              </div>  
+            </div>
           </div>
         </section>
 
@@ -225,12 +235,12 @@ export default function HomePage() {
       </div>
      
       {/* 0.3 Poem */}
-      <div className="w-11/12 mx-auto">    
+      <section className="flex flex-col my-12">    
       <Img fluid={jpgs[3].node.childImageSharp.fluid} alt={jpgs[3].node.base.split(".")[0]}/>
       <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
       <Img fluid={jpgs[5].node.childImageSharp.fluid} alt={jpgs[5].node.base.split(".")[0]}/>
 
-      </div>
+      </section>
 
       {/* 0.4 Poem */}
       <section className="flex flex-col my-12">  
