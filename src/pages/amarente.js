@@ -7,26 +7,39 @@ import { rand } from '../utils/helper';
 import { explode } from '../utils/effect';
 
 const ExplodeStyles = styled.div`
-    padding: 100px;
-     .explodee {
-      top: 50vh;
-      left: 50vw;
-      transform: translate(-50%, -50%);
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-      transition: all 1s ease-in-out;
+  overflow: hidden;
+  padding: 100px;
+  .explodee {
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 1s ease-in-out;
+  }
+  .floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  @keyframes floating {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
     }
-    .floating {
-      animation-name: floating;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
     }
-    @keyframes floating {
-      0% { transform: translate(0, 0px); }
-      50% { transform: translate(0, 15px); }
-      100% { transform: translate(0, -0px); }
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
     }
-  `;
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+`;
 
 export default function AmarentePage() {
   const data = useStaticQuery(graphql`
