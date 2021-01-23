@@ -38,6 +38,10 @@ module.exports = {
         '1/2': '50vw',
         '3/4': '75vw',
        },
+      minWidth: {
+      '1/4': '25vw',
+      '1/2': '50vw',
+      },
     },
   },
   variants: {

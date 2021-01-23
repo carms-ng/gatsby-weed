@@ -197,14 +197,14 @@ export default function HomePage() {
             <Link to="">An opportunistic germinator</Link>
           </p>
         </div>
-        <div className="grid sm:grid-cols-2">
+        <div className="grid sm:grid-cols-2 gap-6">
           <div>
             <Img
               fluid={jpgs[2].node.childImageSharp.fluid}
               alt={jpgs[2].node.base.split(".")[0]}
             />
           </div>
-          <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-start">
+          <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-center">
             <p className="">Is a weed</p>
             <p className="ml-16">What is yet to come</p>
             <p className="ml-28 pt-8">Is a weed</p>
@@ -235,9 +235,39 @@ export default function HomePage() {
       </div>
      
       {/* 0.3 Poem */}
-      <section className="flex flex-col my-12">    
-      <Img fluid={jpgs[3].node.childImageSharp.fluid} alt={jpgs[3].node.base.split(".")[0]}/>
-      <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
+      <section className="flex flex-col my-12 space-y-6">  
+        <Link 
+          to="/"
+          className="container mx-auto max-w-3/4"
+        >
+          <Img
+            fluid={jpgs[3].node.childImageSharp.fluid}
+            alt={jpgs[3].node.base.split(".")[0]}
+            />
+        </Link>  
+        <div className="flex justify-end py-12">
+          <div className="flex-grow space-y-2">
+            {/* Placeholder text!! Not real */}
+            <p className="">Is a weed</p>
+            <p className="ml-16">What is yet to come</p>
+            <p className="ml-28 pt-8">Is a weed</p>
+            <p className="sm:ml-28">A history maker, a storyteller, a punctuator</p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="container px-4 min-w-1/2 md:min-w-1/4">
+              <Link to="/">
+              <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
+              </Link>
+            </div>
+            <div className="space-y-2">
+              {/* Placeholder text!! Not real */}
+              <p className="">Is a weed</p>
+              <p className="ml-16">What is yet to come</p>
+              <p className="ml-28 pt-8">Is a weed</p>
+            </div>
+
+          </div>
+        </div>
       <Img fluid={jpgs[5].node.childImageSharp.fluid} alt={jpgs[5].node.base.split(".")[0]}/>
 
       </section>
