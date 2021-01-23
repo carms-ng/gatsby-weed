@@ -43,7 +43,6 @@ const GlobalStyles = createGlobalStyle`
         
       h3 {
         opacity: 0;
-        float: left;
         font-size: 3rem;
         text-transform: uppercase;
         color: var(--brown);
@@ -52,6 +51,12 @@ const GlobalStyles = createGlobalStyle`
         top: 20%;
         left: 0;
         padding: 0 1rem;  
+      }
+      .right {
+        float: right;
+        display: inline;
+        left: auto;
+        right: 0;
       }
     }
 
