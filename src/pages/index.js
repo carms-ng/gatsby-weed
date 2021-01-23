@@ -35,7 +35,6 @@ export default function HomePage() {
   return (
 
     <Layout>
-      <div className="w-11/12 mx-auto">
         {/* TODO: Intro Statement to be refined */}
         <section className="pt-32 pl-6 md:pt-60 md:pl-12 md:-ml-half-width" style={{ maxWidth: "80vw", fontFamily: "MonetaSans"}}>
           <p className="mb-4 italic">"What is a weed?<br/>What is a weed?"</p>
@@ -81,6 +80,8 @@ export default function HomePage() {
           <p className="text-right sm:text-left sm:ml-60">A (vegetal) being holding <em>ground</em></p>        
         </section>
 
+      {/* TODO: Adjust title width & hover effects */}
+      <div className="w-11/12 mx-auto">
         {/* 0.1 Title Mobile */}        
         <div className="text-rose md:hidden">
           <Link to="index-concrete-plant">
@@ -88,7 +89,7 @@ export default function HomePage() {
             <h3 className="text-xl uppercase  tracking-wide  md:hidden">Concrete & Plant Relationships</h3>
           </Link>
         </div>
-       
+      
         {/* 0.1 Title Desktop */}
         <div className="text-rose hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
           <Link to="index-concrete-plant">
@@ -98,6 +99,7 @@ export default function HomePage() {
             </div>
           </Link>
         </div>
+      </div>
 
         {/* 0.1 Poem */}
         <section className="flex flex-col">
@@ -156,6 +158,8 @@ export default function HomePage() {
           </div>
         </section>
 
+      {/* TODO: Adjust title width & hover effects */}
+      <div className="w-11/12 mx-auto">
         {/* 0.2 Title Mobile */}        
         <div className="text-rose md:hidden">
          <Link to="index-conditioned-nature">
@@ -173,63 +177,90 @@ export default function HomePage() {
             </div>
           </Link>
         </div>
+      </div>
 
-        {/* 0.2 Poem */}
-        <section className="flex flex-col my-12">
-          <div className="space-y-2 pb-12 leading-loose">
-            <p className="">Weeds,</p>
-            <p className="ml-12">Show us how to be in the presence of discomfort, of <span className="pl-4 tracking-widest">disruptions</span></p>
-            <p className="pt-24 ml-12">Is a weed</p>
-            <p className="ml-32">A pioneer</p>
-            {/* Modal 1 */}
-            <p className="underline text-right sm:text-left sm:ml-32">
-              <Link to="">An opportunistic germinator</Link>
-            </p>
+      {/* 0.2 Poem */}
+      <section className="flex flex-col my-12">
+        <div className="space-y-2 pb-12 leading-loose">
+          <p className="">Weeds,</p>
+          <p className="ml-12">Show us how to be in the presence of discomfort, of <span className="pl-4 tracking-widest">disruptions</span></p>
+          <p className="pt-24 ml-12">Is a weed</p>
+          <p className="ml-32">A pioneer</p>
+          {/* Modal 1 */}
+          <p className="underline text-right sm:text-left sm:ml-32">
+            <Link to="">An opportunistic germinator</Link>
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2">
+          <div className="overflow-hidden mx-auto">
+            <Img
+              fluid={jpgs[3].node.childImageSharp.fluid}
+              alt={jpgs[2].node.base.split(".")[0]}
+            />
           </div>
-          <div className="grid sm:grid-cols-2">
-            <div className="overflow-hidden mx-auto">
-              <Img
-                fluid={jpgs[3].node.childImageSharp.fluid}
-                alt={jpgs[2].node.base.split(".")[0]}
-              />
-            </div>
-            <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-start">
-              <p className="">Is a weed</p>
-              <p className="ml-16">What is yet to come</p>
-              <p className="ml-28 pt-8">Is a weed</p>
-              <p className="sm:ml-28">A history maker, a storyteller, a punctuator</p>
-            </div>
+          <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-start">
+            <p className="">Is a weed</p>
+            <p className="ml-16">What is yet to come</p>
+            <p className="ml-28 pt-8">Is a weed</p>
+            <p className="sm:ml-28">A history maker, a storyteller, a punctuator</p>
           </div>
-        </section>
-
+        </div>
+      </section>
+      
+      {/* TODO: Adjust title width & hover effects */}
+      <div className="w-11/12 mx-auto">
         {/* 0.3 Title Mobile */}        
         <div className="text-rose text-right md:hidden">
           <Link to="index-plants-witness">
               <h2 className="text-5xl md:text-7xl">0.3</h2>
               <h3 className="text-xl uppercase tracking-wide md:hidden">Plants as Witnesses</h3>
             </Link>
-          </div>
+        </div>
         
-          {/* 0.3 Title Desktop */}
-          <div className="text-rose text-right hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-            <Link to="index-plants-witness">
-              <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">0.3</h2>
-              <div className="z-auto absolute bottom-4 right-4">
+        {/* 0.3 Title Desktop */}
+        <div className="text-rose text-right hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+          <Link to="index-plants-witness">
+            <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">0.3</h2>
+            <div className="z-auto absolute bottom-4 right-4">
               <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">Plants as Witnesses</h3>
-              </div>
-            </Link>
-          </div>
-
-          
-      
+            </div>
+          </Link>
+        </div>
       </div>
+     
+      {/* 0.3 Poem */}
+      <div className="w-11/12 mx-auto">    
       <Img fluid={jpgs[1].node.childImageSharp.fluid} alt={jpgs[1].node.base.split(".")[0]}/>
       <Img fluid={jpgs[0].node.childImageSharp.fluid} alt={jpgs[0].node.base.split(".")[0]}/>
       <Img fluid={jpgs[6].node.childImageSharp.fluid} alt={jpgs[6].node.base.split(".")[0]}/>
-      {/* insert gif for 007 */}
-      <img src={gif_7} alt="" />
-      <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
+
+      </div>
+
+      {/* 0.4 Poem */}
+      <section className="flex flex-col my-12">  
+        {/* insert gif for 007 */}
+        <img src={gif_7} alt="" />
+      </section>
+
+      {/* 0.5 Poem */}
+      <section className="flex flex-col my-12">  
+        <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
+      </section>
+
+      {/* 0.6 Poem */}
+      <section className="flex flex-col my-12">   
+        <Img fluid={jpgs[2].node.childImageSharp.fluid} alt={jpgs[2].node.base.split(".")[0]}/>
+      </section>
+
+      {/* 0.7 Poem */}
+      <section className="flex flex-col my-12">  
       <Img fluid={jpgs[2].node.childImageSharp.fluid} alt={jpgs[2].node.base.split(".")[0]}/>
+      </section>
+      
+    
+  
+  
+      
 
       <Footer />
     </Layout>

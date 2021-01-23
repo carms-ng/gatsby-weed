@@ -15,7 +15,10 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-size: 1rem;
   }
-  
+  section {  
+    width: 91.666667%;
+    margin: 0 auto;
+  }
 `;
 
 export default GlobalStyles;
