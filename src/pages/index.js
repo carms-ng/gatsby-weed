@@ -246,7 +246,7 @@ export default function HomePage() {
             />
         </Link>  
         <div className="flex justify-end py-12">
-          <div className="flex-grow space-y-2">
+          <div className="flex-grow space-y-2 self-center lg:self-auto">
             {/* Placeholder text!! Not real */}
             <p className="">Is a weed</p>
             <p className="ml-16">What is yet to come</p>
@@ -259,36 +259,139 @@ export default function HomePage() {
               <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
               </Link>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 self-end pt-12 lg:pb-12">
               {/* Placeholder text!! Not real */}
               <p className="">Is a weed</p>
               <p className="ml-16">What is yet to come</p>
               <p className="ml-28 pt-8">Is a weed</p>
             </div>
-
           </div>
         </div>
-      <Img fluid={jpgs[5].node.childImageSharp.fluid} alt={jpgs[5].node.base.split(".")[0]}/>
-
       </section>
 
       {/* 0.4 Poem */}
-      <section className="flex flex-col my-12">  
-        {/* insert gif for 007 */}
-        <img src={gif_7} alt="" />
+      {/* 0.4 Title Mobile */}
+      <div></div>
+
+      <div className="grid md:grid-cols-2">
+        <div>
+          {/* 0.4 Title Desktop */}
+          <div>Title</div>
+          {/* 0.4 Stanza 2 */}
+          <div>Stanza 2</div>
+        </div>
+        
+        {/* 0.4 Stanza 1 */}
+        <div>Stanza 1</div>
+      </div>
+
+      {/* 0.4 Stanza 3, 4, modal, & image */}
+      <section className="my-12 space-y-6">   
+        {/* Placeholder text!! Not real */}
+        <div className="">
+          <p className="">Is a weed test</p>
+          <p className="ml-16">What is yet to come</p>
+          <p className="ml-28 pt-8">Is a weed</p>
+          <p className="sm:ml-28">A history maker, a storyteller, a punctuator</p>
+        </div>
+        <div className="grid grid-cols-2 gap-12">
+            <div className="space-y-2 self-end pt-12 lg:pb-12">
+              {/* Placeholder text!! Not real */}
+              <p className="">Is a weed</p>
+              <p className="ml-16">What is yet to come</p>
+              <p className="ml-28 pt-8">Is a weed</p>
+            </div>
+            <div className="container px-4 max-w-1/2">
+              <Link to="/">
+              <Img fluid={jpgs[5].node.childImageSharp.fluid} alt={jpgs[5].node.base.split(".")[0]}/>
+              </Link>
+            </div>
+          </div>
       </section>
 
+      {/* 0.5 Title Mobile */}
+
+      {/* 0.5 Title Desktop */}
+
       {/* 0.5 Poem */}
-      <section className="flex flex-col my-12">  
-        <Img fluid={jpgs[6].node.childImageSharp.fluid} alt={jpgs[6].node.base.split(".")[0]}/>
+      <section className="my-12 mx-auto max-w-3/4"> 
+        <p className="ml-16">What is yet to come</p>
+        <p className="ml-28 pt-8 text-right">Is a weed</p>
+      </section>
+
+      <div className="flex md:flex-row-reverse">
+        <div className="py-12 mr-6 md:mr-0 md:ml-12 max-w-1/2">
+          <Link to="/">
+            {/* insert gif for 007 */}
+            <img src={gif_7} alt="" />
+          </Link>
+        </div>
+        <div className="space-y-2 self-center">
+          {/* Placeholder text!! Not real */}
+          <p className="">Is a weed</p>
+          <p className="">What is yet to come</p>
+          <p className="">Is a weed</p>
+        </div>
+      </div>
+
+      <section className="my-12 mx-auto max-w-3/4"> 
+        <p className="ml-16">What is yet to come</p>
+        <p className="ml-28 pt-8 text-right">Is a weed</p>
       </section>
 
       {/* 0.6 Poem */}
-      <section className="flex flex-col my-12">   
-        <Img fluid={jpgs[7].node.childImageSharp.fluid} alt={jpgs[7].node.base.split(".")[0]}/>
+      {/* 0.6 Title Mobile */}
+      <div></div>
+
+      <div className="grid md:grid-cols-2">
+        <div>
+          {/* 0.6 Title Desktop */}
+          <div>Title</div>
+          {/* 0.6 Stanza 2 */}
+          <div>Stanza 2</div>
+        </div>
+      </div>
+
+      <section className="my-12 mx-auto max-w-3/4"> 
+        <div>
+          <p className="ml-16">What is yet to come</p>
+          <p className="ml-28 pt-8 text-right">Is a weed</p>
+        </div>
+        <div className="container mx-auto lg:max-w-1/2">
+          <Link 
+            to="/"
+          >
+            <Img
+              fluid={jpgs[6].node.childImageSharp.fluid}
+              alt={jpgs[6].node.base.split(".")[0]}
+              />
+          </Link>
+        </div> 
+        <div>
+          <p className="ml-16">What is yet to come</p>
+          <p className="ml-28 pt-8 text-right">Is a weed</p>
+        </div>
       </section>
 
-      {/* 0.7 Poem */}
+
+      {/* 0.7 Title & Image */}
+      <div className="grid md:grid-cols-2 mr-12 md:mr-24">
+        <div>
+          {/* 0.7 Title Mobile */}
+          <div>Title</div>
+          {/* 0.7 Title Desktop */}
+          <div>Title</div>
+        </div>
+        <Link 
+          to="/"
+          className="container mx-auto max-w-2/5"
+        >
+          <Img
+            fluid={jpgs[7].node.childImageSharp.fluid}
+            alt={jpgs[7].node.base.split(".")[0]}
+            />
+        </Link> 
+      </div>
 
       <Footer />
     </Layout>
