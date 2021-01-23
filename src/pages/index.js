@@ -8,21 +8,16 @@ import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
 import Footer from '../components/Footer';
 
 
-
 export default function HomePage() {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allFile(filter: {relativePath: {regex: "/^00.+jpg$/"}}) {
+      allFile(filter: {absolutePath: {regex: "/landing_page/"}}, sort: {fields: base}) {
         edges {
           node {
             base
             childImageSharp {
               fluid {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -30,8 +25,9 @@ export default function HomePage() {
       }
     }
   `)
-  const jpgs = data.allFile.edges;
 
+  const jpgs = data.allFile.edges;
+  console.log(jpgs)
   return (
 
     <Layout>
@@ -64,8 +60,8 @@ export default function HomePage() {
             style={{ padding: "200px 10vw 0 10vw"}}
           >
             <Img
-              fluid={jpgs[7].node.childImageSharp.fluid}
-              alt={jpgs[7].node.base.split(".")[0]}
+              fluid={jpgs[0].node.childImageSharp.fluid}
+              alt={jpgs[0].node.base.split(".")[0]}
               />
           </Link>
         </section>
@@ -116,8 +112,8 @@ export default function HomePage() {
               style={{ maxWidth: "30vw", marginLeft: "15vw"}}
             >
               <Img
-                fluid={jpgs[5].node.childImageSharp.fluid}
-                alt={jpgs[5].node.base.split(".")[0]}
+                fluid={jpgs[1].node.childImageSharp.fluid}
+                alt={jpgs[1].node.base.split(".")[0]}
                 />
             
             </Link>
@@ -192,9 +188,9 @@ export default function HomePage() {
           </p>
         </div>
         <div className="grid sm:grid-cols-2">
-          <div className="overflow-hidden mx-auto">
+          <div>
             <Img
-              fluid={jpgs[3].node.childImageSharp.fluid}
+              fluid={jpgs[2].node.childImageSharp.fluid}
               alt={jpgs[2].node.base.split(".")[0]}
             />
           </div>
@@ -230,9 +226,9 @@ export default function HomePage() {
      
       {/* 0.3 Poem */}
       <div className="w-11/12 mx-auto">    
-      <Img fluid={jpgs[1].node.childImageSharp.fluid} alt={jpgs[1].node.base.split(".")[0]}/>
-      <Img fluid={jpgs[0].node.childImageSharp.fluid} alt={jpgs[0].node.base.split(".")[0]}/>
-      <Img fluid={jpgs[6].node.childImageSharp.fluid} alt={jpgs[6].node.base.split(".")[0]}/>
+      <Img fluid={jpgs[3].node.childImageSharp.fluid} alt={jpgs[3].node.base.split(".")[0]}/>
+      <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
+      <Img fluid={jpgs[5].node.childImageSharp.fluid} alt={jpgs[5].node.base.split(".")[0]}/>
 
       </div>
 
@@ -244,25 +240,18 @@ export default function HomePage() {
 
       {/* 0.5 Poem */}
       <section className="flex flex-col my-12">  
-        <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
+        <Img fluid={jpgs[6].node.childImageSharp.fluid} alt={jpgs[6].node.base.split(".")[0]}/>
       </section>
 
       {/* 0.6 Poem */}
       <section className="flex flex-col my-12">   
-        <Img fluid={jpgs[2].node.childImageSharp.fluid} alt={jpgs[2].node.base.split(".")[0]}/>
+        <Img fluid={jpgs[7].node.childImageSharp.fluid} alt={jpgs[7].node.base.split(".")[0]}/>
       </section>
 
       {/* 0.7 Poem */}
-      <section className="flex flex-col my-12">  
-      <Img fluid={jpgs[2].node.childImageSharp.fluid} alt={jpgs[2].node.base.split(".")[0]}/>
-      </section>
-      
-    
-  
-  
-      
 
       <Footer />
     </Layout>
   );
 }
+
