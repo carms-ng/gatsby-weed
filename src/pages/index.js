@@ -85,16 +85,16 @@ export default function HomePage() {
             <h3 className="text-xl uppercase  tracking-wide  md:hidden">Concrete & Plant Relationships</h3>
           </Link>
         </div>
-      
-        {/* 0.1 Title Desktop */}
-        <div className="text-rose hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-          <Link to="index-concrete-plant">
-            <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
-            <div className="z-auto absolute bottom-4 left-4">
-              <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">Concrete & Plant Relationships</h3>
-            </div>
-          </Link>
-        </div>
+      </div>
+
+      {/* 0.1 Title Desktop */}
+      <div className="title hidden md:block">
+        <Link to="index-concrete-plant">
+          <h2 className="ml-24">0.1</h2>
+          <div className="subtitle">
+            <h3>Concrete & Plant Relationships</h3>
+          </div>
+        </Link>
       </div>
 
         {/* 0.1 Poem */}
