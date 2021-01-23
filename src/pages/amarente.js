@@ -15,6 +15,17 @@ const ExplodeStyles = styled.div`
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
       transition: all 1s ease-in-out;
     }
+    .floating {
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    @keyframes floating {
+      0% { transform: translate(0, 0px); }
+      50% { transform: translate(0, 15px); }
+      100% { transform: translate(0, -0px); }
+    }
   `;
 
 export default function AmarentePage() {

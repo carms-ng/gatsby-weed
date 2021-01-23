@@ -12,6 +12,7 @@ export const explode = () => {
     explodees.forEach((elem) => {
       elem.style.top = rand(pageHeight, 0) + "px";
       elem.style.left = rand(80, 20) + "vw";
+      elem.classList.add("floating");
     })
   }
 }
