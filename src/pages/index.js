@@ -1,22 +1,36 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { useStaticQuery, graphql, Link } from "gatsby";
+import Img from "gatsby-image";
+import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
+import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
 
 import Footer from '../components/Footer';
 
+
+
 export default function HomePage() {
   const data = useStaticQuery(graphql`
-    query {
-      fileName: file(relativePath: { eq: "1.jpg" }) {
-        childImageSharp {
-          fixed(width: 300, height: 200) {
-            ...GatsbyImageSharpFixed
+    query MyQuery {
+      allFile(filter: {relativePath: {regex: "/^00.+jpg$/"}}) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid {
+                aspectRatio
+                base64
+                sizes
+                src
+                srcSet
+              }
+            }
           }
         }
       }
     }
   `)
+  const jpgs = data.allFile.edges;
 
   return (
 
@@ -46,13 +60,13 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <Link to="amarente">
+          <Link 
+            to="amarente"
+            style={{ padding: "200px 10vw 0 10vw"}}
+          >
             <Img
-                fixed={data.fileName.childImageSharp.fixed}
-                objectFit="cover"
-                objectPosition="50% 50%"
-                alt=""
-                className="mx-auto w-full"
+              fluid={jpgs[7].node.childImageSharp.fluid}
+              alt={jpgs[7].node.base.split(".")[0]}
               />
           </Link>
         </section>
@@ -87,23 +101,26 @@ export default function HomePage() {
 
         {/* 0.1 Poem */}
         <section className="flex flex-col">
-          <div className="my-12 space-y-2">
-            <p className="my-12 md:text-center"><em>Landing ground — to land on the ground — to come through </em></p>
-            <p className="">A weed is</p>
-            <p className="ml-16">Is a weed</p>
-            <p className="ml-32">Is a weed</p>
-            <p className="ml-48">Is a weed</p>      
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="my-12 space-y-2 col-span-1">
+              <p className="my-12"><em>Landing ground — to land on the ground — to come through </em></p>
+              <p className="">A weed is</p>
+              <p className="ml-16">Is a weed</p>
+              <p className="ml-32">Is a weed</p>
+              <p className="ml-48">Is a weed</p>      
+            </div>
+            <Link 
+              to="concrete-plant"
+              style={{ maxWidth: "30vw", marginLeft: "15vw"}}
+            >
+              <Img
+                fluid={jpgs[5].node.childImageSharp.fluid}
+                alt={jpgs[5].node.base.split(".")[0]}
+                />
+            
+            </Link>
+
           </div>
-          
-          <Link to="concrete-plant">
-            <Img
-                fixed={data.fileName.childImageSharp.fixed}
-                objectFit="cover"
-                objectPosition="50% 50%"
-                alt=""
-                className="float-right sm:mr-16 md:mr-32 lg:mr-48"
-              />
-          </Link>
 
           <div className="mt-12 space-y-2 md:align-right self-center">
             <p className="">Is a weed</p>
@@ -111,23 +128,17 @@ export default function HomePage() {
             <p className="text-right sm:text-left sm:ml-80"><span className="tracking-widest">ture</span></p>
             <p className="py-6 text-right sm:text-left sm:ml-96">s</p>
 
-              <div className="space-y-2 pb-12 leading-loose">
-                <p className="text-right">Are weeds pushing their way out of every crack,</p>
-                <p className="text-right">nature’s proof of her will to resist the human’s urge to control it?</p>
-                <p className="pt-12 text-right">A reminder that every built environment must exist in</p>
-                <p className="">negotiation — ideally in harmony — with its natural one.</p>
-                <p className="pt-12">Is a weed then,</p>
-                <p className="">A resistance to laboriously curated, easily manageable and predictable urban spaces</p>
-              </div>
+            <div className="space-y-2 pb-12 leading-loose">
+              <p className="text-right">Are weeds pushing their way out of every crack,</p>
+              <p className="text-right">nature’s proof of her will to resist the human’s urge to control it?</p>
+              <p className="pt-12 text-right">A reminder that every built environment must exist in</p>
+              <p className="">negotiation — ideally in harmony — with its natural one.</p>
+              <p className="pt-12">Is a weed then,</p>
+              <p className="">A resistance to laboriously curated, easily manageable and predictable urban spaces</p>
+            </div>
           </div>
           <Link to="conditioned-nature">
-            <Img
-                fixed={data.fileName.childImageSharp.fixed}
-                objectFit="cover"
-                objectPosition="50% 50%"
-                alt=""
-                className="float-right sm:mr-16 md:mr-32 lg:mr-48"
-              />
+            <img src={gif_2} alt=""/>
           </Link>
           <div className="my-12 space-y-2 self-center">
             <p className="">Weeds,</p>
@@ -178,11 +189,9 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2">
             <div className="overflow-hidden mx-auto">
               <Img
-                  fixed={data.fileName.childImageSharp.fixed}
-                  objectFit="cover"
-                  objectPosition="50% 50%"
-                  alt=""
-                />
+                fluid={jpgs[3].node.childImageSharp.fluid}
+                alt={jpgs[2].node.base.split(".")[0]}
+              />
             </div>
             <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-start">
               <p className="">Is a weed</p>
@@ -211,9 +220,17 @@ export default function HomePage() {
             </Link>
           </div>
 
-
+          
       
       </div>
+      <Img fluid={jpgs[1].node.childImageSharp.fluid} alt={jpgs[1].node.base.split(".")[0]}/>
+      <Img fluid={jpgs[0].node.childImageSharp.fluid} alt={jpgs[0].node.base.split(".")[0]}/>
+      <Img fluid={jpgs[6].node.childImageSharp.fluid} alt={jpgs[6].node.base.split(".")[0]}/>
+      {/* insert gif for 007 */}
+      <img src={gif_7} alt="" />
+      <Img fluid={jpgs[4].node.childImageSharp.fluid} alt={jpgs[4].node.base.split(".")[0]}/>
+      <Img fluid={jpgs[2].node.childImageSharp.fluid} alt={jpgs[2].node.base.split(".")[0]}/>
+
       <Footer />
     </Layout>
   );
