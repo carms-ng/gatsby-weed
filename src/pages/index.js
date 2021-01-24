@@ -4,7 +4,6 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
 import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 import IntroSection from '../components/Intro';
@@ -122,7 +121,6 @@ export default function HomePage() {
           </p>
         </section>
 
-        {/* TODO: Adjust title width & hover effects */}
         <div className="w-11/12 mx-auto">
           {/* 0.1 Title Mobile */}
           <div className="text-rose md:hidden">
@@ -133,18 +131,16 @@ export default function HomePage() {
               </h3>
             </Link>
           </div>
+        </div>
 
-          {/* 0.1 Title Desktop */}
-          <div className="text-rose hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-            <Link to="index-concrete-plant">
-              <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.1</h2>
-              <div className="z-auto absolute bottom-4 left-4">
-                <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide  text-beige hover:text-rose-dark transition-all ease-in duration-700">
-                  Concrete & Plant Relationships
-                </h3>
-              </div>
-            </Link>
-          </div>
+        {/* 0.1 Title Desktop */}
+        <div className="title hidden md:block">
+          <Link to="index-concrete-plant">
+            <h2 className="ml-24">0.1</h2>
+            <div className="subtitle">
+              <h3>Concrete & Plant Relationships</h3>
+            </div>
+          </Link>
         </div>
 
         {/* 0.1 Poem */}
@@ -205,6 +201,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+
           <div className="grid">
             <div className="my-12 space-y-2 self-center">
               <p className="">Weeds,</p>
@@ -235,8 +232,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* TODO: Adjust title width & hover effects */}
-        <div className="w-11/12 mx-auto">
+        <div className="mx-auto">
           {/* 0.2 Title Mobile */}
           <div className="text-rose md:hidden">
             <Link to="index-conditioned-nature">
@@ -248,13 +244,11 @@ export default function HomePage() {
           </div>
 
           {/* 0.2 Title Desktop */}
-          <div className="text-rose hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
+          <div className="title hidden md:block">
             <Link to="index-conditioned-nature">
-              <h2 className="z-10 absolute bottom-2 left-16 text-7xl">0.2</h2>
-              <div className="z-auto absolute bottom-4 left-4">
-                <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">
-                  Conditioned Nature
-                </h3>
+              <h2 className="ml-24">0.2</h2>
+              <div className="subtitle">
+                <h3>Conditioned Nature</h3>
               </div>
             </Link>
           </div>
@@ -293,8 +287,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* TODO: Adjust title width & hover effects */}
-        <div className="w-11/12 mx-auto">
+        <div className="mx-auto">
           {/* 0.3 Title Mobile */}
           <div className="text-rose text-right md:hidden">
             <Link to="index-plants-witness">
@@ -304,20 +297,16 @@ export default function HomePage() {
               </h3>
             </Link>
           </div>
+        </div>
 
-          {/* 0.3 Title Desktop */}
-          <div className="text-rose text-right hidden md:block m-4 p-4 pt-16 relative hover:bg-rose-light transition-all ease-in duration-700">
-            <Link to="index-plants-witness">
-              <h2 className="z-10 absolute bottom-2 right-48 xl:right-80 text-7xl">
-                0.3
-              </h2>
-              <div className="z-auto absolute bottom-4 right-4">
-                <h3 className="md:text-4xl lg:text-5xl uppercase tracking-wide text-beige hover:text-rose-dark transition-all ease-in duration-700">
-                  Plants as Witnesses
-                </h3>
-              </div>
-            </Link>
-          </div>
+        {/* 0.3 Title Desktop */}
+        <div className="title hidden md:block text-right">
+          <Link to="index-plants-witness">
+            <h2 className="mr-48">0.3</h2>
+            <div className="subtitle">
+              <h3 className="right">Plants as Witnesses</h3>
+            </div>
+          </Link>
         </div>
 
         {/* 0.3 Poem */}
@@ -359,18 +348,33 @@ export default function HomePage() {
 
         {/* 0.4 Poem */}
         {/* 0.4 Title Mobile */}
-        <div></div>
+        <div className="mx-auto">
+          <div className="text-rose text-right md:hidden">
+            <Link to="index-third-landscape">
+              <h2 className="text-5xl md:text-7xl">0.4</h2>
+              <h3 className="text-xl uppercase tracking-wide md:hidden">
+                Third Landscape
+              </h3>
+            </Link>
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2">
+          {/* 0.4 Stanza 1 */}
+          <div>Stanza 1</div>
           <div>
             {/* 0.4 Title Desktop */}
-            <div>Title</div>
+            <div className="title hidden md:block text-right">
+              <Link to="index-third-landscape">
+                <h2 className="mr-48">0.4</h2>
+                <div className="subtitle">
+                  <h3 className="right">Third Landscape</h3>
+                </div>
+              </Link>
+            </div>
             {/* 0.4 Stanza 2 */}
             <div>Stanza 2</div>
           </div>
-
-          {/* 0.4 Stanza 1 */}
-          <div>Stanza 1</div>
         </div>
 
         {/* 0.4 Stanza 3, 4, modal, & image */}
@@ -402,9 +406,27 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 0.5 Title Mobile */}
+        <div className="mx-auto">
+          {/* 0.5 Title Mobile */}
+          <div className="text-rose md:hidden">
+            <Link to="index-displace-migrate">
+              <h2 className="text-5xl md:text-7xl">0.5</h2>
+              <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
+                Displacement / Migration
+              </h3>
+            </Link>
+          </div>
 
-        {/* 0.5 Title Desktop */}
+          {/* 0.5 Title Desktop */}
+          <div className="title hidden md:block">
+            <Link to="index-displace-migrate">
+              <h2 className="ml-24">0.5</h2>
+              <div className="subtitle">
+                <h3>Displacement / Migration</h3>
+              </div>
+            </Link>
+          </div>
+        </div>
 
         {/* 0.5 Poem */}
         <section className="my-12 mx-auto max-w-3/4">
@@ -433,51 +455,82 @@ export default function HomePage() {
         </section>
 
         {/* 0.6 Poem */}
-        {/* 0.6 Title Mobile */}
-        <div></div>
+        <div className="mx-auto">
+          {/* 0.6 Title Mobile */}
+          <div className="text-rose md:hidden">
+            <Link to="index-body-landscape">
+              <h2 className="text-5xl md:text-7xl">0.6</h2>
+              <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
+                Body in / as Landscape
+              </h3>
+            </Link>
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2">
           <div>
             {/* 0.6 Title Desktop */}
-            <div>Title</div>
+            <div className="title hidden md:block">
+              <Link to="index-body-landscape">
+                <h2 className="ml-24">0.6</h2>
+                <div className="subtitle">
+                  <h3>Body in / as Landscape</h3>
+                </div>
+              </Link>
+            </div>
             {/* 0.6 Stanza 2 */}
             <div>Stanza 2</div>
           </div>
-        </div>
 
-        <section className="my-12 mx-auto max-w-3/4">
-          <div>
-            <p className="ml-16">What is yet to come</p>
-            <p className="ml-28 pt-8 text-right">Is a weed</p>
-          </div>
-          <div className="container mx-auto lg:max-w-1/2">
-            <Link to="/">
+          <section className="my-12 mx-auto max-w-3/4">
+            <div>
+              <p className="ml-16">What is yet to come</p>
+              <p className="ml-28 pt-8 text-right">Is a weed</p>
+            </div>
+            <div className="container mx-auto lg:max-w-1/2">
+              <Link to="/">
+                <Img
+                  fluid={jpgs[6].node.childImageSharp.fluid}
+                  alt={jpgs[6].node.base.split('.')[0]}
+                />
+              </Link>
+            </div>
+            <div>
+              <p className="ml-16">What is yet to come</p>
+              <p className="ml-28 pt-8 text-right">Is a weed</p>
+            </div>
+          </section>
+
+          {/* 0.7 Title & Image */}
+          <div className="grid md:grid-cols-2 mr-12 md:mr-24">
+            <div className="">
+              {/* 0.7 Title Mobile */}
+              <div className="text-rose md:hidden">
+                <Link to="index-furthermore">
+                  <h2 className="text-5xl md:text-7xl">0.7</h2>
+                  <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
+                    Furthermore
+                  </h3>
+                </Link>
+              </div>
+
+              {/* 0.7 Title Desktop */}
+              <div className="title hidden md:block">
+                <Link to="index-furthermore">
+                  <h2 className="ml-24">0.7</h2>
+                  <div className="subtitle">
+                    <h3>Furthermore</h3>
+                  </div>
+                </Link>
+              </div>
+            </div>
+            <Link to="/" className="container mx-auto max-w-2/5">
               <Img
-                fluid={jpgs[6].node.childImageSharp.fluid}
-                alt={jpgs[6].node.base.split('.')[0]}
+                fluid={jpgs[7].node.childImageSharp.fluid}
+                alt={jpgs[7].node.base.split('.')[0]}
               />
             </Link>
           </div>
-          <div>
-            <p className="ml-16">What is yet to come</p>
-            <p className="ml-28 pt-8 text-right">Is a weed</p>
-          </div>
-        </section>
-
-        {/* 0.7 Title & Image */}
-        <div className="grid md:grid-cols-2 mr-12 md:mr-24">
-          <div>
-            {/* 0.7 Title Mobile */}
-            <div>Title</div>
-            {/* 0.7 Title Desktop */}
-            <div>Title</div>
-          </div>
-          <Link to="/" className="container mx-auto max-w-2/5">
-            <Img
-              fluid={jpgs[7].node.childImageSharp.fluid}
-              alt={jpgs[7].node.base.split('.')[0]}
-            />
-          </Link>
         </div>
       </FallingStyles>
       <Footer />
