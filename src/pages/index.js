@@ -9,6 +9,47 @@ import styled from 'styled-components';
 import IntroSection from '../components/Intro';
 import Footer from '../components/Footer';
 
+const FallingStyles = styled.div`
+  p {
+    opacity: 0;
+    transform: translateY(-20vh);
+    transition: all 0.6s cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  .falling {
+    opacity: 1;
+    animation-name: falling;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
+    animation-fill-mode: forwards;
+  }
+  .zoomin {
+    opacity: 1;
+    animation-name: zoomin;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
+    animation-fill-mode: forwards;
+  }
+  @keyframes falling {
+    from {
+      transform: translateY(-20vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes zoomin {
+    from {
+      transform: scale(1, 1);
+    }
+    to {
+      transform: scale(1.2, 1.2);
+    }
+  }
+}
+`;
+
 export default function HomePage() {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -36,7 +77,9 @@ export default function HomePage() {
 
   // Scroll effects
   useEffect(() => {
-    const pTags = document.querySelectorAll('p');
+    const pTags = document.querySelectorAll("p");
+    const images = document.querySelectorAll("img");
+
     let options = {
       // root: document.querySelector('#scrollArea'),
       rootMargin: '0px 0px 100px 0px',
@@ -45,39 +88,24 @@ export default function HomePage() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
-          entry.target.classList.add('falling');
+          if (entry.target.localName === "img") {
+            console.log(entry);
+            entry.target.classList.add('zoomin');
+          } else {
+            entry.target.classList.add('falling');
+          }
         }
       });
     }, options);
 
     pTags.forEach((tag) => {
       observer.observe(tag);
-    });
-  }, []);
+    })
+    images.forEach(tag => {
+      observer.observe(tag);
+    })
 
-  const FallingStyles = styled.div`
-    p {
-      opacity: 0;
-      transform: translateY(-20vh);
-      transition: all 0.6s cubic-bezier(0.11, 0, 0.5, 0);
-    }
-    .falling {
-      opacity: 1;
-      animation-name: falling;
-      animation-duration: 1s;
-      animation-delay: 1s;
-      animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
-      animation-fill-mode: forwards;
-    }
-    @keyframes falling {
-      from {
-        transform: translateY(-20vh);
-      }
-      to {
-        transform: translateY(0);
-      }
-    }
-  `;
+  }, []);
 
   return (
     <Layout>
