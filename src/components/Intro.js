@@ -27,10 +27,8 @@ export default function IntroSection() {
     let scrollPos = 0;
     window.addEventListener('scroll', function () {
       moveTitle(scrollPos);
-      
       scrollPos = (document.body.getBoundingClientRect()).top;
     });
-      
     return () => {
       window.removeEventListener('scroll', () => {});
     };
@@ -90,24 +88,24 @@ export default function IntroSection() {
       </h1>
       <div id="intro-text" className="grid md:grid-cols-2 md:gap-12 mx-6 sm:mx-12 mt-4 text-justify justify-items-center">
         <div className="max-w-prose">
-          <p className="mb-4">
+          <h6 className="mb-4">
             On camera, famed British gardener Bannerman asks this seemingly simple question whilst walking in his Trematon Castle garden in Cornwall, with a spiky giant Gunnera in hand, the leaves acting as an oversized umbrella over the imposing man. Yet, he spent months removing the invasive petasites from the grounds of the garden when he first started working on it.
-          </p>
+          </h6>
 
-          <p className="mb-4">
+          <h6 className="mb-4">
             Here lies the complexity of offering an answer to this treacherous interrogation. A plant is, first and foremost, regarded as a weed according to its desirability to humans in a given context. In this human-centric perspective, it is a plant that is not valued for certain of its particular characteristics and properties, making it undesirable, to be eradicated through various — often violent — methods. As the famous gardener asks us to reconsider our narrow conceptions of nature, at the core of his role, lies the desire to control and manipulate nature.
-          </p>
-          <p className="mb-4">
+          </h6>
+          <h6 className="mb-4">
             What do these plants become when growing in an alternate third space (or is it the first space)? Vegetal practices such as gardening have a long history of control and conditioning of nature as a separate, subservient non-human entity — the desire to tame it in accordance with human’s use of space.
-          </p>
+          </h6>
         </div>
         <div className="max-w-prose">
-          <p className="mb-4">
+          <h6 className="mb-4">
             Weeding out undesirable plants is a part of this practice. What potential then lies in relinquishing control to these undesirables? Is this ground for a rewilding revolution, a quiet resistance and decolonial utopia? To think through the question of what is a weed is to problematize the varied notions, to become conscious of the dualistic divide of nature and culture, and to break it down like a mycellic cell in a heap of soil and humus.
-          </p>
-          <p className="mb-4">
+          </h6>
+          <h6 className="mb-4">
             This collaborative multi-disciplined project, which premises itself on the idea of vegetal and human entanglements, weaves a collection of provocations, questions and investigations that explore and interrogate the multi-faceted notions of a weed through essays of images and texts using the digital landscape as fertile ground to germinate from. We agitate metaphysical soil and thread together plant provocations and metaphors. We explore the weed’s place in the construction of landscapes, botanical migration across the globe and we situate the body as a landscape.
-          </p>
+          </h6>
         </div>
       </div>
 
