@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 import IntroSection from '../components/Intro';
 import Footer from '../components/Footer';
+import Overlay from '../components/Overlay';
 
 const FallingStyles = styled.div`
   p {
@@ -122,12 +123,17 @@ export default function HomePage() {
       </div>
       <section className="grid pt-8">
         <IntroSection />
-        <Link to="amarente" style={{ padding: '100px 15vw 0 15vw' }}>
+        <Link
+          to="amarente"
+          // style={{ margin: '100px 15vw 0 15vw' }}
+          className="img-container max-w-3/4 mx-auto"
+        >
           <Img
             fluid={jpgs[0].node.childImageSharp.fluid}
             alt={jpgs[0].node.base.split('.')[0]}
             // imgStyle={{ transition: `all 500ms ase 0s` }}
           />
+          <Overlay />
         </Link>
       </section>
       <FallingStyles id="scrollArea">
@@ -185,13 +191,14 @@ export default function HomePage() {
             </div>
             <Link
               to="concrete-plant"
-              className="container justify-self-end md:justify-self-center px-4 max-w-1/2 md:max-w-3/10"
+              className="img-container self-end md:justify-self-center mx-4 max-w-1/2 md:max-w-3/10"
               // style={{ maxWidth: "30vw", marginLeft: "15vw"}}
             >
               <Img
                 fluid={jpgs[1].node.childImageSharp.fluid}
                 alt={jpgs[1].node.base.split('.')[0]}
               />
+              <Overlay />
             </Link>
           </div>
 
@@ -234,9 +241,10 @@ export default function HomePage() {
               <p className="ml-12">Blurring seductively clear</p>
               <div className="space-y-2 pt-4 sm:ml-56 lg:ml-24">
                 <div className="flex flex-row-reverse">
-                  <div className="container px-4 max-w-1/2">
+                  <div className="img-container max-w-1/2">
                     <Link to="conditioned-nature">
                       <img src={gif_2} alt="" />
+                      <Overlay />
                     </Link>
                   </div>
                   <div className="space-y-2 flex-grow">
@@ -337,11 +345,12 @@ export default function HomePage() {
 
         {/* 0.3 Poem */}
         <section className="flex flex-col my-12 space-y-6">
-          <Link to="/" className="container mx-auto max-w-3/4">
+          <Link to="/" className="img-container mx-auto max-w-3/4">
             <Img
               fluid={jpgs[3].node.childImageSharp.fluid}
               alt={jpgs[3].node.base.split('.')[0]}
             />
+            <Overlay />
           </Link>
           <div className="flex justify-end py-12">
             <div className="flex-grow space-y-2 self-center lg:self-auto">
@@ -354,12 +363,13 @@ export default function HomePage() {
               </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-12">
-              <div className="container px-4 min-w-1/2 md:min-w-1/4">
+              <div className="img-container min-w-1/2 md:min-w-1/4">
                 <Link to="/">
                   <Img
                     fluid={jpgs[4].node.childImageSharp.fluid}
                     alt={jpgs[4].node.base.split('.')[0]}
                   />
+                  <Overlay />
                 </Link>
               </div>
               <div className="space-y-2 self-end pt-12 lg:pb-12">
@@ -421,12 +431,13 @@ export default function HomePage() {
               <p className="ml-16">What is yet to come</p>
               <p className="ml-28 pt-8">Is a weed</p>
             </div>
-            <div className="container px-4 max-w-1/2">
+            <div className="img-container max-w-1/2">
               <Link to="/">
                 <Img
                   fluid={jpgs[5].node.childImageSharp.fluid}
                   alt={jpgs[5].node.base.split('.')[0]}
                 />
+                <Overlay />
               </Link>
             </div>
           </div>
@@ -461,10 +472,11 @@ export default function HomePage() {
         </section>
 
         <div className="flex md:flex-row-reverse">
-          <div className="py-12 mr-6 md:mr-0 md:ml-12 max-w-1/2">
+          <div className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2">
             <Link to="/">
               {/* insert gif for 007 */}
               <img src={gif_7} alt="" />
+              <Overlay />
             </Link>
           </div>
           <div className="space-y-2 self-center">
@@ -513,12 +525,13 @@ export default function HomePage() {
               <p className="ml-16">What is yet to come</p>
               <p className="ml-28 pt-8 text-right">Is a weed</p>
             </div>
-            <div className="container mx-auto lg:max-w-1/2">
+            <div className="img-container mx-auto lg:max-w-1/2">
               <Link to="/">
                 <Img
                   fluid={jpgs[6].node.childImageSharp.fluid}
                   alt={jpgs[6].node.base.split('.')[0]}
                 />
+                <Overlay />
               </Link>
             </div>
             <div>
@@ -550,11 +563,12 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <Link to="/" className="container mx-auto max-w-2/5">
+            <Link to="/" className="img-container mx-auto max-w-2/5">
               <Img
                 fluid={jpgs[7].node.childImageSharp.fluid}
                 alt={jpgs[7].node.base.split('.')[0]}
               />
+              <Overlay />
             </Link>
           </div>
         </div>

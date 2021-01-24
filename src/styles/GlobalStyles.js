@@ -77,6 +77,15 @@ const GlobalStyles = createGlobalStyle`
     }
     
   }
+  .img-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .img-container:hover .overlay {
+    opacity: 50%;
+  }
+  
 `;
 
 export default GlobalStyles;
