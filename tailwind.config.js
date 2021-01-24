@@ -27,6 +27,17 @@ module.exports = {
         '-half-screen': '50vw',
         '-half-width': '50%',
       },
+      maxHeight: {
+        '1/4': '25vh',
+        '1/2': '50vh',
+        '3/4': '75vh',
+      },
+      maxWidth: {
+        '1/4': '25vw',
+        '2/5': '40vw',
+        '1/2': '50vw',
+        '3/4': '75vw',
+      }
     },
   },
   variants: {
