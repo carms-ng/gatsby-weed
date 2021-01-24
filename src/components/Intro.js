@@ -5,18 +5,20 @@ import styled from 'styled-components'
 export default function IntroSection() {
   const moveTitle = (scrollPos) => {
     const h1 = document.getElementById("intro-title")
-    const h1Top = h1.getBoundingClientRect().top;
-    if ((document.body.getBoundingClientRect()).top > scrollPos) {
-      // Scrolling up
-      if (h1Top > 2 * h1.clientHeight) {
-        h1.classList.replace("diagonal-down", "diagonal-up");
-      }
-    } else {
-      // Scrolling down
-      if (h1.classList.contains("diagonal-up")) {
-        h1.classList.replace("diagonal-up", "diagonal-down");
+    if (h1) {
+      const h1Top = h1.getBoundingClientRect().top;
+      if ((document.body.getBoundingClientRect()).top > scrollPos) {
+        // when its scrolling up
+        if (h1Top > 2 * h1.clientHeight) {
+          h1.classList.replace("diagonal-down", "diagonal-up");
+        }
       } else {
-        h1.classList.add("diagonal-down");
+        // when its scrolling down
+        if (h1.classList.contains("diagonal-up")) {
+          h1.classList.replace("diagonal-up", "diagonal-down");
+        } else {
+          h1.classList.add("diagonal-down");
+        }
       }
     }
   }
@@ -25,13 +27,13 @@ export default function IntroSection() {
     let scrollPos = 0;
     window.addEventListener('scroll', function () {
       moveTitle(scrollPos);
-      // update scroll position
+      
       scrollPos = (document.body.getBoundingClientRect()).top;
     });
       
-    // return () => {
-    //   window.removeEventListener('scroll', handleScroll);
-    // };
+    return () => {
+      window.removeEventListener('scroll', () => {});
+    };
   }, []);
 
   const IntroStyles = styled.div`
