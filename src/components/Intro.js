@@ -47,10 +47,9 @@ const IntroStyles = styled.div`
 
 export default function IntroSection() {
   const [scrollPos, setScrollPos] = useState(0);
-  
-  const h1 = document.getElementById("intro-title")
 
   const moveTitle = (scrollPos) => {
+    const h1 = document.getElementById("intro-title")
     if (h1) {
       const h1Top = h1.getBoundingClientRect().top;
       if ((document.body.getBoundingClientRect()).top > scrollPos) {
