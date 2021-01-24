@@ -16,8 +16,15 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--beige);
   }
   body {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
+
+  @media (max-width: 768px){
+    body {
+      font-size: 1rem;
+    }
+  }
+
   section {  
     width: 91.666667%;
     margin: 0 auto;

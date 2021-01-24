@@ -22,10 +22,6 @@ module.exports = {
       wider: '.3em',
       widest: '.5em',
     },
-    //  maxHeight: {
-    //   '1/2': '50vw',
-    //   '3/4': '75vw',
-    //  },
     extend: {
       margin: {
         '-half-screen': '50vw',
