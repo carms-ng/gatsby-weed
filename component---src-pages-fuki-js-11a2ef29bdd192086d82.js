@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{du22:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return r}));var u=t("q1tI"),a=t.n(u);function r(){return a.a.createElement("div",null,a.a.createElement("h1",null,"SubPageSix"))}}}]);
+//# sourceMappingURL=component---src-pages-fuki-js-11a2ef29bdd192086d82.js.map
