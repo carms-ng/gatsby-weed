@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function SubPageFive() {
+export default function SubPageTwo() {
   return (
     <div>
-      <h1>0.5</h1>
+      <h1>SubPageTwo</h1>
     </div>
   );
 }
