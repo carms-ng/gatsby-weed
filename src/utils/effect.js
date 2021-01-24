@@ -10,8 +10,11 @@ export const explode = () => {
     })
     // for each of the element set top and left style randomly
     explodees.forEach((elem) => {
-      elem.style.top = rand(pageHeight, 0) + "px";
-      elem.style.left = rand(80, 20) + "vw";
+      // scale down by 1.2 to reduce empty spaces
+      elem.style.top = (rand(pageHeight, 0) - (elem.clientHeight / 2)) / 1.2 + "px";
+      elem.style.left = rand(80, 20) / 100 * window.innerWidth - (elem.clientHeight / 2) + "px";
+      elem.classList.add("floating");
+      elem.style.animationDuration = rand(10, 2) + "s";
     })
   }
 }
