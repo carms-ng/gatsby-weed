@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import din from '../assets/fonts/din_alternate_bold-webfont.woff';
-import ms from '../assets/fonts/monetasans-black-webfont.woff'
+import ms from '../assets/fonts/monetasans-black-webfont.woff';
 
 const Typography = createGlobalStyle`
   @font-face {
@@ -17,7 +17,7 @@ const Typography = createGlobalStyle`
     color: var(--green-dark);
   }
   p, li {
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
   }
   h1 {
     font-family: MonetaSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

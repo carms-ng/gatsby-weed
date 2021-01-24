@@ -13,11 +13,18 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     font-size: 16px;
-    background-color: var(--beige);
+    background-color: #F8FAF2;
   }
   body {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
+
+  @media (max-width: 768px){
+    body {
+      font-size: 1rem;
+    }
+  }
+
   section {  
     width: 91.666667%;
     margin: 0 auto;
