@@ -11,7 +11,6 @@ const SiteBorderStyles = styled.div`
   @media (min-width: 1100px) {
     max-width: 1440px;
   }
-
 `;
 
 export default function Layout({ children }) {

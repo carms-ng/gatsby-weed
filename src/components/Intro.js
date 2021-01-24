@@ -1,10 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 
+const IntroStyles = styled.div`
+  #intro-title {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  #intro-text {
+    margin-top: 116px;
+  }
+  @media (min-width: 1280px) {
+    position: relative;
+
+    .diagonal-down {
+      animation-name: diagonal-down;
+      animation-duration: 1.5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+    .diagonal-up {
+      animation-name: diagonal-up;
+      animation-duration: 1.5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+    @keyframes diagonal-down {
+      from {
+        transform: translate(-50%, 0);
+      }
+      to {
+        transform: translate(0%, 600px);
+      }
+    }
+    @keyframes diagonal-up {
+      from {
+        transform: translate(0%, 600px);
+      }
+      to {
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+`;
 
 export default function IntroSection() {
+  const [scrollPos, setScrollPos] = useState(0);
+  
+  const h1 = document.getElementById("intro-title")
+
   const moveTitle = (scrollPos) => {
-    const h1 = document.getElementById("intro-title")
     if (h1) {
       const h1Top = h1.getBoundingClientRect().top;
       if ((document.body.getBoundingClientRect()).top > scrollPos) {
@@ -23,60 +69,19 @@ export default function IntroSection() {
     }
   }
 
+  const handleScroll = () => {
+    moveTitle(scrollPos);
+    const newScrollPos = document.body.getBoundingClientRect().top;
+    setScrollPos(newScrollPos);
+  }
+  
   useEffect(() => {
-    let scrollPos = 0;
-    window.addEventListener('scroll', function () {
-      moveTitle(scrollPos);
-      scrollPos = (document.body.getBoundingClientRect()).top;
-    });
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', () => {});
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  const IntroStyles = styled.div`
-    #intro-title {
-      white-space: nowrap;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-    #intro-text {
-      margin-top: 116px;
-    }
-    @media (min-width: 1280px) {
-      position: relative;
-
-      .diagonal-down {
-        animation-name: diagonal-down;
-        animation-duration: 1.5s;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-      }
-      .diagonal-up {
-        animation-name: diagonal-up;
-        animation-duration: 1.5s;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-      }
-      @keyframes diagonal-down {
-        from {
-          transform: translate(-50%, 0) 
-        }
-        to {
-          transform: translate(0%, 600px)
-        }
-      }
-      @keyframes diagonal-up {
-        from {
-          transform: translate(0%, 600px)
-        }
-        to {
-          transform: translate(-50%, 0) 
-        }
-      }
-    }
-  `;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollPos]);
 
   return (
     <IntroStyles>
