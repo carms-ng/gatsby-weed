@@ -56,7 +56,7 @@ export default function AmarentePage() {
     }
   `;
 
-return (
+  return (
     <Layout>
       <ExplodeStyles onClick={explode}>
         {data.allFile.edges.map(({ node } ) => (
