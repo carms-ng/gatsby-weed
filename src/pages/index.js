@@ -50,7 +50,7 @@ const FallingStyles = styled.div`
 
 export default function HomePage() {
   const data = useStaticQuery(graphql`
-    query {
+    query MyQuery {
       allFile(
         filter: { absolutePath: { regex: "/landing_page/" } }
         sort: { fields: base }
@@ -75,8 +75,8 @@ export default function HomePage() {
 
   // Scroll effects
   useEffect(() => {
-    const pTags = document.querySelectorAll("p");
-    const images = document.querySelectorAll("img");
+    const pTags = document.querySelectorAll('p');
+    const images = document.querySelectorAll('img');
 
     let options = {
       // root: document.querySelector('#scrollArea'),
@@ -86,7 +86,7 @@ export default function HomePage() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
-          if (entry.target.localName === "img") {
+          if (entry.target.localName === 'img') {
             console.log(entry);
             entry.target.classList.add('zoomin');
           } else {
@@ -98,11 +98,10 @@ export default function HomePage() {
 
     pTags.forEach((tag) => {
       observer.observe(tag);
-    })
-    images.forEach(tag => {
+    });
+    images.forEach((tag) => {
       observer.observe(tag);
-    })
-
+    });
   }, []);
 
   return (
@@ -123,10 +122,7 @@ export default function HomePage() {
       </div>
       <section className="grid pt-8">
         <IntroSection />
-        <Link 
-          to="amarente"
-          style={{ padding: "100px 15vw 0 15vw" }}
-        >
+        <Link to="amarente" style={{ padding: '100px 15vw 0 15vw' }}>
           <Img
             fluid={jpgs[0].node.childImageSharp.fluid}
             alt={jpgs[0].node.base.split('.')[0]}
