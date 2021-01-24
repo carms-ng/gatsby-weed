@@ -12,7 +12,7 @@ const ImageContainer = styled.div`
 
 export default function SubPageFive() {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query GetImages {
       allFile(
         filter: { absolutePath: { regex: "/body_landscape/" } }
         sort: { fields: base }
