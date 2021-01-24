@@ -27,7 +27,6 @@ const FallingStyles = styled.div`
     opacity: 1;
     animation-name: zoomin;
     animation-duration: 2s;
-    animation-delay: 1s;
     animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
     animation-fill-mode: forwards;
   }
@@ -47,12 +46,11 @@ const FallingStyles = styled.div`
       transform: scale(1.2, 1.2);
     }
   }
-}
 `;
 
 export default function HomePage() {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       allFile(
         filter: { absolutePath: { regex: "/landing_page/" } }
         sort: { fields: base }
@@ -125,10 +123,14 @@ export default function HomePage() {
       </div>
       <section className="grid pt-8">
         <IntroSection />
-        <Link to="amarente">
+        <Link 
+          to="amarente"
+          style={{ padding: "100px 15vw 0 15vw" }}
+        >
           <Img
             fluid={jpgs[0].node.childImageSharp.fluid}
             alt={jpgs[0].node.base.split('.')[0]}
+            // imgStyle={{ transition: `all 500ms ase 0s` }}
           />
         </Link>
       </section>
