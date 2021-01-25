@@ -5,40 +5,23 @@ import Img from 'gatsby-image';
 import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
 import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
 import styled from 'styled-components';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import IntroSection from '../components/Intro';
 import Footer from '../components/Footer';
 import Overlay from '../components/Overlay';
 
 const FallingStyles = styled.div`
-  p {
-    opacity: 0;
-    transform: translateY(-20vh);
-    transition: all 0.6s cubic-bezier(0.11, 0, 0.5, 0);
-  }
-  .falling {
-    opacity: 1;
-    animation-name: falling;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
-    animation-fill-mode: forwards;
-  }
   .zoomin {
     opacity: 1;
     animation-name: zoomin;
     animation-duration: 2s;
     animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
+    animation-direction: alternate;
   }
-  @keyframes falling {
-    from {
-      transform: translateY(-20vh);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
+
   @keyframes zoomin {
     from {
       transform: scale(1, 1);
@@ -74,6 +57,15 @@ export default function HomePage() {
   const jpgs = data.allFile.edges;
   console.log(jpgs);
 
+  // Add AOS Scroll Library
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+    AOS.refresh();
+  });
+
   // Scroll effects
   useEffect(() => {
     const pTags = document.querySelectorAll('p');
@@ -84,22 +76,22 @@ export default function HomePage() {
       rootMargin: '0px 0px 100px 0px',
       threshold: 0.7,
     };
+
+    pTags.forEach((tag) => {
+      tag.setAttribute('data-aos', 'fade-down');
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
           if (entry.target.localName === 'img') {
             console.log(entry);
             entry.target.classList.add('zoomin');
-          } else {
-            entry.target.classList.add('falling');
           }
         }
       });
     }, options);
 
-    pTags.forEach((tag) => {
-      observer.observe(tag);
-    });
     images.forEach((tag) => {
       observer.observe(tag);
     });
