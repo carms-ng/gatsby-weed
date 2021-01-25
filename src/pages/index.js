@@ -392,7 +392,7 @@ export default function HomePage() {
 
         <div className="grid md:grid-cols-2">
           {/* 0.4 Stanza 1 */}
-          <div className="ml-8">
+          <div className="mx-auto">
             <p className="pb-12 tracking-wide">A PLANT PROLIFERATING</p>
             <p className="ml-16">
               ernabling <span className="pl-2 tracking-widest">etnlmns</span>
@@ -401,59 +401,39 @@ export default function HomePage() {
               <span className="tracking-widest">nageet</span>
             </p>
           </div>
-          <div>
-            {/* 0.4 Title Desktop */}
-            <div className="title hidden md:block text-right">
-              <Link to="index-third-landscape">
-                <h2 className="mr-48">0.4</h2>
-                <div className="subtitle">
-                  <h3 className="right">Third Landscape</h3>
-                </div>
-              </Link>
-            </div>
-            {/* 0.4 Stanza 2 */}
-            <div className="mr-8 pt-32 space-y-2">
-              <p className="text-right tracking-wide">
-                STRANGLING the stuff of living
-              </p>
-              <p className="tracking-wide">REGENERATING the stuff of living</p>
-            </div>
+          {/* 0.4 Title Desktop */}
+          <div className="title hidden md:block text-right">
+            <Link to="index-third-landscape">
+              <h2 className="mr-48">0.4</h2>
+              <div className="subtitle">
+                <h3 className="right">Third Landscape</h3>
+              </div>
+            </Link>
+          </div>
+          {/* 0.4 Stanza 2 */}
+          <div className="md:col-start-2 mx-auto py-32 space-y-6 md:space-y-2">
+            <p className="md:ml-32 lg:ml-64 tracking-wide">
+              STRANGLING the stuff of living
+            </p>
+            <p className="tracking-wide">REGENERATING the stuff of living</p>
           </div>
         </div>
 
         {/* 0.4 Stanza 3, 4, 5, modal, & image */}
         <section className="my-12 space-y-6">
-          <div className="">
+          <div className="space-y-6 mx-auto">
             <p className="">Is a weed</p>
-            <p className="ml-16">A plant living in the urban human habitat</p>
-            <p className="ml-28 pt-8">a landscape?</p>
+            <p className="ml-6 md:ml-16">
+              A plant living in the urban human habitat
+            </p>
+            <p className="ml-24 md:pl-80">a landscape?</p>
             {/* MODAL 2 */}
-            <Link to="/">
-              <p className="underline sm:ml-28">A third landscape.</p>
-            </Link>
+            <p className="underline ml-36 md:pl-96">
+              <Link to="/">A third landscape. </Link>
+            </p>
           </div>
-          <div className="">
-            <p className="">Is a weed</p>
-            <p className="ml-16">Speaking</p>
-            <p className="ml-28 pt-8">for</p>
-            <p className="ml-28 pt-8">the soil</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-12">
-            <div className="space-y-2 self-end pt-12 lg:pb-12">
-              <p className="">
-                The types of weed found growing in soil indicate its composition
-              </p>
-              <p className="ml-16">Moss and plantain love an acidic ground</p>
-              <p className="ml-28 pt-8">Chicory thrives in fertile soil</p>
-              <p className="ml-28 pt-8">
-                Knotweed needs a heavy and compacted home
-              </p>
-              <p className="ml-28 pt-8">
-                Clover will cover a lawn lacking nitrogen
-              </p>
-            </div>
-            <div className="img-container max-w-1/2">
+          <div className="grid md:grid-cols-2">
+            <div className="img-container mr-0 ml-auto max-w-1/2 md:max-w-2/5 lg:max-w-1/4 lg:mr-auto">
               <Link to="third-landscape">
                 <Img
                   fluid={jpgs[5].node.childImageSharp.fluid}
@@ -461,6 +441,23 @@ export default function HomePage() {
                 />
                 <Overlay />
               </Link>
+            </div>
+            <div className="space-y-6 md:order-first self-end md:self-center">
+              <p className="">Is a weed</p>
+              <p className="ml-20">Speaking</p>
+              <p className="ml-40">for</p>
+              <p className="ml-48">the soil</p>
+            </div>
+            <div className="space-y-4 lg:pb-12 lg:float-left">
+              <p className="">
+                The types of weed found growing in soil indicate its composition
+              </p>
+              <div className="ml-16 space-y-4 pt-12 float-right">
+                <p className="">Moss and plantain love an acidic ground</p>
+                <p className="">Chicory thrives in fertile soil</p>
+                <p className="">Knotweed needs a heavy and compacted home</p>
+                <p className="">Clover will cover a lawn lacking nitrogen</p>
+              </div>
             </div>
           </div>
         </section>
@@ -475,22 +472,15 @@ export default function HomePage() {
               </h3>
             </Link>
           </div>
-
-          {/* 0.5 Title Desktop */}
-          <div className="title hidden md:block">
-            <Link to="index-displace-migrate">
-              <h2 className="ml-24">0.5</h2>
-              <div className="subtitle">
-                <h3>Displacement / Migration</h3>
-              </div>
-            </Link>
-          </div>
         </div>
 
         {/* 0.5 Poem */}
 
         <div className="flex md:flex-row-reverse">
-          <div className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2 self-start overflow-hidden">
+          <div
+            className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2 self-start overflow-hidden"
+            style={{ width: 'auto' }}
+          >
             <Link to="body-landscape">
               {/* insert gif for 007 */}
               <img src={gif_7} alt="Body Is/As Landscape" />
@@ -498,12 +488,21 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="space-y-2 self-center">
-            {/* Placeholder text!! Not real */}
             <p className="">Is a weed</p>
             <p className="">A way to navigate oneself</p>
-            <p className="">through space,</p>
-            <p className="">through a place,</p>
-            <p className="">through no place</p>
+            <div className="float-right">
+              <p className="">through space,</p>
+              <p className="">through a place,</p>
+              <p className="">through no place</p>
+            </div>
+          </div>
+          <div className="title hidden md:block float-left">
+            <Link to="index-displace-migrate">
+              <h2 className="ml-24">0.5</h2>
+              <div className="subtitle">
+                <h3>Displacement / Migration</h3>
+              </div>
+            </Link>
           </div>
         </div>
 
