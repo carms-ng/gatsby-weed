@@ -337,13 +337,12 @@ export default function HomePage() {
 
         {/* 0.3 Poem */}
         <section className="flex flex-col my-12 space-y-6">
-          <Link to="/" className="img-container mx-auto max-w-3/4">
+          <div className="img-container mx-auto max-w-3/4">
             <Img
               fluid={jpgs[3].node.childImageSharp.fluid}
               alt={jpgs[3].node.base.split('.')[0]}
             />
-            <Overlay />
-          </Link>
+          </div>
           <div className="flex justify-end py-12">
             <div className="flex-grow space-y-2 self-center lg:self-auto">
               {/* Placeholder text!! Not real */}
@@ -356,13 +355,10 @@ export default function HomePage() {
             </div>
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="img-container min-w-1/2 md:min-w-1/4">
-                <Link to="/">
-                  <Img
-                    fluid={jpgs[4].node.childImageSharp.fluid}
-                    alt={jpgs[4].node.base.split('.')[0]}
-                  />
-                  <Overlay />
-                </Link>
+                <Img
+                  fluid={jpgs[4].node.childImageSharp.fluid}
+                  alt={jpgs[4].node.base.split('.')[0]}
+                />
               </div>
               <div className="space-y-2 self-end pt-12 lg:pb-12">
                 {/* Placeholder text!! Not real */}
@@ -424,7 +420,7 @@ export default function HomePage() {
               <p className="ml-28 pt-8">Is a weed</p>
             </div>
             <div className="img-container max-w-1/2">
-              <Link to="/">
+              <Link to="third-landscape">
                 <Img
                   fluid={jpgs[5].node.childImageSharp.fluid}
                   alt={jpgs[5].node.base.split('.')[0]}
@@ -465,9 +461,9 @@ export default function HomePage() {
 
         <div className="flex md:flex-row-reverse">
           <div className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2 self-start overflow-hidden">
-            <Link to="/">
+            <Link to="body-landscape">
               {/* insert gif for 007 */}
-              <img src={gif_7} alt="" />
+              <img src={gif_7} alt="Body Is/As Landscape" />
               <Overlay />
             </Link>
           </div>
@@ -518,7 +514,7 @@ export default function HomePage() {
               <p className="ml-28 pt-8 text-right">Is a weed</p>
             </div>
             <div className="img-container mx-auto lg:max-w-1/2">
-              <Link to="/">
+              <Link to="fuki">
                 <Img
                   fluid={jpgs[6].node.childImageSharp.fluid}
                   alt={jpgs[6].node.base.split('.')[0]}
@@ -555,7 +551,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <Link to="/" className="img-container mx-auto max-w-2/5">
+            <Link to="roses" className="img-container mx-auto max-w-2/5">
               <Img
                 fluid={jpgs[7].node.childImageSharp.fluid}
                 alt={jpgs[7].node.base.split('.')[0]}
