@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const IntroStyles = styled.div`
   position: relative;
+  padding-bottom: 120px;
 
   h1 {
     text-align: center;
