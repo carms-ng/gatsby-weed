@@ -343,9 +343,8 @@ export default function HomePage() {
               alt={jpgs[3].node.base.split('.')[0]}
             />
           </div>
-          <div className="flex justify-end py-12">
-            <div className="flex-grow space-y-2 self-center lg:self-auto">
-              {/* Placeholder text!! Not real */}
+          <div className="grid md:grid-cols-3 gap-6 py-12">
+            <div className="space-y-2 self-center lg:self-auto">
               <p className="">Is a weed</p>
               <p className="ml-16">What is yet to come</p>
               <p className="ml-28 pt-8">Is a weed</p>
