@@ -2,46 +2,14 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 
 const IntroStyles = styled.div`
-  #intro-title {
-    white-space: nowrap;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-  #intro-text {
-    margin-top: 116px;
-  }
-  @media (min-width: 1280px) {
-    position: relative;
+  position: relative;
 
-    .diagonal-down {
-      animation-name: diagonal-down;
-      animation-duration: 1.5s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-    }
-    .diagonal-up {
-      animation-name: diagonal-up;
-      animation-duration: 1.5s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-    }
-    @keyframes diagonal-down {
-      from {
-        transform: translate(-50%, 0);
-      }
-      to {
-        transform: translate(0%, 600px);
-      }
-    }
-    @keyframes diagonal-up {
-      from {
-        transform: translate(0%, 600px);
-      }
-      to {
-        transform: translate(-50%, 0);
-      }
-    }
+  h1 {
+    text-align: center;
+    white-space: nowrap;
+  }
+  .title-relative {
+    position: relative;
   }
 `;
 
@@ -50,25 +18,49 @@ export default function IntroSection() {
 
   const moveTitle = (scrollPos) => {
     const h1 = document.getElementById("intro-title")
+    const h6 = document.getElementById("intro-text");
+
     if (h1) {
-      const h1Top = h1.getBoundingClientRect().top;
-      if ((document.body.getBoundingClientRect()).top > scrollPos) {
-        // when its scrolling up
-        if (h1Top > 2 * h1.clientHeight) {
-          h1.classList.replace("diagonal-down", "diagonal-up");
-        }
-      } else {
-        // when its scrolling down
-        if (h1.classList.contains("diagonal-up")) {
-          h1.classList.replace("diagonal-up", "diagonal-down");
-        } else {
-          h1.classList.add("diagonal-down");
-        }
-      }
+      // guard clause to allow for animation to happen once only
+      if (h1.dataset.animated !== "true") {
+        // to address when it gets scrolls back up before animation ends.
+        if (h6.parentElement.getBoundingClientRect().top > 0) {
+          h1.style.position = "relative";
+          h1.style.transform = "";
+          h1.style.left = "unset";
+          h6.style.paddingTop = "0";
+  
+        } else if (h1.getBoundingClientRect().top <= 0 && h6.getBoundingClientRect().bottom > 0 ) {
+          // set padding top to replace the height of h1
+          h6.style.paddingTop = h1.offsetHeight + 'px';
+          // set Start Scroll Position
+          const stScrollPos = h1.parentElement.getBoundingClientRect().top + document.documentElement.scrollTop;
+          // Calculate expected h1 position left based on scrollY and height of elements
+          const totDistanceY = h6.offsetHeight + h1.offsetHeight;
+          const yPos = (window.scrollY - stScrollPos) / totDistanceY;
+          
+          // set h1 to fix
+          h1.style.position = "fixed";
+          h1.style.top = 0;
+          h1.style.transform = `translateX(-50%)`;
+          
+          const totDistanceX = (h6.offsetWidth -  h1.offsetWidth) / 2;
+          const xPos = totDistanceX * yPos;
+          const h1Left = window.innerWidth * 0.5 + xPos;
+          h1.style.left = h1Left + 'px';
+
+        } else if (h6.getBoundingClientRect().bottom < 0) {
+          // only animate once
+          h1.dataset.animated = true;
+          h1.style.position = "absolute";
+          h1.style.top = (h6.offsetHeight) + 'px';
+        } 
+      } 
     }
   }
 
   const handleScroll = () => {
+    // animate title
     moveTitle(scrollPos);
     const newScrollPos = document.body.getBoundingClientRect().top;
     setScrollPos(newScrollPos);
