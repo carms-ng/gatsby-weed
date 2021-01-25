@@ -498,38 +498,32 @@ export default function HomePage() {
           </div>
           <div className="title hidden md:block float-left">
             <Link to="index-displace-migrate">
-              <h2 className="ml-24">0.5</h2>
+              <h2 className="ml-24 mt-12">0.5</h2>
               <div className="subtitle">
                 <h3>Displacement / Migration</h3>
               </div>
             </Link>
           </div>
         </div>
-
         <section className="my-12 mx-auto max-w-3/4">
-          <p className="ml-16">Is a weed</p>
+          <p className="pb-12">Is a weed</p>
           {/* MODAL 3 */}
           <Link to="/">
-            <p className="underline sm:ml-28">
+            <p className="underline ml-28 pb-12">
               The vegetal most akin to the human spirit
             </p>
           </Link>
-          <p className="ml-28 pt-8 text-right">
+          <p className="pb-12">
             Weeds, testimonies of resilience and adaptability — their numerous
-            seeds
+            seeds remaining dormant for many years, waiting for the right
+            conditions to spring, spreading easily and rapidly in inhospitable
+            locales —
           </p>
-          <p className="ml-28 pt-8 text-right">
-            remaining dormant for many years, waiting for the right conditions
-            to spring,
-          </p>
-          <p className="ml-28 pt-8 text-right">
-            spreading easily and rapidly in inhospitable locales —
-          </p>
-          <p className="ml-28 pt-8 text-right">
+          <p className="pb-12">
             Showing us how to develop survival mechanisms to counter
           </p>
-          <p className="ml-28 pt-8 text-right">removal</p>
-          <p className="ml-28 pt-8 text-right">Disappearance</p>
+          <p className="">removal</p>
+          <p className="ml-16">Disappearance</p>
         </section>
 
         {/* 0.6 Title Mobile */}
@@ -546,38 +540,41 @@ export default function HomePage() {
 
         {/* 0.6 Poem */}
         <div className="grid md:grid-cols-2">
-          <div>
-            {/* 0.6 Title Desktop */}
-            <div className="title hidden md:block">
-              <Link to="index-body-landscape">
-                <h2 className="ml-24">0.6</h2>
-                <div className="subtitle">
-                  <h3>Body in / as Landscape</h3>
-                </div>
-              </Link>
-            </div>
-            {/* 0.6 Stanza 2 */}
-            <div>
-              <p className="">Is a weed</p>
-              <p className="">A paragon</p>
-              <p className="">For bodies made to feel out of place</p>
-              <p className="">For displaced bodies</p>
-              <p className="">For contested bodies</p>
-              <p className="">
-                For Indigenous bodies whose land rights are contested
-              </p>
-              <p className="">For migrant bodies denied ressources</p>
-            </div>
+          {/* 0.6 Title Desktop */}
+          <div className="title hidden md:block">
+            <Link to="index-body-landscape">
+              <h2 className="float-right mr-24 mt-4">0.6</h2>
+              <div className="subtitle">
+                <h3>Body in / as Landscape</h3>
+              </div>
+            </Link>
           </div>
+          {/* 0.6 Stanza 2 */}
+          <div>
+            <p className="ml-16">Is a weed</p>
+            <p className="ml-24">A paragon</p>
+            <p className="">For bodies made to feel out of place</p>
+            <p className="">For displaced bodies</p>
+            <p className="">For contested bodies</p>
+            <p className="ml-2">
+              For Indigenous bodies whose land rights are con-
+            </p>
+          </div>
+          <div className="my-24 ml-16 md:ml-24 lg:ml-36">
+            <p className="">tested</p>
+            <p className="">For migrant bodies denied ressources</p>
+          </div>
+        </div>
 
-          <section className="my-12 mx-auto max-w-3/4">
-            <div>
-              <p className="ml-16">A weed</p>
-              <p className="ml-28 pt-8 text-right italic">
-                Teaching the body how to become its own landscape
-              </p>
-            </div>
-            <div className="img-container mx-auto lg:max-w-1/2">
+        <section className="my-12 grid md:grid-cols-3 max-w-3/4">
+          <div>
+            <p className="ml-16">A weed</p>
+          </div>
+          <div className="col-span-2">
+            <p className="text-center mb-6 italic">
+              Teaching the body how to become its own landscape
+            </p>
+            <div className="img-container lg:max-w-1/2">
               <Link to="fuki">
                 <Img
                   fluid={jpgs[6].node.childImageSharp.fluid}
@@ -586,42 +583,42 @@ export default function HomePage() {
                 <Overlay />
               </Link>
             </div>
-            <div>
-              <p className="ml-16">Is a weed</p>
-              <p className="ml-28 pt-8 text-right">Resistance</p>
-              <p className="ml-16">Is a weed</p>
-              <p className="ml-28 pt-8 text-right">Resisting definition</p>
-            </div>
-          </section>
+          </div>
+          <div className="col-span-2 space-y-4">
+            <p className="">Is a weed</p>
+            <p className="ml-36">Resistance</p>
+            <p className="">Is a weed</p>
+            <p className="ml-36">Resisting definition</p>
+          </div>
+        </section>
 
-          {/* 0.7 Title & Image */}
-          <div className="grid grid-cols-2 mr-12 md:mr-24">
-            {/* 0.7 Title Mobile */}
-            <div className="ml-4 text-rose md:hidden">
-              <Link to="index-furthermore">
-                <h2 className="text-5xl md:text-7xl">0.7</h2>
-                <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
-                  Furthermore
-                </h3>
-              </Link>
-            </div>
-            {/* 0.7 Title Desktop */}
-            <div className="title hidden md:block">
-              <Link to="index-furthermore">
-                <h2 className="ml-24">0.7</h2>
-                <div className="subtitle">
-                  <h3>Furthermore</h3>
-                </div>
-              </Link>
-            </div>
-            <Link to="roses" className="img-container mr-0 ml-auto max-w-2/5">
-              <Img
-                fluid={jpgs[7].node.childImageSharp.fluid}
-                alt={jpgs[7].node.base.split('.')[0]}
-              />
-              <Overlay />
+        {/* 0.7 Title & Image */}
+        <div className="grid grid-cols-2 mr-12 md:mr-24">
+          {/* 0.7 Title Mobile */}
+          <div className="ml-4 text-rose md:hidden">
+            <Link to="index-furthermore">
+              <h2 className="text-5xl md:text-7xl">0.7</h2>
+              <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
+                Furthermore
+              </h3>
             </Link>
           </div>
+          {/* 0.7 Title Desktop */}
+          <div className="title hidden md:block">
+            <Link to="index-furthermore">
+              <h2 className="ml-24">0.7</h2>
+              <div className="subtitle">
+                <h3>Furthermore</h3>
+              </div>
+            </Link>
+          </div>
+          <Link to="roses" className="img-container mr-0 ml-auto max-w-2/5">
+            <Img
+              fluid={jpgs[7].node.childImageSharp.fluid}
+              alt={jpgs[7].node.base.split('.')[0]}
+            />
+            <Overlay />
+          </Link>
         </div>
       </FallingStyles>
       <Footer />
