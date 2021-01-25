@@ -9,16 +9,13 @@ const IntroStyles = styled.div`
     text-align: center;
     white-space: nowrap;
   }
-  .title-relative {
-    position: relative;
-  }
 `;
 
 export default function IntroSection() {
   const [scrollPos, setScrollPos] = useState(0);
 
   const moveTitle = (scrollPos) => {
-    const h1 = document.getElementById("intro-title")
+    const h1 = document.getElementById("intro-title");
     const h6 = document.getElementById("intro-text");
 
     if (h1) {
@@ -26,35 +23,38 @@ export default function IntroSection() {
       if (h1.dataset.animated !== "true") {
         // to address when it gets scrolls back up before animation ends.
         if (h6.parentElement.getBoundingClientRect().top > 0) {
-          h1.style.position = "relative";
-          h1.style.transform = "";
-          h1.style.left = "unset";
-          h6.style.paddingTop = "0";
+          h1.style.position = `relative`;
+          h1.style.transform = ``;
+          h1.style.left = `unset`;
+          h6.style.paddingTop = 0;
   
         } else if (h1.getBoundingClientRect().top <= 0 && h6.getBoundingClientRect().bottom > 0 ) {
-          // set padding top to replace the height of h1
+          // Set padding top to replace the height of h1
           h6.style.paddingTop = h1.offsetHeight + 'px';
-          // set Start Scroll Position
+          // Set Start Scroll Position
           const stScrollPos = h1.parentElement.getBoundingClientRect().top + document.documentElement.scrollTop;
           // Calculate expected h1 position left based on scrollY and height of elements
-          const totDistanceY = h6.offsetHeight + h1.offsetHeight;
+          const totDistanceY = h6.offsetHeight;
+          // Proportion of Y traveled
           const yPos = (window.scrollY - stScrollPos) / totDistanceY;
           
-          // set h1 to fix
-          h1.style.position = "fixed";
+          // Set h1 to fixed
           h1.style.top = 0;
           h1.style.transform = `translateX(-50%)`;
-          
-          const totDistanceX = (h6.offsetWidth -  h1.offsetWidth) / 2;
+          h1.style.position = `fixed`;
+          const totDistanceX = (h6.parentElement.offsetWidth - h1.offsetWidth) / 2;
           const xPos = totDistanceX * yPos;
           const h1Left = window.innerWidth * 0.5 + xPos;
-          h1.style.left = h1Left + 'px';
-
+          h1.style.left = `${h1Left}px`;
         } else if (h6.getBoundingClientRect().bottom < 0) {
-          // only animate once
+          // Only animate once, set h1 to absolute
           h1.dataset.animated = true;
-          h1.style.position = "absolute";
-          h1.style.top = (h6.offsetHeight) + 'px';
+          h1.style.top = `unset`;
+          h1.style.transform = ``;
+          h1.style.bottom = 0;
+          h1.style.left = `unset`;
+          h1.style.right = 0;
+          h1.style.position = `absolute`;
         } 
       } 
     }
@@ -83,7 +83,7 @@ export default function IntroSection() {
       >
         What is a weed?
       </h1>
-      <div id="intro-text" className="grid md:grid-cols-2 md:gap-12 mx-6 sm:mx-12 mt-4 text-justify justify-items-center">
+      <div id="intro-text" className="grid md:grid-cols-2 md:gap-12 px-6 sm:px-12 pt-4 text-justify justify-items-center">
         <div className="max-w-prose">
           <h6 className="mb-4">
             On camera, famed British gardener Bannerman asks this seemingly simple question whilst walking in his Trematon Castle garden in Cornwall, with a spiky giant Gunnera in hand, the leaves acting as an oversized umbrella over the imposing man. Yet, he spent months removing the invasive petasites from the grounds of the garden when he first started working on it.

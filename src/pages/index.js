@@ -5,8 +5,8 @@ import Img from 'gatsby-image';
 import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
 import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
 import styled from 'styled-components';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 
 import IntroSection from '../components/Intro';
 import Footer from '../components/Footer';
@@ -14,7 +14,6 @@ import Overlay from '../components/Overlay';
 
 const FallingStyles = styled.div`
   .zoomin {
-    opacity: 1;
     animation-name: zoomin;
     animation-duration: 2s;
     animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
@@ -30,6 +29,28 @@ const FallingStyles = styled.div`
       transform: scale(1.2, 1.2);
     }
   }
+  p {
+    opacity: 0;
+    transform: translateY(-20vh);
+    transition: all 0.6s cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  .falling {
+    animation-name: falling;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
+    animation-fill-mode: forwards;
+  }
+  @keyframes falling {
+    from {
+      opacity: 0;
+      transform: translateY(-40vh);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 `;
 
 export default function HomePage() {
@@ -55,16 +76,14 @@ export default function HomePage() {
 
   // Gatsby image
   const jpgs = data.allFile.edges;
-  console.log(jpgs);
 
   // Add AOS Scroll Library
-
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-    AOS.refresh();
-  });
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 2000,
+  //   });
+  //   AOS.refresh();
+  // });
 
   // Scroll effects
   useEffect(() => {
@@ -77,21 +96,26 @@ export default function HomePage() {
       threshold: 0.7,
     };
 
-    pTags.forEach((tag) => {
-      tag.setAttribute('data-aos', 'fade-down');
-    });
-
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          if (entry.target.localName === 'img') {
-            console.log(entry);
-            entry.target.classList.add('zoomin');
+        setTimeout(() => {
+          if (entry.intersectionRatio > 0) {
+            if (entry.target.localName === 'img') {
+              // console.log(entry);
+              entry.target.classList.add('zoomin');
+            } else {
+              entry.target.classList.add('falling');
+            }
           }
-        }
+        }, 500);
       });
     }, options);
-
+    
+    pTags.forEach((tag) => {
+      // tag.setAttribute('data-aos', 'fade-down');
+      observer.observe(tag);
+    });
     images.forEach((tag) => {
       observer.observe(tag);
     });
