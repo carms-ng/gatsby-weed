@@ -133,7 +133,7 @@ export default function HomePage() {
         <section className="space-y-6 pt-12">
           <p className="">Is a weed</p>
           <p className="ml-24">
-            A <span className="tracking-widest pl-2">displaced</span> plant
+            A <span className="tracking-wider pl-2">displaced</span> plant
           </p>
           <p className="text-right sm:text-left sm:ml-96">
             a plant out of place
@@ -198,10 +198,10 @@ export default function HomePage() {
             <p className="">Is a weed</p>
             <p className="ml-8 sm:ml-16">
               A plant negotiating concrete{' '}
-              <span className="pl-1 tracking-widest">rup</span>
+              <span className="pl-1 tracking-wider">rup</span>
             </p>
             <p className="text-right sm:text-left sm:ml-80">
-              <span className="tracking-widest">ture</span>
+              <span className="tracking-wider">ture</span>
             </p>
             <p className="py-6 text-right sm:text-left sm:ml-96">s</p>
 
@@ -260,7 +260,7 @@ export default function HomePage() {
 
         <div className="mx-auto">
           {/* 0.2 Title Mobile */}
-          <div className="text-rose md:hidden">
+          <div className="w-11/12 mx-auto text-rose md:hidden">
             <Link to="index-conditioned-nature">
               <h2 className="text-5xl md:text-7xl">0.2</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
@@ -286,7 +286,7 @@ export default function HomePage() {
             <p className="">Weeds,</p>
             <p className="ml-12">
               Show us how to be in the presence of discomfort, of{' '}
-              <span className="pl-4 tracking-widest">disruptions</span>
+              <span className="pl-4 tracking-wider">disruptions</span>
             </p>
             <p className="pt-24 ml-12">Is a weed</p>
             <p className="ml-32">A pioneer</p>
@@ -313,7 +313,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <div className="mx-auto">
+        <div className="w-11/12 mx-auto">
           {/* 0.3 Title Mobile */}
           <div className="text-rose text-right md:hidden">
             <Link to="index-plants-witness">
@@ -336,43 +336,51 @@ export default function HomePage() {
         </div>
 
         {/* 0.3 Poem */}
-        <section className="flex flex-col my-12 space-y-6">
+        <section className="flex flex-col my-12 space-y-12">
+          <div className="text-center space-y-2 mb-24">
+            <p>
+              Is a weed the thought in our minds that make us move more
+              vigorously
+            </p>
+            <p>Is a weed the dance between the boundary and the threshold</p>
+            <p>Is a weed the feeling in our bodies that agitates our skin</p>
+            <p>Is a weed the song we sing when we settle to sleep</p>
+          </div>
           <div className="img-container mx-auto max-w-3/4">
             <Img
               fluid={jpgs[3].node.childImageSharp.fluid}
               alt={jpgs[3].node.base.split('.')[0]}
             />
           </div>
-          <div className="grid md:grid-cols-3 gap-6 py-12">
-            <div className="space-y-2 self-center lg:self-auto">
+          <div className="grid lg:grid-cols-4 gap-6 py-12">
+            <div className="space-y-2 self-center lg:col-span-2 lg:self-auto">
               <p className="">Is a weed</p>
-              <p className="ml-16">What is yet to come</p>
-              <p className="ml-28 pt-8">Is a weed</p>
-              <p className="sm:ml-28">
-                A history maker, a storyteller, a punctuator
-              </p>
+              <p className="ml-16">To push beyond the edge,</p>
+              <p className="ml-16">to keep to the margin,</p>
+              <p className="ml-16">to straddle in between,</p>
+              <p className="ml-16">to protrude more than others</p>
             </div>
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div className="img-container min-w-1/2 md:min-w-1/4">
-                <Img
-                  fluid={jpgs[4].node.childImageSharp.fluid}
-                  alt={jpgs[4].node.base.split('.')[0]}
-                />
-              </div>
-              <div className="space-y-2 self-end pt-12 lg:pb-12">
-                {/* Placeholder text!! Not real */}
-                <p className="">Is a weed</p>
-                <p className="ml-16">What is yet to come</p>
-                <p className="ml-28 pt-8">Is a weed</p>
-              </div>
+
+            <div className="img-container max-w-2/5 lg:max-w-1/2 order-first ml-auto mr-12 lg:mx-auto lg:order-3">
+              <Img
+                fluid={jpgs[4].node.childImageSharp.fluid}
+                alt={jpgs[4].node.base.split('.')[0]}
+              />
+            </div>
+
+            <div className="space-y-8 self-center text-right lg:text-left pt-12 lg:pt-32 lg:pb-12 order-4">
+              <p className="mr-40 lg:mx-0">Is a weed</p>
+              <p className="mr-16 pb-4 lg:ml-24 lg:mr-0 ">To take space</p>
+              <p className="mr-48 lg:ml-24 lg:mr-0 ">To speak louder</p>
+              <p className="mr-56 lg:ml-24 lg:mr-0 ">To live longer</p>
             </div>
           </div>
         </section>
 
         {/* 0.4 Poem */}
         {/* 0.4 Title Mobile */}
-        <div className="mx-auto">
-          <div className="text-rose text-right md:hidden">
+        <div className="mx-auto w-11/12">
+          <div className="text-right text-rose md:hidden">
             <Link to="index-third-landscape">
               <h2 className="text-5xl md:text-7xl">0.4</h2>
               <h3 className="text-xl uppercase tracking-wide md:hidden">
@@ -384,7 +392,15 @@ export default function HomePage() {
 
         <div className="grid md:grid-cols-2">
           {/* 0.4 Stanza 1 */}
-          <div>Stanza 1</div>
+          <div className="ml-8">
+            <p className="pb-12 tracking-wide">A PLANT PROLIFERATING</p>
+            <p className="ml-16">
+              ernabling <span className="pl-2 tracking-widest">etnlmns</span>
+            </p>
+            <p className="ml-36 pt-4">
+              <span className="tracking-widest">nageet</span>
+            </p>
+          </div>
           <div>
             {/* 0.4 Title Desktop */}
             <div className="title hidden md:block text-right">
@@ -396,27 +412,46 @@ export default function HomePage() {
               </Link>
             </div>
             {/* 0.4 Stanza 2 */}
-            <div>Stanza 2</div>
+            <div className="mr-8 pt-32 space-y-2">
+              <p className="text-right tracking-wide">
+                STRANGLING the stuff of living
+              </p>
+              <p className="tracking-wide">REGENERATING the stuff of living</p>
+            </div>
           </div>
         </div>
 
-        {/* 0.4 Stanza 3, 4, modal, & image */}
+        {/* 0.4 Stanza 3, 4, 5, modal, & image */}
         <section className="my-12 space-y-6">
-          {/* Placeholder text!! Not real */}
           <div className="">
-            <p className="">Is a weed test</p>
-            <p className="ml-16">What is yet to come</p>
-            <p className="ml-28 pt-8">Is a weed</p>
-            <p className="sm:ml-28">
-              A history maker, a storyteller, a punctuator
-            </p>
+            <p className="">Is a weed</p>
+            <p className="ml-16">A plant living in the urban human habitat</p>
+            <p className="ml-28 pt-8">a landscape?</p>
+            {/* MODAL 2 */}
+            <Link to="/">
+              <p className="underline sm:ml-28">A third landscape.</p>
+            </Link>
           </div>
+          <div className="">
+            <p className="">Is a weed</p>
+            <p className="ml-16">Speaking</p>
+            <p className="ml-28 pt-8">for</p>
+            <p className="ml-28 pt-8">the soil</p>
+          </div>
+
           <div className="grid grid-cols-2 gap-12">
             <div className="space-y-2 self-end pt-12 lg:pb-12">
-              {/* Placeholder text!! Not real */}
-              <p className="">Is a weed</p>
-              <p className="ml-16">What is yet to come</p>
-              <p className="ml-28 pt-8">Is a weed</p>
+              <p className="">
+                The types of weed found growing in soil indicate its composition
+              </p>
+              <p className="ml-16">Moss and plantain love an acidic ground</p>
+              <p className="ml-28 pt-8">Chicory thrives in fertile soil</p>
+              <p className="ml-28 pt-8">
+                Knotweed needs a heavy and compacted home
+              </p>
+              <p className="ml-28 pt-8">
+                Clover will cover a lawn lacking nitrogen
+              </p>
             </div>
             <div className="img-container max-w-1/2">
               <Link to="third-landscape">
@@ -432,7 +467,7 @@ export default function HomePage() {
 
         <div className="mx-auto">
           {/* 0.5 Title Mobile */}
-          <div className="text-rose md:hidden">
+          <div className="w-11/12 mx-auto text-rose md:hidden">
             <Link to="index-displace-migrate">
               <h2 className="text-5xl md:text-7xl">0.5</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
@@ -453,10 +488,6 @@ export default function HomePage() {
         </div>
 
         {/* 0.5 Poem */}
-        <section className="my-12 mx-auto max-w-3/4">
-          <p className="ml-16">What is yet to come</p>
-          <p className="ml-28 pt-8 text-right">Is a weed</p>
-        </section>
 
         <div className="flex md:flex-row-reverse">
           <div className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2 self-start overflow-hidden">
@@ -469,20 +500,42 @@ export default function HomePage() {
           <div className="space-y-2 self-center">
             {/* Placeholder text!! Not real */}
             <p className="">Is a weed</p>
-            <p className="">What is yet to come</p>
-            <p className="">Is a weed</p>
+            <p className="">A way to navigate oneself</p>
+            <p className="">through space,</p>
+            <p className="">through a place,</p>
+            <p className="">through no place</p>
           </div>
         </div>
 
         <section className="my-12 mx-auto max-w-3/4">
-          <p className="ml-16">What is yet to come</p>
-          <p className="ml-28 pt-8 text-right">Is a weed</p>
+          <p className="ml-16">Is a weed</p>
+          {/* MODAL 3 */}
+          <Link to="/">
+            <p className="underline sm:ml-28">
+              The vegetal most akin to the human spirit
+            </p>
+          </Link>
+          <p className="ml-28 pt-8 text-right">
+            Weeds, testimonies of resilience and adaptability — their numerous
+            seeds
+          </p>
+          <p className="ml-28 pt-8 text-right">
+            remaining dormant for many years, waiting for the right conditions
+            to spring,
+          </p>
+          <p className="ml-28 pt-8 text-right">
+            spreading easily and rapidly in inhospitable locales —
+          </p>
+          <p className="ml-28 pt-8 text-right">
+            Showing us how to develop survival mechanisms to counter
+          </p>
+          <p className="ml-28 pt-8 text-right">removal</p>
+          <p className="ml-28 pt-8 text-right">Disappearance</p>
         </section>
 
-        {/* 0.6 Poem */}
+        {/* 0.6 Title Mobile */}
         <div className="mx-auto">
-          {/* 0.6 Title Mobile */}
-          <div className="text-rose md:hidden">
+          <div className="w-11/12 mx-auto text-rose md:hidden">
             <Link to="index-body-landscape">
               <h2 className="text-5xl md:text-7xl">0.6</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
@@ -492,6 +545,7 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* 0.6 Poem */}
         <div className="grid md:grid-cols-2">
           <div>
             {/* 0.6 Title Desktop */}
@@ -504,13 +558,25 @@ export default function HomePage() {
               </Link>
             </div>
             {/* 0.6 Stanza 2 */}
-            <div>Stanza 2</div>
+            <div>
+              <p className="">Is a weed</p>
+              <p className="">A paragon</p>
+              <p className="">For bodies made to feel out of place</p>
+              <p className="">For displaced bodies</p>
+              <p className="">For contested bodies</p>
+              <p className="">
+                For Indigenous bodies whose land rights are contested
+              </p>
+              <p className="">For migrant bodies denied ressources</p>
+            </div>
           </div>
 
           <section className="my-12 mx-auto max-w-3/4">
             <div>
-              <p className="ml-16">What is yet to come</p>
-              <p className="ml-28 pt-8 text-right">Is a weed</p>
+              <p className="ml-16">A weed</p>
+              <p className="ml-28 pt-8 text-right italic">
+                Teaching the body how to become its own landscape
+              </p>
             </div>
             <div className="img-container mx-auto lg:max-w-1/2">
               <Link to="fuki">
@@ -522,35 +588,34 @@ export default function HomePage() {
               </Link>
             </div>
             <div>
-              <p className="ml-16">What is yet to come</p>
-              <p className="ml-28 pt-8 text-right">Is a weed</p>
+              <p className="ml-16">Is a weed</p>
+              <p className="ml-28 pt-8 text-right">Resistance</p>
+              <p className="ml-16">Is a weed</p>
+              <p className="ml-28 pt-8 text-right">Resisting definition</p>
             </div>
           </section>
 
           {/* 0.7 Title & Image */}
-          <div className="grid md:grid-cols-2 mr-12 md:mr-24">
-            <div className="">
-              {/* 0.7 Title Mobile */}
-              <div className="text-rose md:hidden">
-                <Link to="index-furthermore">
-                  <h2 className="text-5xl md:text-7xl">0.7</h2>
-                  <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
-                    Furthermore
-                  </h3>
-                </Link>
-              </div>
-
-              {/* 0.7 Title Desktop */}
-              <div className="title hidden md:block">
-                <Link to="index-furthermore">
-                  <h2 className="ml-24">0.7</h2>
-                  <div className="subtitle">
-                    <h3>Furthermore</h3>
-                  </div>
-                </Link>
-              </div>
+          <div className="grid grid-cols-2 mr-12 md:mr-24">
+            {/* 0.7 Title Mobile */}
+            <div className="ml-4 text-rose md:hidden">
+              <Link to="index-furthermore">
+                <h2 className="text-5xl md:text-7xl">0.7</h2>
+                <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
+                  Furthermore
+                </h3>
+              </Link>
             </div>
-            <Link to="roses" className="img-container mx-auto max-w-2/5">
+            {/* 0.7 Title Desktop */}
+            <div className="title hidden md:block">
+              <Link to="index-furthermore">
+                <h2 className="ml-24">0.7</h2>
+                <div className="subtitle">
+                  <h3>Furthermore</h3>
+                </div>
+              </Link>
+            </div>
+            <Link to="roses" className="img-container mr-0 ml-auto max-w-2/5">
               <Img
                 fluid={jpgs[7].node.childImageSharp.fluid}
                 alt={jpgs[7].node.base.split('.')[0]}

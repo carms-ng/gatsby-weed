@@ -19,8 +19,8 @@ module.exports = {
     },
     letterSpacing: {
       wide: '.025em',
-      wider: '.3em',
-      widest: '.5em',
+      wider: '.5em',
+      widest: '1em',
     },
     extend: {
       margin: {
