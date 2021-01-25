@@ -233,7 +233,7 @@ export default function HomePage() {
               <p className="ml-12">Blurring seductively clear</p>
               <div className="space-y-2 pt-4 sm:ml-56 lg:ml-24">
                 <div className="flex flex-row-reverse">
-                  <div className="img-container max-w-1/2">
+                  <div className="img-container max-w-1/2 self-start overflow-hidden">
                     <Link to="conditioned-nature">
                       <img src={gif_2} alt="" />
                       <Overlay />
@@ -464,7 +464,7 @@ export default function HomePage() {
         </section>
 
         <div className="flex md:flex-row-reverse">
-          <div className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2">
+          <div className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2 self-start overflow-hidden">
             <Link to="/">
               {/* insert gif for 007 */}
               <img src={gif_7} alt="" />
