@@ -42,7 +42,7 @@ export default function HomePage() {
           node {
             base
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 2048, quality: 80) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -67,6 +67,7 @@ export default function HomePage() {
     AOS.init({ duration: 1500 });
     AOS.refresh();
 
+    // Add zoom effect
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.target.localName === 'img') {
@@ -279,7 +280,7 @@ export default function HomePage() {
             <p className="ml-32">A pioneer</p>
             {/* Modal 1 */}
             <p className="underline text-right sm:text-left sm:ml-32">
-              <Link to="">An opportunistic germinator</Link>
+              <button href="">An opportunistic germinator</button>
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -421,7 +422,7 @@ export default function HomePage() {
             <p className="ml-24 md:pl-80">a landscape?</p>
             {/* MODAL 2 */}
             <p className="underline ml-36 md:pl-96">
-              <Link to="/">A third landscape. </Link>
+              <button href="#">A third landscape. </button>
             </p>
           </div>
           <div className="grid md:grid-cols-2">
@@ -503,11 +504,11 @@ export default function HomePage() {
         <section className="my-12 mx-auto max-w-3/4">
           <p className="pb-12">Is a weed</p>
           {/* MODAL 3 */}
-          <Link to="/">
+          <button href="#">
             <p className="underline ml-28 pb-12">
               The vegetal most akin to the human spirit
             </p>
-          </Link>
+          </button>
           <p className="pb-12">
             Weeds, testimonies of resilience and adaptability — their numerous
             seeds remaining dormant for many years, waiting for the right
