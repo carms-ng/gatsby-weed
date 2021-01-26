@@ -217,9 +217,12 @@ export default function HomePage() {
             <div className="my-12 space-y-2 self-center">
               <p className="">Weeds,</p>
               <p className="ml-12">Blurring seductively clear</p>
-              <div className="space-y-2 pt-4 sm:ml-56 lg:ml-24">
+              <div className="space-y-2 pt-4 sm:ml-56 lg:ml-24 xl:mr-36">
                 <div className="flex flex-row-reverse">
-                  <div className="img-container max-w-1/2 self-start overflow-hidden">
+                  <div
+                    className="img-container max-w-1/2 self-start overflow-hidden"
+                    style={{ width: 'auto' }}
+                  >
                     <Link to="conditioned-nature">
                       <img src={gif_2} alt="" />
                       <Overlay />
