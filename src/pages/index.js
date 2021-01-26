@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
+import Nav from '../components/Nav';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
@@ -92,6 +93,7 @@ export default function HomePage() {
   return (
     <Layout>
       <Background>
+        <Nav />
         <img
           src={svg_1}
           alt="Line drawing of weeds"
