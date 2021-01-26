@@ -11,7 +11,7 @@ const NavStyles = styled.nav`
   padding: 20px;
   .btns-lang {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .btn-lang {
@@ -37,14 +37,8 @@ export default function Nav() {
       <div className="btns-lang">
         <button
           type="button"
-          className="btn-lang text-2xl md:text-4xl p-2"
-          href="#"
-        >
-          EN
-        </button>
-        <button
-          type="button"
-          className="btn-lang text-2xl md:text-4xl p-2"
+          className="btn-lang p-2"
+          title="Télécharger le PDF"
           href="#"
         >
           FR
