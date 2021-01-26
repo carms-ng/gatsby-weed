@@ -1,5 +1,4 @@
 import React from 'react';
-import sample from '../assets/videos/3.mp4';
 
 export default function Video({ style, src }) {
   // console.log(props)
