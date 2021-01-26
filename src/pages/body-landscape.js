@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
+import NavSubpage from '../components/NavSubpage';
 import styled from 'styled-components';
 
 const ImageContainer = styled.div`
@@ -36,6 +37,7 @@ export default function SubPageFive() {
 
   return (
     <Layout>
+      <NavSubpage />
       <ImageContainer>
         {/* Row 1 */}
         <div className="flex max-w-3/4 my-24">
