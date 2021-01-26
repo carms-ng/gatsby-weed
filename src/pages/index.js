@@ -130,7 +130,7 @@ export default function HomePage() {
           </p>
         </section>
 
-        <div className="w-11/12 mx-auto">
+        <div className="w-11/12 mx-auto mt-12">
           {/* 0.1 Title Mobile */}
           <div className="text-rose md:hidden">
             <Link to="index-concrete-plant">
@@ -370,7 +370,7 @@ export default function HomePage() {
 
         {/* 0.4 Poem */}
         {/* 0.4 Title Mobile */}
-        <div className="mx-auto w-11/12">
+        <div className="mx-auto w-11/12 mb-12">
           <div className="text-right text-rose md:hidden">
             <Link to="index-third-landscape">
               <h2 className="text-5xl md:text-7xl">0.4</h2>
@@ -457,7 +457,7 @@ export default function HomePage() {
 
         <div className="mx-auto">
           {/* 0.5 Title Mobile */}
-          <div className="w-11/12 mx-auto text-rose md:hidden">
+          <div className="w-11/12 mx-auto mb-6 text-rose md:hidden">
             <Link to="index-displace-migrate">
               <h2 className="text-5xl md:text-7xl">0.5</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
@@ -522,7 +522,7 @@ export default function HomePage() {
         </section>
 
         {/* 0.6 Title Mobile */}
-        <div className="mx-auto">
+        <div className="mx-auto mb-12">
           <div className="w-11/12 mx-auto text-rose md:hidden">
             <Link to="index-body-landscape">
               <h2 className="text-5xl md:text-7xl">0.6</h2>
