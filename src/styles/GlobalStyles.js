@@ -33,47 +33,53 @@ const GlobalStyles = createGlobalStyle`
   .title {
     padding: 0 1rem;
     position: relative;
+    max-width: min-content;
+    height: min-content;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 1000ms;
+
     
     h2 {
       font-size: 4.5rem;
       color: var(--rose);
-      position: relative;
       display: inline-block;
-      z-index: 10;
     }
-    
-    .subtitle{
-      float: left;
-        display: inline-block;
-        opacity: 0;
-        z-index: 0;
-        
-      h3 {
-        opacity: 0;
-        font-size: 3rem;
-        text-transform: uppercase;
-        color: var(--brown);
-        position: absolute;
-        background: var(--rose-light);
-        top: 20%;
-        left: 0;
-        padding: 0 1rem;  
-      }
-      .right {
-        float: right;
-        display: inline;
-        left: auto;
-        right: 0;
+
+    h3 {
+      opacity: 0;
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: var(--brown);
+
+      line-height: 100%;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 1000ms;
+
+      :hover {
+        opacity: 1;
       }
     }
 
-    :hover{
-      .subtitle, h3 {
-        opacity: 1;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 1000ms;
-      }
+    // Set width relative parent div for hover background
+    h3.title-width {
+      visibility: hidden;
+      height: 0px;
+      position: relative;
+      color: red;    
+      pointer-events: none;
+    } 
+    
+    :hover {
+      opacity: 1;
+      background: var(--rose-light);
     }
     
   }
