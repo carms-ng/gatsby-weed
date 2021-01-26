@@ -48,7 +48,7 @@ export default function HomePage() {
           node {
             base
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 2048, quality: 80) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -73,6 +73,7 @@ export default function HomePage() {
     AOS.init({ duration: 1500 });
     AOS.refresh();
 
+    // Add zoom effect
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.target.localName === 'img') {
@@ -293,6 +294,7 @@ export default function HomePage() {
               <p className="ml-12">
                 Show us how to be in the presence of discomfort, of{' '}
                 <span className="pl-4 tracking-wider">disruptions</span>
+
               </p>
               <p className="pt-24 ml-12">Is a weed</p>
               <p className="ml-32">A pioneer</p>
@@ -399,7 +401,6 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-
           <div className="grid md:grid-cols-2">
             {/* 0.4 Stanza 1 */}
             <div className="mx-auto">
@@ -488,7 +489,6 @@ export default function HomePage() {
           </div>
 
           {/* 0.5 Poem */}
-
           <div className="flex md:flex-row-reverse">
             <div
               className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2 self-start overflow-hidden"
