@@ -490,10 +490,10 @@ export default function HomePage() {
             </div>
           </div>
           {/* 0.5 Title Desktop */}
-          <div className="title hidden md:block my-auto ml-0 mr-auto nowrap">
+          <div className="title hidden md:inline-block my-auto ml-0 mr-auto xl:whitespace-nowrap">
             <Link to="index-displace-migrate">
               <h3 className="title-width">Displacement / Migration</h3>
-              <h2 className="ml-24">0.5</h2>
+              <h2 className="mx-40">0.5</h2>
               <div className="subtitle">
                 <h3>Displacement / Migration</h3>
               </div>
