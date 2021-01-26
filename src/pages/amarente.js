@@ -13,7 +13,6 @@ const ExplodeStyles = styled.div`
     top: 50vh;
     left: 50vw;
     transform: translate(-50%, -50%);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     transition: all 1s ease-in-out;
   }
   .floating {
