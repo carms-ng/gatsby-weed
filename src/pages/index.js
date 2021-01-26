@@ -67,7 +67,7 @@ export default function HomePage() {
     AOS.init({ duration: 1500 });
     AOS.refresh();
 
-    // Add zoom effect
+    // Image zoom effect
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.target.localName === 'img') {
@@ -80,9 +80,7 @@ export default function HomePage() {
       });
     });
 
-    images.forEach((tag) => {
-      observer.observe(tag);
-    });
+    images.forEach(tag => observer.observe(tag));
   }, []);
 
   return (
