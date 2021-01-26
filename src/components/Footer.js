@@ -11,16 +11,15 @@ const FooterStyles = styled.nav`
   }
   h6 {
     text-transform: uppercase;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     font-size: 1.25rem;
     letter-spacing: 0.05em;
   }
   li {
-    margin: 0.5rem 5px;
+    margin: 0.5rem 0;
   }
   ul {
     list-style: none;
-    margin-right: 100px;
   }
 `;
 
@@ -28,8 +27,8 @@ export default function Nav() {
   return (
     <FooterStyles>
       <hr />
-      <section className="md:flex mt-8">
-        <ul>
+      <section className="md:flex mt-2 mx-0 md:m-4">
+        <ul className="md:mr-24 xl:mr-36">
           <h6>overview</h6>
           <li>
             <Link to="index-concrete-plant">
