@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
-import Nav from './Nav';
 
 const SiteBorderStyles = styled.div`
   width: 100%;
@@ -18,10 +17,7 @@ export default function Layout({ children }) {
     <>
       <GlobalStyles />
       <Typography />
-      <SiteBorderStyles>
-        <Nav />
-        {children}
-      </SiteBorderStyles>
+      <SiteBorderStyles>{children}</SiteBorderStyles>
     </>
-  )
+  );
 }

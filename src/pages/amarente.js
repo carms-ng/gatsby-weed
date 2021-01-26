@@ -1,7 +1,8 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from "gatsby-image"
+import Img from 'gatsby-image';
 import Layout from '../components/Layout';
+import NavSubpage from '../components/NavSubpage';
 import styled from 'styled-components';
 import { rand } from '../utils/helper';
 import { explode } from '../utils/effect';
@@ -25,16 +26,21 @@ const ExplodeStyles = styled.div`
     perspective: 1000px;
   }
   @keyframes floating {
-    10%, 90% {
+    10%,
+    90% {
       transform: translate3d(-1px, 0, 0);
     }
-    20%, 80% {
+    20%,
+    80% {
       transform: translate3d(2px, 0, 0);
     }
-    30%, 50%, 70% {
+    30%,
+    50%,
+    70% {
       transform: translate3d(-4px, 0, 0);
     }
-    40%, 60% {
+    40%,
+    60% {
       transform: translate3d(4px, 0, 0);
     }
   }
@@ -43,7 +49,7 @@ const ExplodeStyles = styled.div`
 export default function SubPageOne() {
   const data = useStaticQuery(graphql`
     query myQuery {
-      allFile(filter: {name: {regex: "/^01.+/"}}) {
+      allFile(filter: { name: { regex: "/^01.+/" } }) {
         edges {
           node {
             base
@@ -60,23 +66,24 @@ export default function SubPageOne() {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout>
+      <NavSubpage />
       <ExplodeStyles onClick={explode}>
-        {data.allFile.edges.map(({ node } ) => (
+        {data.allFile.edges.map(({ node }) => (
           <Img
             style={{
-              position: "absolute",
-              overflow: "visible",
+              position: 'absolute',
+              overflow: 'visible',
               width: `${rand(70, 30)}vmin`,
-              zIndex: rand(20, 1)
+              zIndex: rand(20, 1),
             }}
             className="explodee"
             fluid={node.childImageSharp.fluid}
             key={node.base}
-            alt={node.base.split(".")[0] }
+            alt={node.base.split('.')[0]}
           />
         ))}
       </ExplodeStyles>
