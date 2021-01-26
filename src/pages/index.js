@@ -60,13 +60,13 @@ export default function HomePage() {
     const area = document.querySelector('#scrollArea');
     const pTags = area.querySelectorAll('p');
     const images = area.querySelectorAll('.animate-zoom img');
-    
-    pTags.forEach(tag => tag.setAttribute('data-aos', 'fade-down'));
+
+    pTags.forEach((tag) => tag.setAttribute('data-aos', 'fade-down'));
 
     // Add AOS Scroll Library
     AOS.init({ duration: 1500 });
     AOS.refresh();
-    
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.target.localName === 'img') {
@@ -105,10 +105,7 @@ export default function HomePage() {
       </section>
       <FallingStyles id="scrollArea">
         <section className="grid pt-8">
-          <Link
-            to="amarente"
-            className="img-container max-w-3/4 mx-auto"
-          >
+          <Link to="amarente" className="img-container max-w-3/4 mx-auto">
             <Img
               fluid={jpgs[0].node.childImageSharp.fluid}
               alt={jpgs[0].node.base.split('.')[0]}
@@ -133,7 +130,7 @@ export default function HomePage() {
           </p>
         </section>
 
-        <div className="w-11/12 mx-auto">
+        <div className="w-11/12 mx-auto mt-12">
           {/* 0.1 Title Mobile */}
           <div className="text-rose md:hidden">
             <Link to="index-concrete-plant">
@@ -146,7 +143,8 @@ export default function HomePage() {
         </div>
 
         {/* 0.1 Title Desktop */}
-        <div className="title hidden md:block">
+        <div className="title hidden md:block whitespace-nowrap">
+          <h3 className="title-width">Concrete & Plant Relationships</h3>
           <Link to="index-concrete-plant">
             <h2 className="ml-24">0.1</h2>
             <div className="subtitle">
@@ -258,7 +256,8 @@ export default function HomePage() {
           </div>
 
           {/* 0.2 Title Desktop */}
-          <div className="title hidden md:block">
+          <div className="title hidden md:block whitespace-nowrap">
+            <h3 className="title-width">Conditioned Nature</h3>
             <Link to="index-conditioned-nature">
               <h2 className="ml-24">0.2</h2>
               <div className="subtitle">
@@ -315,7 +314,8 @@ export default function HomePage() {
         </div>
 
         {/* 0.3 Title Desktop */}
-        <div className="title hidden md:block text-right">
+        <div className="title hidden md:block float-right mb-12 text-right whitespace-nowrap">
+          <h3 className="title-width">Plants as Witnesses</h3>
           <Link to="index-plants-witness">
             <h2 className="mr-48">0.3</h2>
             <div className="subtitle">
@@ -370,7 +370,7 @@ export default function HomePage() {
 
         {/* 0.4 Poem */}
         {/* 0.4 Title Mobile */}
-        <div className="mx-auto w-11/12">
+        <div className="mx-auto w-11/12 mb-12">
           <div className="text-right text-rose md:hidden">
             <Link to="index-third-landscape">
               <h2 className="text-5xl md:text-7xl">0.4</h2>
@@ -393,11 +393,12 @@ export default function HomePage() {
             </p>
           </div>
           {/* 0.4 Title Desktop */}
-          <div className="title hidden md:block text-right">
+          <div className="title hidden md:block justify-self-end text-right whitespace-nowrap">
+            <h3 className="title-width">Third Landscape</h3>
             <Link to="index-third-landscape">
               <h2 className="mr-48">0.4</h2>
               <div className="subtitle">
-                <h3 className="right">Third Landscape</h3>
+                <h3 className="right nowrap">Third Landscape</h3>
               </div>
             </Link>
           </div>
@@ -456,7 +457,7 @@ export default function HomePage() {
 
         <div className="mx-auto">
           {/* 0.5 Title Mobile */}
-          <div className="w-11/12 mx-auto text-rose md:hidden">
+          <div className="w-11/12 mx-auto mb-6 text-rose md:hidden">
             <Link to="index-displace-migrate">
               <h2 className="text-5xl md:text-7xl">0.5</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
@@ -488,9 +489,11 @@ export default function HomePage() {
               <p className="">through no place</p>
             </div>
           </div>
-          <div className="title hidden md:block float-left">
+          {/* 0.5 Title Desktop */}
+          <div className="title hidden md:inline-block my-auto ml-0 mr-auto xl:whitespace-nowrap">
             <Link to="index-displace-migrate">
-              <h2 className="ml-24 mt-12">0.5</h2>
+              <h3 className="title-width">Displacement / Migration</h3>
+              <h2 className="mx-40">0.5</h2>
               <div className="subtitle">
                 <h3>Displacement / Migration</h3>
               </div>
@@ -519,7 +522,7 @@ export default function HomePage() {
         </section>
 
         {/* 0.6 Title Mobile */}
-        <div className="mx-auto">
+        <div className="mx-auto mb-12">
           <div className="w-11/12 mx-auto text-rose md:hidden">
             <Link to="index-body-landscape">
               <h2 className="text-5xl md:text-7xl">0.6</h2>
@@ -531,13 +534,14 @@ export default function HomePage() {
         </div>
 
         {/* 0.6 Poem */}
-        <div className="grid md:grid-cols-2">
+        <div className="grid grid-cols-2">
           {/* 0.6 Title Desktop */}
           <div className="title hidden md:block">
+            <h3 className="title-width">Body in / as Landscape</h3>
             <Link to="index-body-landscape">
-              <h2 className="float-right mr-24 mt-4">0.6</h2>
+              <h2 className="float-right mr-24">0.6</h2>
               <div className="subtitle">
-                <h3>Body in / as Landscape</h3>
+                <h3 className="">Body in / as Landscape</h3>
               </div>
             </Link>
           </div>
@@ -597,9 +601,11 @@ export default function HomePage() {
             </Link>
           </div>
           {/* 0.7 Title Desktop */}
-          <div className="title hidden md:block">
+          <div className="title hidden md:block min-w-0">
+            <h3 className="title-width">Furthermore</h3>
             <Link to="index-furthermore">
               <h2 className="ml-24">0.7</h2>
+
               <div className="subtitle">
                 <h3>Furthermore</h3>
               </div>
