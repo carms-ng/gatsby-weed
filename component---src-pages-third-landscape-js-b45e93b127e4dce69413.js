@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{LJYP:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return r}));var u=t("q1tI"),a=t.n(u);function r(){return a.a.createElement("div",null,a.a.createElement("h1",null,"SubPageFour - Randomized"))}}}]);
-//# sourceMappingURL=component---src-pages-third-landscape-js-b45e93b127e4dce69413.js.map

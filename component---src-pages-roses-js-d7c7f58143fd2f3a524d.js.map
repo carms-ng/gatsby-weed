@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/roses.js"],"names":["SubPageSeven"],"mappings":"4FAAA,wEAEe,SAASA,IACtB,OACE,6BACE","file":"component---src-pages-roses-js-d7c7f58143fd2f3a524d.js","sourcesContent":["import React from 'react';\n\nexport default function SubPageSeven() {\n  return (\n    <div>\n      <h1>roses</h1>\n    </div>\n  );\n}\n"],"sourceRoot":""}

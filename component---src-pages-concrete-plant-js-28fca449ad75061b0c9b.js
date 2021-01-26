@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{g0Wj:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return r}));var u=t("q1tI"),a=t.n(u);function r(){return a.a.createElement("div",null,a.a.createElement("h1",null,"SubPageTwo"))}}}]);
+//# sourceMappingURL=component---src-pages-concrete-plant-js-28fca449ad75061b0c9b.js.map
