@@ -4,6 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
 import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
+import svg_1 from '../assets/images/line-drawing.svg';
 import styled from 'styled-components';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -86,7 +87,11 @@ export default function HomePage() {
 
   return (
     <Layout>
-      {/* TODO: Intro Statement to be refined */}
+      <img
+        src={svg_1}
+        alt="Line drawing of weeds"
+        className="absolute hidden md:block -mr-half-width"
+      />
       <div
         className="pt-32 pl-6 md:pt-60 md:pl-12 md:-ml-half-width"
         style={{ maxWidth: '80vw', fontFamily: 'MonetaSans' }}
