@@ -40,8 +40,8 @@ export default function SubPageFive() {
       <NavSubpage />
       <ImageContainer>
         {/* Row 1 */}
-        <div className="flex max-w-3/4 my-24">
-          <div className="container pt-60">
+        <div className="flex md:max-w-3/4 mb-24 md:my-24 space-x-6">
+          <div className="container pt-32 md:pt-60">
             <Img
               fluid={jpgs[0].node.childImageSharp.fluid}
               alt={jpgs[0].node.base.split('.')[0]}
