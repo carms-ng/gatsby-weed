@@ -5,8 +5,8 @@ import Img from 'gatsby-image';
 import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
 import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
 import styled from 'styled-components';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import IntroSection from '../components/Intro';
 import Footer from '../components/Footer';
@@ -15,7 +15,7 @@ import Overlay from '../components/Overlay';
 const FallingStyles = styled.div`
   .zoomin {
     animation-name: zoomin;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
     animation-fill-mode: both;
     animation-direction: alternate;
@@ -29,28 +29,6 @@ const FallingStyles = styled.div`
       transform: scale(1.2, 1.2);
     }
   }
-  p {
-    opacity: 0;
-    transform: translateY(-20vh);
-    transition: all 0.6s cubic-bezier(0.11, 0, 0.5, 0);
-  }
-  .falling {
-    animation-name: falling;
-    animation-duration: 1.5s;
-    animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
-    animation-fill-mode: forwards;
-  }
-  @keyframes falling {
-    from {
-      opacity: 0;
-      transform: translateY(-40vh);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
 `;
 
 export default function HomePage() {
@@ -77,45 +55,30 @@ export default function HomePage() {
   // Gatsby image
   const jpgs = data.allFile.edges;
 
-  // Add AOS Scroll Library
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 2000,
-  //   });
-  //   AOS.refresh();
-  // });
-
   // Scroll effects
   useEffect(() => {
-    const pTags = document.querySelectorAll('p');
-    const images = document.querySelectorAll('img');
+    const area = document.querySelector('#scrollArea');
+    const pTags = area.querySelectorAll('p');
+    const images = area.querySelectorAll('.animate-zoom img');
+    
+    pTags.forEach(tag => tag.setAttribute('data-aos', 'fade-down'));
 
-    let options = {
-      // root: document.querySelector('#scrollArea'),
-      rootMargin: '0px 0px 100px 0px',
-      threshold: 0.7,
-    };
-
+    // Add AOS Scroll Library
+    AOS.init({ duration: 1500 });
+    AOS.refresh();
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        setTimeout(() => {
-          if (entry.intersectionRatio > 0) {
-            if (entry.target.localName === 'img') {
-              // console.log(entry);
-              entry.target.classList.add('zoomin');
-            } else {
-              entry.target.classList.add('falling');
-            }
+        if (entry.target.localName === 'img') {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('zoomin');
+          } else {
+            entry.target.classList.remove('zoomin');
           }
-        }, 500);
+        }
       });
-    }, options);
-    
-    pTags.forEach((tag) => {
-      // tag.setAttribute('data-aos', 'fade-down');
-      observer.observe(tag);
     });
+
     images.forEach((tag) => {
       observer.observe(tag);
     });
@@ -139,20 +102,21 @@ export default function HomePage() {
       </div>
       <section className="grid pt-8">
         <IntroSection />
-        <Link
-          to="amarente"
-          // style={{ margin: '100px 15vw 0 15vw' }}
-          className="img-container max-w-3/4 mx-auto"
-        >
-          <Img
-            fluid={jpgs[0].node.childImageSharp.fluid}
-            alt={jpgs[0].node.base.split('.')[0]}
-            // imgStyle={{ transition: `all 500ms ase 0s` }}
-          />
-          <Overlay />
-        </Link>
       </section>
       <FallingStyles id="scrollArea">
+        <section className="grid pt-8">
+          <Link
+            to="amarente"
+            className="img-container max-w-3/4 mx-auto"
+          >
+            <Img
+              fluid={jpgs[0].node.childImageSharp.fluid}
+              alt={jpgs[0].node.base.split('.')[0]}
+              className="animate-zoom"
+            />
+            <Overlay />
+          </Link>
+        </section>
         {/* Intro Poem */}
         <section className="space-y-6 pt-12">
           <p className="">Is a weed</p>
@@ -208,11 +172,11 @@ export default function HomePage() {
             <Link
               to="concrete-plant"
               className="img-container self-end md:justify-self-center mx-4 max-w-1/2 md:max-w-3/10"
-              // style={{ maxWidth: "30vw", marginLeft: "15vw"}}
             >
               <Img
                 fluid={jpgs[1].node.childImageSharp.fluid}
                 alt={jpgs[1].node.base.split('.')[0]}
+                className="animate-zoom"
               />
               <Overlay />
             </Link>
@@ -324,6 +288,7 @@ export default function HomePage() {
               <Img
                 fluid={jpgs[2].node.childImageSharp.fluid}
                 alt={jpgs[2].node.base.split('.')[0]}
+                className="animate-zoom"
               />
             </div>
             <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-center">
@@ -374,6 +339,7 @@ export default function HomePage() {
             <Img
               fluid={jpgs[3].node.childImageSharp.fluid}
               alt={jpgs[3].node.base.split('.')[0]}
+              className="animate-zoom"
             />
           </div>
           <div className="grid lg:grid-cols-4 gap-6 py-12">
@@ -389,6 +355,7 @@ export default function HomePage() {
               <Img
                 fluid={jpgs[4].node.childImageSharp.fluid}
                 alt={jpgs[4].node.base.split('.')[0]}
+                className="animate-zoom"
               />
             </div>
 
@@ -462,6 +429,7 @@ export default function HomePage() {
                 <Img
                   fluid={jpgs[5].node.childImageSharp.fluid}
                   alt={jpgs[5].node.base.split('.')[0]}
+                  className="animate-zoom"
                 />
                 <Overlay />
               </Link>
@@ -603,6 +571,7 @@ export default function HomePage() {
                 <Img
                   fluid={jpgs[6].node.childImageSharp.fluid}
                   alt={jpgs[6].node.base.split('.')[0]}
+                  className="animate-zoom"
                 />
                 <Overlay />
               </Link>
@@ -640,6 +609,7 @@ export default function HomePage() {
             <Img
               fluid={jpgs[7].node.childImageSharp.fluid}
               alt={jpgs[7].node.base.split('.')[0]}
+              className="animate-zoom"
             />
             <Overlay />
           </Link>
