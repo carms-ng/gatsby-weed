@@ -11,9 +11,9 @@ const ExplodeStyles = styled.div`
   overflow: hidden;
   padding: 100px;
   .explodee {
-    top: 50%;
+    top: 50vh;
     left: 50%;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, -50%);
     transition: all 1s ease-in-out;
   }
   .floating {
