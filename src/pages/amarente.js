@@ -12,7 +12,7 @@ const ExplodeStyles = styled.div`
   padding: 100px;
   .explodee {
     top: 50vh;
-    left: 50vw;
+    left: 50%;
     transform: translate(-50%, -50%);
     transition: all 1s ease-in-out;
   }
@@ -55,11 +55,7 @@ export default function SubPageOne() {
             base
             childImageSharp {
               fluid(maxWidth: 2048, quality: 80) {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid
               }
             }
           }
