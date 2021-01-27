@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
 import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
-import svg_1 from '../assets/images/line-drawing.svg';
+import line_drawing from '../assets/gifs/line-drawing.gif';
 import styled from 'styled-components';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -34,7 +34,7 @@ const FallingStyles = styled.div`
 `;
 
 const Background = styled.div`
-  background-color: #fcfcf6;
+  /* background-color: #fcfcf6; */
 `;
 
 export default function HomePage() {
@@ -96,9 +96,10 @@ export default function HomePage() {
       <Background>
         <Nav />
         <img
-          src={svg_1}
+          src={line_drawing}
           alt="Line drawing of weeds"
-          className="absolute hidden md:block -mr-half-width"
+          className="absolute hidden md:block"
+          style={{maxWidth: "50%", top: "0", left: "-5vw"}}
         />
         <div
           className="pt-32 pl-6 md:pt-60 md:pl-12 md:-ml-half-width"
