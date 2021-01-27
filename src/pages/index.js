@@ -118,7 +118,7 @@ export default function HomePage() {
         </section>
         <FallingStyles id="scrollArea">
           <section className="grid pt-8">
-            <Link to="amarente" className="img-container max-w-3/4 mx-auto">
+            <Link to="amaranth" className="img-container max-w-3/4 mx-auto">
               <Img
                 fluid={jpgs[0].node.childImageSharp.fluid}
                 alt={jpgs[0].node.base.split('.')[0]}
@@ -294,7 +294,6 @@ export default function HomePage() {
               <p className="ml-12">
                 Show us how to be in the presence of discomfort, of{' '}
                 <span className="pl-4 tracking-wider">disruptions</span>
-
               </p>
               <p className="pt-24 ml-12">Is a weed</p>
               <p className="ml-32">A pioneer</p>
