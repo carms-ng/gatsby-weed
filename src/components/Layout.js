@@ -10,14 +10,14 @@ const SiteBorderStyles = styled.div`
 
   @media (min-width: 1100px) {
     max-width: 1440px;
-    padding: 100px;
+    padding: 0 100px;
   }
 `;
 
-export default function Layout({ children }) {
+export default function Layout({greenBg, children}) {
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyles greenBg={greenBg}/>
       <Typography />
       <SiteBorderStyles>{children}</SiteBorderStyles>
     </>

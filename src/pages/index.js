@@ -92,7 +92,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <Layout>
+    <Layout greenBg>
       <Background>
         <Nav />
         <img

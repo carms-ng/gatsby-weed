@@ -11,9 +11,9 @@ const ExplodeStyles = styled.div`
   overflow: hidden;
   padding: 100px;
   .explodee {
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
     transition: all 1s ease-in-out;
   }
   .floating {
@@ -55,11 +55,7 @@ export default function SubPageOne() {
             base
             childImageSharp {
               fluid(maxWidth: 2048, quality: 80) {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid
               }
             }
           }
