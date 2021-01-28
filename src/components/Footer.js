@@ -63,6 +63,8 @@ export default function Nav() {
             <a
               href="https://www.nowness.com/series/great-gardens/trematon-castle-cornwall-julian-isabel-bannerman"
               target="_blank"
+              className="text-green hover:underline"
+              id="foot"
             >
               “Great Gardens: Trematon Castle”
             </a>
@@ -73,6 +75,8 @@ export default function Nav() {
             <a
               href="https://www.nytimes.com/2016/09/23/t-magazine/design/isabel-julian-bannerman-garden-designer-cornwall-norman-castle.html"
               target="_blank"
+              className="text-green hover:underline"
+              id="foot"
             >
               “A Garden Sanctuary of Medieval Magic”
             </a>
