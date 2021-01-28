@@ -4,7 +4,7 @@ import columns from '../assets/contents/PlantsWitnessContent';
 import Layout from '../components/Layout';
 
 
-export default function SubPageSeven() {
+export default function PlantsWitnessIndex() {
   return (
     <Layout>
       <IndexContainer header="Plant as Witnesses" columns={columns} />

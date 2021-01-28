@@ -4,7 +4,7 @@ import columns from '../assets/contents/ThirdLandscapeContent';
 import Layout from '../components/Layout';
 
 
-export default function SubPageSeven() {
+export default function ThirdLandscapeIndex() {
   return (
     <Layout>
       <IndexContainer header="Third Landscape" columns={columns} />

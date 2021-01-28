@@ -4,7 +4,7 @@ import columns from '../assets/contents/FurthermoreContent';
 import Layout from '../components/Layout';
 
 
-export default function SubPageSeven() {
+export default function FurthermoreIndex() {
   return (
     <Layout>
       <IndexContainer header="Furthermore" columns={columns} />
