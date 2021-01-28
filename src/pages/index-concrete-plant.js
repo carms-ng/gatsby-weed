@@ -1,9 +1,12 @@
 import React from 'react';
+import IndexContainer from '../components/IndexContainer';
+import columns from '../assets/contents/ConcretePlantContent';
+import Layout from '../components/Layout';
 
-export default function IndexPageOne() {
+export default function ConcretePlantIndex() {
   return (
-    <div>
-      <h1>0.1 CONCRETE & PLANT RELATIONSHIPS</h1>
-    </div>
+    <Layout>
+      <IndexContainer header="Concrete & Plant Relationships" columns={columns} />
+    </Layout>
   );
 }

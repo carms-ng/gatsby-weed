@@ -1,9 +1,13 @@
 import React from 'react';
+import IndexContainer from '../components/IndexContainer';
+import columns from '../assets/contents/PlantsWitnessContent';
+import Layout from '../components/Layout';
 
-export default function IndexPageThree() {
+
+export default function PlantsWitnessIndex() {
   return (
-    <div>
-      <h1>0.3 PLANTS AS WITNESSES</h1>
-    </div>
+    <Layout>
+      <IndexContainer header="Plant as Witnesses" columns={columns} />
+    </Layout>
   );
 }
