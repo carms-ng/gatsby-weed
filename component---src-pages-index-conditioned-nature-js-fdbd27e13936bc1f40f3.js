@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{x6Jn:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return a}));var u=t("q1tI"),r=t.n(u);function a(){return r.a.createElement("div",null,r.a.createElement("h1",null,"0.2 CONDITIONED NATURE"))}}}]);
-//# sourceMappingURL=component---src-pages-index-conditioned-nature-js-fdbd27e13936bc1f40f3.js.map

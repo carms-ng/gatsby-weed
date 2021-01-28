@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/fuki.js"],"names":["SubPageSix"],"mappings":"4FAAA,wEAEe,SAASA,IACtB,OACE,6BACE","file":"component---src-pages-fuki-js-813f36690f78302164e9.js","sourcesContent":["import React from 'react';\n\nexport default function SubPageSix() {\n  return (\n    <div>\n      <h1>SubPageSix</h1>\n    </div>\n  );\n}\n"],"sourceRoot":""}
