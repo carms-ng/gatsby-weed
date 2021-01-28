@@ -41,7 +41,7 @@ export default function SubPageSeven() {
       <NavSubpage />
       <ImageContainer>
         {/* Row 1 */}
-        <div className="max-w-lg text-justify">
+        <div className="max-w-lg text-justify text-sm lg:text-base">
           <p>Even Roses can “become” a weed.</p>
           <p>
             Arguably the most desired -- one could say cliché -- flower in the
@@ -248,7 +248,7 @@ export default function SubPageSeven() {
               }}
             />
           </div>
-          <div className="max-w-md space-y-6">
+          <div className="max-w-md space-y-6 text-sm lg:text-base">
             <p>
               Multiflora rose is an exotic invasive perennial shrub native to
               China, Japan, and Korea (Zheng et al 2006; Dirr, 1998; Amrine and
