@@ -140,6 +140,7 @@ export default function SubPageSix() {
               <a
                 href="https://www.lapresse.ca/maison/immobilier/conseils/200707/13/01-870610-ou-trouver-des-petasites-japonais-geants.php"
                 target="_blank"
+                rel="noreferrer"
                 className="text-green hover:underline"
               >
                 très envahissante{' '}
@@ -237,6 +238,7 @@ export default function SubPageSix() {
             <a
               href="https://commons.wikimedia.org/w/index.php?curid=79715189"
               target="_blank"
+              rel="noreferrer"
               className="text-green hover:underline"
             >
               {' '}
@@ -246,6 +248,7 @@ export default function SubPageSix() {
           <a
             href="https://en.wikipedia.org/wiki/Korpokkur"
             target="_blank"
+            rel="noreferrer"
             className="text-green hover:underline"
           >
             <p>Korpokkur</p>
