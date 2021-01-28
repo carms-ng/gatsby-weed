@@ -2,26 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
-import Nav from './Nav';
 
 const SiteBorderStyles = styled.div`
+  position: relative;
   width: 100%;
   margin: 0 auto;
 
   @media (min-width: 1100px) {
     max-width: 1440px;
+    padding: 0 100px;
   }
 `;
 
-export default function Layout({ children }) {
+export default function Layout({greenBg, children}) {
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyles greenBg={greenBg}/>
       <Typography />
-      <SiteBorderStyles>
-        <Nav />
-        {children}
-      </SiteBorderStyles>
+      <SiteBorderStyles>{children}</SiteBorderStyles>
     </>
-  )
+  );
 }
