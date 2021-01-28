@@ -7,28 +7,28 @@ import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
 import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
 import line_drawing from '../assets/gifs/line-drawing.gif';
 import styled from 'styled-components';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 import IntroSection from '../components/Intro';
 import Footer from '../components/Footer';
 import Overlay from '../components/Overlay';
 
-const FallingStyles = styled.div`
-  .zoomin {
-    animation-name: zoomin;
-    animation-duration: 1.5s;
-    animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
-    animation-fill-mode: both;
-    animation-direction: alternate;
-  }
+import { initLineDrop, initImageZoom } from '../utils/effect';
 
+const FallingStyles = styled.div`
   @keyframes zoomin {
     from {
       transform: scale(1, 1);
     }
     to {
       transform: scale(1.2, 1.2);
+    }
+  }
+  @keyframes zoomout {
+    from {
+      transform: scale(1.2, 1.2);
+    }
+    to {
+      transform: scale(1, 1);
     }
   }
 `;
@@ -62,30 +62,10 @@ export default function HomePage() {
     const area = document.querySelector('#scrollArea');
     const pTags = area.querySelectorAll('p');
     const images = area.querySelectorAll('.animate-zoom img');
-
-    pTags.forEach((tag) => tag.setAttribute('data-aos', 'fade-down'));
-
-    // Add AOS Scroll Library
-    AOS.init({ duration: 1500 });
-    AOS.refresh();
-
-    // Add zoom effect
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target.localName === 'img') {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('zoomin');
-          } else {
-            entry.target.classList.remove('zoomin');
-          }
-        }
-      });
-    });
-
-    images.forEach((tag) => {
-      observer.observe(tag);
-    });
+    initLineDrop(pTags);
+    initImageZoom(images);
   }, []);
+
 
   return (
     <Layout greenBg>
