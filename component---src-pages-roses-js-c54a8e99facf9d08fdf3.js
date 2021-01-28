@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{x3J4:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return a}));var r=t("q1tI"),u=t.n(r);function a(){return u.a.createElement("div",null,u.a.createElement("h1",null,"roses"))}}}]);
-//# sourceMappingURL=component---src-pages-roses-js-c54a8e99facf9d08fdf3.js.map

@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{iTe9:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return a}));var u=t("q1tI"),r=t.n(u);function a(){return r.a.createElement("div",null,r.a.createElement("h1",null,"0.5 DISPLACEMENT / MIGRATION"))}}}]);
-//# sourceMappingURL=component---src-pages-index-displace-migrate-js-30506a63e86afe5755b5.js.map
