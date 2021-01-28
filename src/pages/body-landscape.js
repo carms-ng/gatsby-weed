@@ -1,6 +1,12 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import Video from '../components/Video';
+import v_0 from '../assets/videos/body_landscape/000_body-landscape.mp4';
+import v_1 from '../assets/videos/body_landscape/001_body-landscape.mp4';
+import v_2 from '../assets/videos/body_landscape/002_body-landscape.mp4';
+import v_3 from '../assets/videos/body_landscape/003_body-landscape.mp4';
+import v_4 from '../assets/videos/body_landscape/004_body-landscape.mp4';
 import Layout from '../components/Layout';
 import NavSubpage from '../components/NavSubpage';
 import styled from 'styled-components';
@@ -48,7 +54,7 @@ export default function SubPageFive() {
               imgStyle={{ objectFit: 'contain', maxHeight: '40vh' }}
             />
           </div>
-          <div className="container pt-24">
+          <div className="container pt-16 md:pt-24">
             <Img
               fluid={jpgs[1].node.childImageSharp.fluid}
               alt={jpgs[1].node.base.split('.')[0]}
@@ -65,7 +71,7 @@ export default function SubPageFive() {
         </div>
 
         {/* Rows 2 thru 6 */}
-        <div className="grid gap-6 grid-cols-2 space-y-24 max-h-full">
+        <div className="grid gap-6 grid-cols-2 space-y-12 lg:space-y-24 max-h-full">
           {/* Row 2 */}
           <div className="container self-center lg:w-1/2 mx-auto">
             <Img
@@ -73,30 +79,21 @@ export default function SubPageFive() {
               alt={jpgs[3].node.base.split('.')[0]}
             />
           </div>
-          <div className="container flex max-h-full ">
+          <div className="relative self-start">
             <Img
               fluid={jpgs[4].node.childImageSharp.fluid}
               alt={jpgs[4].node.base.split('.')[0]}
-              className="container"
+              className=""
+              imgStyle={{ height: '100%', width: 'auto' }}
             />
-            <Img
-              fluid={jpgs[5].node.childImageSharp.fluid}
-              alt={jpgs[5].node.base.split('.')[0]}
-              className="container h-1/2 -ml-32 self-end bottom-6"
-              imgStyle={{
-                objectFit: 'contain',
-                maxHeight: '50vh',
-                width: '100%',
-              }}
-            />
+            <div className="absolute h-3/4 w-1/4 top-1/4 left-1/2">
+              <Video src={v_0} />
+            </div>
           </div>
 
           {/* Row 3 */}
           <div className="container self-center pt-12 lg:w-3/4 mx-auto">
-            <Img
-              fluid={jpgs[6].node.childImageSharp.fluid}
-              alt={jpgs[6].node.base.split('.')[0]}
-            />
+            <Video src={v_1} />
           </div>
 
           <div></div>
@@ -104,10 +101,7 @@ export default function SubPageFive() {
           {/* Row 4 */}
 
           <div className="container self-center pt-12 lg:w-3/4 mx-auto col-start-2">
-            <Img
-              fluid={jpgs[7].node.childImageSharp.fluid}
-              alt={jpgs[7].node.base.split('.')[0]}
-            />
+            <Video src={v_2} />
           </div>
 
           {/* Row 5 */}
@@ -203,10 +197,7 @@ export default function SubPageFive() {
           </div>
           {/* Row 9 */}
           <div className="container self-center mx-auto">
-            <Img
-              fluid={jpgs[16].node.childImageSharp.fluid}
-              alt={jpgs[16].node.base.split('.')[0]}
-            />
+            <Video src={v_3} />
           </div>
           <div className="container w-1/2 self-center mx-auto">
             <Img
@@ -247,17 +238,8 @@ export default function SubPageFive() {
         </div>
 
         {/* Row 11 */}
-        <div className="container self-center lg:w-1/2 mx-auto my-48">
-          <Img
-            fluid={jpgs[20].node.childImageSharp.fluid}
-            alt={jpgs[20].node.base.split('.')[0]}
-            className="container"
-            imgStyle={{
-              objectFit: 'contain',
-              maxHeight: '50vh',
-              width: '100%',
-            }}
-          />
+        <div className="container self-center lg:w-3/4 mx-auto my-48">
+          <Video src={v_4} />
         </div>
 
         {/* Row 12 */}
@@ -267,6 +249,14 @@ export default function SubPageFive() {
               fluid={jpgs[21].node.childImageSharp.fluid}
               alt={jpgs[21].node.base.split('.')[0]}
             />
+            <a
+              href="https://www.theguardian.com/cities/series/guardian-concrete-week"
+              target="_blank"
+            >
+              <p className="pt-6 text-lg sm:text-right underline transition duration-200 hover:text-green">
+                Concrete
+              </p>
+            </a>
           </div>
         </div>
       </ImageContainer>
