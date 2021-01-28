@@ -253,7 +253,7 @@ export default function SubPageFive() {
               href="https://www.theguardian.com/cities/series/guardian-concrete-week"
               target="_blank"
             >
-              <p className="pt-6 text-lg sm:text-right underline transition duration-200 hover:text-green">
+              <p className="pt-6 text-lg sm:text-right text-green hover:underline">
                 Concrete
               </p>
             </a>
