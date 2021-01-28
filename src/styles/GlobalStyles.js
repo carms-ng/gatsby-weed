@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     font-size: 1.15rem;
+    background-color: ${props => (props.greenBg ? '#fcfcf6' : '#fff')};
   }
 
   @media (max-width: 768px){

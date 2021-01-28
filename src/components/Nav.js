@@ -17,6 +17,7 @@ const NavStyles = styled.nav`
   .btn-lang {
     font-family: MonetaSans;
   }
+
 `;
 
 export default function Nav() {
