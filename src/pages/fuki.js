@@ -50,7 +50,7 @@ export default function SubPageSix() {
         {/* Row 1 */}
         <div className="relative mb-24">
           <div className="relative">
-            <Video classname="" src={v_0} />
+            <Video style={{ maxHeight: '80vh' }} src={v_0} />
             <div className="absolute w-1/4 bottom-2 left-2 lg:bottom-8 lg:left-4">
               <Img
                 fluid={jpgs[0].node.childImageSharp.fluid}
@@ -170,7 +170,7 @@ export default function SubPageSix() {
 
         {/* Row 5 */}
 
-        <div className="container w-2/3 relative my-24">
+        <div className="container w-1/2 relative my-24">
           <div className="container">
             <Img
               fluid={jpgs[4].node.childImageSharp.fluid}
@@ -178,6 +178,7 @@ export default function SubPageSix() {
               imgStyle={{
                 objectFit: 'contain',
                 maxWidth: '75vw',
+                maxHeight: '90vh',
               }}
             />
           </div>
@@ -194,14 +195,14 @@ export default function SubPageSix() {
         </div>
 
         {/* Row 6 */}
-        <div className="max-w-1/2 relative mx-auto my-24">
-          <div className="container max-w-1/2">
+        <div className="md:w-3/4 lg:w-5/12 max-h-90vh relative mx-auto my-24">
+          <div className="container max-h-90vh">
             <Img
               fluid={jpgs[6].node.childImageSharp.fluid}
               alt={jpgs[6].node.base.split('.')[0]}
               imgStyle={{
                 objectFit: 'contain',
-                maxWidth: '50vw',
+                maxHeight: '90vh',
               }}
             />
           </div>
