@@ -252,6 +252,7 @@ export default function SubPageFive() {
             <a
               href="https://www.theguardian.com/cities/series/guardian-concrete-week"
               target="_blank"
+              rel="noreferrer"
             >
               <p className="pt-6 text-lg sm:text-right text-green hover:underline">
                 Concrete

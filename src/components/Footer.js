@@ -31,29 +31,29 @@ export default function Nav() {
         <ul className="md:mr-24 xl:mr-36">
           <h6>overview</h6>
           <li>
-            <Link to="index-concrete-plant">
+            <Link to="/index-concrete-plant">
               0.1 CONCRETE & PLANT RELATIONSHIPS
             </Link>
           </li>
           <li>
-            <Link to="index-conditioned-nature">0.2 CONDITIONED NATURE</Link>
+            <Link to="/index-conditioned-nature">0.2 CONDITIONED NATURE</Link>
           </li>
           <li>
-            <Link to="index-plants-witness">0.3 PLANTS AS WITNESSES</Link>
+            <Link to="/index-plants-witness">0.3 PLANTS AS WITNESSES</Link>
           </li>
           <li>
-            <Link to="index-third-landscape">0.4 THIRD LANDSCAPE</Link>
+            <Link to="/index-third-landscape">0.4 THIRD LANDSCAPE</Link>
           </li>
           <li>
-            <Link to="index-displace-migrate">
+            <Link to="/index-displace-migrate">
               0.5 DISPLACEMENT / MIGRATION
             </Link>
           </li>
           <li>
-            <Link to="index-body-landscape">0.6 BODY IN / AS LANDSCAPE</Link>
+            <Link to="/index-body-landscape">0.6 BODY IN / AS LANDSCAPE</Link>
           </li>
           <li>
-            <Link to="index-furthermore">0.7 FURTHERMORE</Link>
+            <Link to="/index-furthermore">0.7 FURTHERMORE</Link>
           </li>
         </ul>
         <ol>

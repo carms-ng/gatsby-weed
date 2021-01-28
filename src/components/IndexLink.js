@@ -17,7 +17,12 @@ export default function IndexLink({ entry }) {
   }
   return (
     <IndexLinkStyles>
-      <a className="underline" href={entry.url}>
+      <a 
+        className="underline" 
+        href={entry.url}
+        target="_blank"
+        rel="noreferrer"
+      >
         {text()}
       </a>
       <span>
