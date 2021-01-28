@@ -168,16 +168,18 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-12 space-y-2 md:align-right self-center">
+          <div className="mt-12 space-y-2 md:align-right md:self-center">
             <p className="">Is a weed</p>
-            <p className="ml-8 sm:ml-16">
-              A plant negotiating concrete{' '}
-              <span className="pl-1 tracking-wider">rup</span>
-            </p>
-            <p className="text-right sm:text-left sm:ml-80">
-              <span className="tracking-wider">ture</span>
-            </p>
-            <p className="py-6 text-right sm:text-left sm:ml-96">s</p>
+            <div className="sm:ml-16">
+              <p>
+                A plant negotiating concrete
+                <span className="ml-2 tracking-wider">rup</span>
+              </p>
+              <p className="ml-60 pl-2 md:ml-72">
+                <span className="tracking-wider">ture</span>
+              </p>
+              <p className="py-4 ml-64 sm:ml-72 md:ml-80 pl-12">s</p>
+            </div>
             <div className="space-y-2 pb-12 leading-loose">
               <p className="text-right">
                 Are weeds pushing their way out of every crack,
@@ -375,9 +377,9 @@ export default function HomePage() {
           <div className="mx-auto">
             <p className="pb-12 tracking-wide">A PLANT PROLIFERATING</p>
             <p className="ml-16">
-              ernabling <span className="pl-2 tracking-widest">etnlmns</span>
+              enabling <span className="pl-2 tracking-widest">etnlmns</span>
             </p>
-            <p className="ml-36 pt-4">
+            <p className="ml-40 pl-1 pt-4">
               <span className="tracking-widest">nageet</span>
             </p>
           </div>
@@ -522,7 +524,7 @@ export default function HomePage() {
         </div>
 
         {/* 0.6 Poem */}
-        <div className="grid grid-cols-2">
+        <div className="grid md:grid-cols-2">
           {/* 0.6 Title Desktop */}
           <div className="title hidden md:block">
             <h3 className="title-width">Body in / as Landscape</h3>
@@ -534,31 +536,28 @@ export default function HomePage() {
             </Link>
           </div>
           {/* 0.6 Stanza 2 */}
-          <div>
+          <div className="mb-6 mx-6">
             <p className="ml-16">Is a weed</p>
-            <p className="ml-24">A paragon</p>
+            <p className="ml-24 mb-8">a paragon</p>
             <p className="">For bodies made to feel out of place</p>
             <p className="">For displaced bodies</p>
             <p className="">For contested bodies</p>
-            <p className="ml-2">
-              For Indigenous bodies whose land rights are con-
+            <p className="">
+              For Indigenous bodies whose land rights are contested
             </p>
-          </div>
-          <div className="my-24 ml-16 md:ml-24 lg:ml-36">
-            <p className="">tested</p>
-            <p className="">For migrant bodies denied ressources</p>
+            <p className="">For migrant bodies denied resources</p>
           </div>
         </div>
 
         <section className="my-12 grid md:grid-cols-3 max-w-3/4">
-          <div>
-            <p className="ml-16">A weed</p>
+          <div className="">
+            <p className="md:ml-16 lg:mr-16 lg:text-right ">A weed</p>
           </div>
-          <div className="col-span-2">
-            <p className="text-center mb-6 italic">
+          <div className="col-span-2 my-4">
+            <p className="text-center my-4 italic">
               Teaching the body how to become its own landscape
             </p>
-            <div className="img-container lg:max-w-1/2">
+            <div className="img-container lg:max-w-3/4">
               <Link to="fuki">
                 <Img
                   fluid={jpgs[6].node.childImageSharp.fluid}
