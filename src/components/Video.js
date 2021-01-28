@@ -8,5 +8,5 @@ export default function Video({ style, src }) {
         <source src={src} type="video/mp4" />
       </video>
     </div>
-  )
+  );
 }
