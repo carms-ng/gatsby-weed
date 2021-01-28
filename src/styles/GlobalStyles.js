@@ -13,10 +13,10 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     font-size: 16px;
-    background-color: #fcfcf6;
   }
   body {
     font-size: 1.15rem;
+    background-color: ${props => (props.greenBg ? '#fcfcf6' : '#fff')};
   }
 
   @media (max-width: 768px){

@@ -1,32 +1,34 @@
 import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
+import Nav from '../components/Nav';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_7 from '../assets/gifs/007_body-as-landscape.gif';
 import gif_2 from '../assets/gifs/002_conditioned-nature.gif';
+import line_drawing from '../assets/gifs/line-drawing.gif';
 import styled from 'styled-components';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 import IntroSection from '../components/Intro';
 import Footer from '../components/Footer';
 import Overlay from '../components/Overlay';
 
-const FallingStyles = styled.div`
-  .zoomin {
-    animation-name: zoomin;
-    animation-duration: 1.5s;
-    animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
-    animation-fill-mode: both;
-    animation-direction: alternate;
-  }
+import { initLineDrop, initImageZoom } from '../utils/effect';
 
+const FallingStyles = styled.div`
   @keyframes zoomin {
     from {
       transform: scale(1, 1);
     }
     to {
       transform: scale(1.2, 1.2);
+    }
+  }
+  @keyframes zoomout {
+    from {
+      transform: scale(1.2, 1.2);
+    }
+    to {
+      transform: scale(1, 1);
     }
   }
 `;
@@ -60,32 +62,20 @@ export default function HomePage() {
     const area = document.querySelector('#scrollArea');
     const pTags = area.querySelectorAll('p');
     const images = area.querySelectorAll('.animate-zoom img');
-
-    pTags.forEach((tag) => tag.setAttribute('data-aos', 'fade-down'));
-
-    // Add AOS Scroll Library
-    AOS.init({ duration: 1500 });
-    AOS.refresh();
-
-    // Image zoom effect
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target.localName === 'img') {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('zoomin');
-          } else {
-            entry.target.classList.remove('zoomin');
-          }
-        }
-      });
-    });
-
-    images.forEach(tag => observer.observe(tag));
+    initLineDrop(pTags);
+    initImageZoom(images);
   }, []);
 
+
   return (
-    <Layout>
-      {/* TODO: Intro Statement to be refined */}
+    <Layout greenBg>
+      <Nav />
+      <img
+        src={line_drawing}
+        alt="Line drawing of weeds"
+        className="absolute hidden md:block"
+        style={{maxWidth: "50%", top: "0", left: "-5vw"}}
+      />
       <div
         className="pt-32 pl-6 md:pt-60 md:pl-12 md:-ml-half-width"
         style={{ maxWidth: '80vw', fontFamily: 'MonetaSans' }}
@@ -122,7 +112,9 @@ export default function HomePage() {
           <p className="text-right sm:text-left sm:ml-96">
             a plant out of place
           </p>
-          <p className="text-right sm:text-left sm:ml-80">In a not no place</p>
+          <p className="text-right sm:text-left sm:ml-80">
+            In a not no place
+          </p>
           <p className="ml-36">Is a weed</p>
           <p className="text-right sm:text-left sm:ml-60">
             A (vegetal) being holding <em>ground</em>
@@ -195,8 +187,8 @@ export default function HomePage() {
                 Are weeds pushing their way out of every crack,
               </p>
               <p className="text-right">
-                nature’s proof of her will to resist the human’s urge to control
-                it?
+                nature’s proof of her will to resist the human’s urge to
+                control it?
               </p>
               <p className="pt-12 text-right">
                 A reminder that every built environment must exist in
@@ -216,9 +208,12 @@ export default function HomePage() {
             <div className="my-12 space-y-2 self-center">
               <p className="">Weeds,</p>
               <p className="ml-12">Blurring seductively clear</p>
-              <div className="space-y-2 pt-4 sm:ml-56 lg:ml-24">
+              <div className="space-y-2 pt-4 sm:ml-56 lg:ml-24 xl:mr-36">
                 <div className="flex flex-row-reverse">
-                  <div className="img-container max-w-1/2 self-start overflow-hidden">
+                  <div
+                    className="img-container max-w-1/2 self-start overflow-hidden"
+                    style={{ width: 'auto' }}
+                  >
                     <Link to="conditioned-nature">
                       <img src={gif_2} alt="" />
                       <Overlay />
@@ -237,7 +232,9 @@ export default function HomePage() {
                     </p>
                   </div>
                 </div>
-                <p className="ml-28 lg:hidden">S , roads, tidy delineations</p>
+                <p className="ml-28 lg:hidden">
+                  S , roads, tidy delineations
+                </p>
               </div>
             </div>
           </div>
@@ -273,12 +270,13 @@ export default function HomePage() {
             <p className="ml-12">
               Show us how to be in the presence of discomfort, of{' '}
               <span className="pl-4 tracking-wider">disruptions</span>
+
             </p>
             <p className="pt-24 ml-12">Is a weed</p>
             <p className="ml-32">A pioneer</p>
             {/* Modal 1 */}
             <p className="underline text-right sm:text-left sm:ml-32">
-              <button href="">An opportunistic germinator</button>
+              <Link to="">An opportunistic germinator</Link>
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -379,7 +377,6 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-
         <div className="grid md:grid-cols-2">
           {/* 0.4 Stanza 1 */}
           <div className="mx-auto">
@@ -420,7 +417,7 @@ export default function HomePage() {
             <p className="ml-24 md:pl-80">a landscape?</p>
             {/* MODAL 2 */}
             <p className="underline ml-36 md:pl-96">
-              <button href="#">A third landscape. </button>
+              <Link to="/">A third landscape. </Link>
             </p>
           </div>
           <div className="grid md:grid-cols-2">
@@ -442,7 +439,8 @@ export default function HomePage() {
             </div>
             <div className="space-y-4 lg:pb-12 lg:float-left">
               <p className="">
-                The types of weed found growing in soil indicate its composition
+                The types of weed found growing in soil indicate its
+                composition
               </p>
               <div className="ml-16 space-y-4 pt-12 float-right">
                 <p className="">Moss and plantain love an acidic ground</p>
@@ -467,7 +465,6 @@ export default function HomePage() {
         </div>
 
         {/* 0.5 Poem */}
-
         <div className="flex md:flex-row-reverse">
           <div
             className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2 self-start overflow-hidden"
@@ -502,11 +499,11 @@ export default function HomePage() {
         <section className="my-12 mx-auto max-w-3/4">
           <p className="pb-12">Is a weed</p>
           {/* MODAL 3 */}
-          <button href="#">
+          <Link to="/">
             <p className="underline ml-28 pb-12">
               The vegetal most akin to the human spirit
             </p>
-          </button>
+          </Link>
           <p className="pb-12">
             Weeds, testimonies of resilience and adaptability — their numerous
             seeds remaining dormant for many years, waiting for the right
