@@ -15,20 +15,20 @@ import Footer from '../components/Footer';
 import Overlay from '../components/Overlay';
 
 const FallingStyles = styled.div`
-  .zoomin {
-    animation-name: zoomin;
-    animation-duration: 1.5s;
-    animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
-    animation-fill-mode: both;
-    animation-direction: alternate;
-  }
-
   @keyframes zoomin {
     from {
       transform: scale(1, 1);
     }
     to {
       transform: scale(1.2, 1.2);
+    }
+  }
+  @keyframes zoomout {
+    from {
+      transform: scale(1.2, 1.2);
+    }
+    to {
+      transform: scale(1, 1);
     }
   }
 `;
@@ -69,18 +69,43 @@ export default function HomePage() {
     AOS.init({ duration: 1500 });
     AOS.refresh();
 
+    let previousY = 0
+    let previousRatio = 0
+
+    // Set threshold
+    const thresholdArray = steps => Array(steps + 1)
+      .fill(0)
+      .map((_, index) => index / steps || 0)
+
+    let options = {
+      threshold: thresholdArray(20),
+    }
+    console.log(options);
+
     // Add zoom effect
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.target.localName === 'img') {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('zoomin');
-          } else {
-            entry.target.classList.remove('zoomin');
+        const currentY = entry.boundingClientRect.y
+        const currentRatio = entry.intersectionRatio
+
+        // Scrolling down
+        if (currentY < previousY && currentRatio > 0.1) {
+          // entering (more is showing)
+          if (currentRatio > previousRatio) {
+            entry.target.style.animation = `1.5s cubic-bezier(0.11, 0, 0.5, 0) zoomin forwards`;
+            }
+            
+          } else if (currentY > previousY && currentRatio > 0.1) {
+            // leaving (less is showing)
+            if (currentRatio < previousRatio) {
+              entry.target.style.animation = `1s ease-out zoomout forwards`;
           }
         }
+
+        previousY = currentY
+        previousRatio = currentRatio
       });
-    });
+    }, options);
 
     images.forEach((tag) => {
       observer.observe(tag);
