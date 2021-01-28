@@ -136,10 +136,17 @@ export default function SubPageSix() {
         <div className="container flex justify-between items-center my-24 text-sm">
           <div className="w-1/2">
             <p>
-              Attention ! C'est une plante tr`es envahissante : il n'en faut
-              qu'un seul plant pour couvrir une vaste surface. Aussei, ne
-              libérez pas cette plante dans la nature, car elle étouffe la
-              végétation locale.
+              Attention ! C'est une plante{' '}
+              <a
+                href="https://www.lapresse.ca/maison/immobilier/conseils/200707/13/01-870610-ou-trouver-des-petasites-japonais-geants.php"
+                target="_blank"
+                className="text-green hover:underline"
+              >
+                très envahissante{' '}
+              </a>
+              : il n'en faut qu'un seul plant pour couvrir une vaste surface.
+              Aussi, ne libérez pas cette plante dans la nature, car elle
+              étouffe la végétation locale.
             </p>
           </div>
           <div className="w-1/3 mr-6">
@@ -223,6 +230,25 @@ export default function SubPageSix() {
             alt={jpgs[7].node.base.split('.')[0]}
             imgStyle={{ objectFit: 'contain', maxHeight: '40vh' }}
           />
+
+          <p>
+            By
+            <a
+              href="https://commons.wikimedia.org/w/index.php?curid=79715189"
+              target="_blank"
+              className="text-green hover:underline"
+            >
+              {' '}
+              Matsuura Takeshiro
+            </a>
+          </p>
+          <a
+            href="https://en.wikipedia.org/wiki/Korpokkur"
+            target="_blank"
+            className="text-green hover:underline"
+          >
+            <p>Korpokkur</p>
+          </a>
         </div>
 
         {/* Row 11 */}
