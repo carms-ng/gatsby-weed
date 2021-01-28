@@ -16,6 +16,9 @@ module.exports = {
       beige: {
         DEFAULT: '#FFFAF3',
       },
+      white: {
+        DEFAULT: '#FFFFFF',
+      },
     },
     letterSpacing: {
       wide: '.025em',
@@ -31,6 +34,7 @@ module.exports = {
         '1/4': '25vh',
         '1/2': '50vh',
         '3/4': '75vh',
+        '90vh': '90vh',
       },
       maxWidth: {
         '1/4': '25vw',

@@ -66,7 +66,6 @@ export default function HomePage() {
     initImageZoom(images);
   }, []);
 
-
   return (
     <Layout greenBg>
       <Nav />
@@ -74,7 +73,7 @@ export default function HomePage() {
         src={line_drawing}
         alt="Line drawing of weeds"
         className="absolute hidden md:block"
-        style={{maxWidth: "50%", top: "0", left: "-5vw"}}
+        style={{ maxWidth: '50%', top: '0', left: '-5vw' }}
       />
       <div
         className="pt-32 pl-6 md:pt-60 md:pl-12 md:-ml-half-width"
@@ -94,7 +93,7 @@ export default function HomePage() {
       </section>
       <FallingStyles id="scrollArea">
         <section className="grid pt-8">
-          <Link to="amarente" className="img-container max-w-3/4 mx-auto">
+          <Link to="amaranth" className="img-container max-w-3/4 mx-auto">
             <Img
               fluid={jpgs[0].node.childImageSharp.fluid}
               alt={jpgs[0].node.base.split('.')[0]}
@@ -112,9 +111,7 @@ export default function HomePage() {
           <p className="text-right sm:text-left sm:ml-96">
             a plant out of place
           </p>
-          <p className="text-right sm:text-left sm:ml-80">
-            In a not no place
-          </p>
+          <p className="text-right sm:text-left sm:ml-80">In a not no place</p>
           <p className="ml-36">Is a weed</p>
           <p className="text-right sm:text-left sm:ml-60">
             A (vegetal) being holding <em>ground</em>
@@ -181,14 +178,13 @@ export default function HomePage() {
               <span className="tracking-wider">ture</span>
             </p>
             <p className="py-6 text-right sm:text-left sm:ml-96">s</p>
-
             <div className="space-y-2 pb-12 leading-loose">
               <p className="text-right">
                 Are weeds pushing their way out of every crack,
               </p>
               <p className="text-right">
-                nature’s proof of her will to resist the human’s urge to
-                control it?
+                nature’s proof of her will to resist the human’s urge to control
+                it?
               </p>
               <p className="pt-12 text-right">
                 A reminder that every built environment must exist in
@@ -232,9 +228,7 @@ export default function HomePage() {
                     </p>
                   </div>
                 </div>
-                <p className="ml-28 lg:hidden">
-                  S , roads, tidy delineations
-                </p>
+                <p className="ml-28 lg:hidden">S , roads, tidy delineations</p>
               </div>
             </div>
           </div>
@@ -270,7 +264,6 @@ export default function HomePage() {
             <p className="ml-12">
               Show us how to be in the presence of discomfort, of{' '}
               <span className="pl-4 tracking-wider">disruptions</span>
-
             </p>
             <p className="pt-24 ml-12">Is a weed</p>
             <p className="ml-32">A pioneer</p>
@@ -439,8 +432,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-4 lg:pb-12 lg:float-left">
               <p className="">
-                The types of weed found growing in soil indicate its
-                composition
+                The types of weed found growing in soil indicate its composition
               </p>
               <div className="ml-16 space-y-4 pt-12 float-right">
                 <p className="">Moss and plantain love an acidic ground</p>
@@ -452,8 +444,8 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* 0.5 Title Mobile */}
         <div className="mx-auto">
-          {/* 0.5 Title Mobile */}
           <div className="w-11/12 mx-auto mb-6 text-rose md:hidden">
             <Link to="index-displace-migrate">
               <h2 className="text-5xl md:text-7xl">0.5</h2>

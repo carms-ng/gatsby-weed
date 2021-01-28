@@ -25,7 +25,7 @@ export default function Nav() {
     query {
       fileName: file(relativePath: { eq: "Home_no-text.png" }) {
         childImageSharp {
-          fluid(maxWidth: 250) {
+          fluid(maxWidth: 250, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }

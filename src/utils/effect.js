@@ -60,7 +60,7 @@ export const initImageZoom = (images) => {
       } else if (currentY > previousY[entry.target] && currentRatio > 0.1) {
         // leaving (less is showing)
         if (currentRatio < previousRatio[entry.target]) {
-          entry.target.style.animation = `1s ease-out zoomout forwards`;
+          entry.target.style.animation = `1.5s cubic-bezier(0.11, 0, 0.5, 0) zoomout forwards`;
         }
       }
 
