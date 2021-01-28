@@ -1,9 +1,12 @@
 import React from 'react';
+import IndexContainer from '../components/IndexContainer';
+import columns from '../assets/contents/DisplaceMigrateContent';
+import Layout from '../components/Layout';
 
-export default function IndexPageFive() {
+export default function SubPageSeven() {
   return (
-    <div>
-      <h1>0.5 DISPLACEMENT / MIGRATION</h1>
-    </div>
+    <Layout>
+      <IndexContainer header="Displacement / Migration" columns={columns} />
+    </Layout>
   );
 }

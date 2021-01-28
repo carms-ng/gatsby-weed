@@ -1,10 +1,13 @@
 import React from 'react';
 import IndexContainer from '../components/IndexContainer';
-import Content from '../assets/contents/FurthermoreContent';
+import columns from '../assets/contents/FurthermoreContent';
+import Layout from '../components/Layout';
 
 
 export default function SubPageSeven() {
   return (
-    <IndexContainer header="Furthermore" content={Content} />
+    <Layout>
+      <IndexContainer header="Furthermore" columns={columns} />
+    </Layout>
   );
 }

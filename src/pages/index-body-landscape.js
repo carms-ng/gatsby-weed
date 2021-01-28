@@ -1,9 +1,12 @@
 import React from 'react';
+import IndexContainer from '../components/IndexContainer';
+import columns from '../assets/contents/BodyLandscapeContent';
+import Layout from '../components/Layout';
 
-export default function IndexPageSix() {
+export default function SubPageSeven() {
   return (
-    <div>
-      <h1>0.6 BODY IN / AS LANDSCAPE</h1>
-    </div>
+    <Layout>
+      <IndexContainer header="Body In / As Landscape" columns={columns} />
+    </Layout>
   );
 }

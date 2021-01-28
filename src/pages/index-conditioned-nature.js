@@ -1,9 +1,12 @@
 import React from 'react';
+import IndexContainer from '../components/IndexContainer';
+import columns from '../assets/contents/ConditionedNatureContent';
+import Layout from '../components/Layout';
 
-export default function IndexPageTwo() {
+export default function SubPageSeven() {
   return (
-    <div>
-      <h1>0.2 CONDITIONED NATURE</h1>
-    </div>
+    <Layout>
+      <IndexContainer header="Conditioned Nature" columns={columns} />
+    </Layout>
   );
 }
