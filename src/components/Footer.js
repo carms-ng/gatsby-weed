@@ -58,11 +58,25 @@ export default function Nav() {
         </ul>
         <ol>
           <h6>footnotes</h6>
-          <li>1. Nowness</li>
           <li>
-            <a href="https://www.nytimes.com/2016/09/23/t-magazine/design/isabel-julian-bannerman-garden-designer-cornwall-norman-castle.html">
-              2. Richardson, Tim, NY Times
+            1. Johnnie Shand Kydd,
+            <a
+              href="https://www.nowness.com/series/great-gardens/trematon-castle-cornwall-julian-isabel-bannerman"
+              target="_blank"
+            >
+              “Great Gardens: Trematon Castle”
             </a>
+            , Nowness, 2016.
+          </li>
+          <li>
+            2. Tim Richardson,
+            <a
+              href="https://www.nytimes.com/2016/09/23/t-magazine/design/isabel-julian-bannerman-garden-designer-cornwall-norman-castle.html"
+              target="_blank"
+            >
+              “A Garden Sanctuary of Medieval Magic”
+            </a>
+            , New York Times, September 23 2016.
           </li>
         </ol>
       </section>
