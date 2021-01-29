@@ -353,9 +353,11 @@ export default function HomePage() {
 
             <div className="space-y-8 self-center text-right lg:text-left pt-12 lg:pt-32 lg:pb-12 order-4">
               <p className="mr-40 lg:mx-0">Is a weed</p>
-              <p className="mr-16 pb-4 lg:ml-24 lg:mr-0 ">To take space</p>
-              <p className="mr-48 lg:ml-24 lg:mr-0 ">To speak louder</p>
-              <p className="mr-56 lg:ml-24 lg:mr-0 ">To live longer</p>
+              <p className="mr-16 pb-4 lg:ml-8 xl:ml-24 lg:mr-0 ">
+                To take space
+              </p>
+              <p className="mr-48 lg:ml-8 xl:ml-24 lg:mr-0 ">To speak louder</p>
+              <p className="mr-56 lg:ml-8 xl:ml-24 lg:mr-0 ">To live longer</p>
             </div>
           </div>
         </section>
