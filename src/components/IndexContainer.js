@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Layout from './Layout';
 import IndexColumn from './IndexColumn';
 import NavSubpage from './NavSubpage';
+import Footer from './Footer';
 
 const IndexContainerStyles = styled.div`
   padding: 20px;
@@ -21,6 +22,7 @@ export default function IndexContainer({ header, columns }) {
           {columns.map(column => <IndexColumn key={column.category} category={column.category} entries={column.entries} />)}
         </div>
       </IndexContainerStyles>
+      <Footer />
     </Layout>
   );
 }

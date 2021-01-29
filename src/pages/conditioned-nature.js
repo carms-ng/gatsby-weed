@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
@@ -7,44 +7,16 @@ import Video from '../components/Video';
 import Video_15 from '../assets/videos/015_conditioned-nature.mp4';
 import styled from 'styled-components';
 import { rand } from '../utils/helper';
-import { explode } from '../utils/effect';
+import { initImagePosition, explodeAndDrift } from '../utils/effect';
+
 
 const ExplodeStyles = styled.div`
   overflow: hidden;
-  padding: 100px;
   .explodee {
     top: 50vh;
-    left: 50vw;
+    left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 1s ease-in-out;
-  }
-  .floating {
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-  @keyframes floating {
-    10%,
-    90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    20%,
-    80% {
-      transform: translate3d(2px, 0, 0);
-    }
-    30%,
-    50%,
-    70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-    40%,
-    60% {
-      transform: translate3d(4px, 0, 0);
-    }
+    cursor: pointer;
   }
 `;
 
@@ -70,10 +42,15 @@ export default function SubPageThree() {
     }
   `);
 
+  useEffect(() => {
+    const images = document.querySelectorAll(".explodee");
+    initImagePosition(images);
+  },[]);
+
   return (
     <Layout>
       <Nav />
-      <ExplodeStyles onClick={explode}>
+      <ExplodeStyles onClick={explodeAndDrift}>
         {data.allFile.edges.map(({ node }) => (
           <Img
             style={{
@@ -90,8 +67,10 @@ export default function SubPageThree() {
         ))}
         <Video
           style={{
-            width: '50%',
-            margin: '20rem auto 0',
+            position: 'absolute',
+            overflow: 'visible',
+            width: `${rand(70, 30)}vmin`,
+            zIndex: rand(20, 1),
           }}
           className="explodee"
           src={Video_15}

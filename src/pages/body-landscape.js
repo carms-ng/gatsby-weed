@@ -7,6 +7,7 @@ import v_1 from '../assets/videos/body_landscape/001_body-landscape.mp4';
 import v_2 from '../assets/videos/body_landscape/002_body-landscape.mp4';
 import v_3 from '../assets/videos/body_landscape/003_body-landscape.mp4';
 import v_4 from '../assets/videos/body_landscape/004_body-landscape.mp4';
+import v_5 from '../assets/videos/body_landscape/005_body-landscape.mp4';
 import Layout from '../components/Layout';
 import NavSubpage from '../components/NavSubpage';
 import styled from 'styled-components';
@@ -39,7 +40,6 @@ export default function SubPageFive() {
   `);
 
   const jpgs = data.allFile.edges;
-  console.log(jpgs);
 
   return (
     <Layout>
@@ -144,16 +144,7 @@ export default function SubPageFive() {
             />
           </div>
           <div className="container self-center ml-auto mr-0 md:w-3/4 lg:w-1/2">
-            <Img
-              fluid={jpgs[12].node.childImageSharp.fluid}
-              alt={jpgs[12].node.base.split('.')[0]}
-              className="container"
-              imgStyle={{
-                objectFit: 'contain',
-                maxHeight: '50vh',
-                width: '100%',
-              }}
-            />
+            <Video src={v_5} />
           </div>
         </div>
 
