@@ -1,50 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
-import NavSubpage from '../components/NavSubpage';
+import Nav from '../components/Nav';
 import styled from 'styled-components';
 import { rand } from '../utils/helper';
-import { explode } from '../utils/effect';
+import { initImagePosition, explodeAndDrift } from '../utils/effect';
 
 const ExplodeStyles = styled.div`
   overflow: hidden;
-  padding: 100px;
   .explodee {
     top: 50vh;
-    left: 50vw;
+    left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 1s ease-in-out;
+    cursor: pointer;
   }
-  .floating {
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-  @keyframes floating {
-    10%,
-    90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    20%,
-    80% {
-      transform: translate3d(2px, 0, 0);
-    }
-    30%,
-    50%,
-    70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-    40%,
-    60% {
-      transform: translate3d(4px, 0, 0);
-    }
-  }
-`;
+`
 
 export default function SubPageTwo() {
   const data = useStaticQuery(graphql`
@@ -68,10 +39,15 @@ export default function SubPageTwo() {
     }
   `);
 
+  useEffect(() => {
+    const images = document.querySelectorAll(".explodee");
+    initImagePosition(images);
+  },[]);
+
   return (
     <Layout>
-      <NavSubpage />
-      <ExplodeStyles onClick={explode}>
+      <Nav />
+      <ExplodeStyles onClick={explodeAndDrift}>
         {data.allFile.edges.map(({ node }) => (
           <Img
             style={{

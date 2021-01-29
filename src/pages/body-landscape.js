@@ -39,7 +39,6 @@ export default function SubPageFive() {
   `);
 
   const jpgs = data.allFile.edges;
-  console.log(jpgs);
 
   return (
     <Layout>

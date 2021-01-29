@@ -2,21 +2,86 @@ import { rand } from './helper';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export const explode = () => {
+// Prep image position for explode effect
+export const initImagePosition = (images) => {
+  images.forEach(image => {
+    image.style.top = window.innerHeight / 2 - image.offsetHeight / 2 + 'px';
+    image.style.left = image.parentElement.offsetWidth / 2 - image.offsetWidth / 2 + 'px';
+    image.style.transform = `translate(0, 0)`;
+    image.style.transition = `all 1s ease-in-out`;
+  })
+}
+
+// Explode effect upon click, then a slow drft.
+export const explodeAndDrift = () => {
   const explodees = document.querySelectorAll(".explodee");
   if (explodees) {
-    // set window height
+    // Set window height
     let pageHeight = 0;
     explodees.forEach((elem) => {
-      pageHeight += elem.clientHeight;
+      pageHeight += elem.offsetHeight;
     })
-    // for each of the element set top and left style randomly
+    // PageHeight at least has to be 100vh;
+    pageHeight = pageHeight < window.innerHeight ? window.innerHeight : pageHeight / 1.5;
+
     explodees.forEach((elem) => {
-      // scale down by 1.2 to reduce empty spaces
-      elem.style.top = (rand(pageHeight, 0) - (elem.clientHeight / 2)) / 1.2 + "px";
-      elem.style.left = rand(80, 20) / 100 * window.innerWidth - (elem.clientHeight / 2) + "px";
-      elem.classList.add("floating");
-      elem.style.animationDuration = rand(10, 2) + "s";
+      // update transition property
+      elem.style.transition = `all 0.8s ease-in-out`;
+      const initialY = parseInt(elem.style.top, 10);
+      const initialX = parseInt(elem.style.left, 10)
+
+      // Set the canvas
+      const maxX = window.innerWidth - elem.offsetWidth;
+      const maxY = pageHeight - elem.offsetHeight;
+
+      // Move image to a random position
+      const y = rand(0, maxY);
+      const x = rand(0, maxX);
+      setTimeout(() => {
+        elem.style.top = y + 'px';
+        elem.style.left = x + 'px';
+      }, 100)
+
+      // Calculate projected position
+      let finalX;
+      let finalY;
+
+      if (x === initialX && y === initialY) {
+        finalX = maxX;
+        finalY = maxY;
+      } else if (x === initialX) {
+        if (y > initialY) {
+          finalY = maxY;
+          finalX = x;
+        } else {
+          finalY = 0;
+          finalX = x;
+        }
+      } else if (y === initialY) {
+        if (x > initialX) {
+          finalY = y;
+          finalX = maxX;
+        } else {
+          finalY = y;
+          finalX = 0;
+        }
+      } else {
+        const landaLeft = (0 - initialX) / ( x - initialX );
+        const landaRight = (maxX - initialX) / ( x - initialX );
+        const landaTop = (0 - initialY) / ( y - initialY );
+        const landaBottom = (maxY - initialY) / ( y - initialY );
+        const positiveLandas = [landaLeft, landaRight, landaTop, landaBottom].filter(landa => landa > 0 );
+        const minLanda = Math.min(...positiveLandas);
+        finalY = minLanda * (y - initialY) + initialY;
+        finalX = minLanda * (x - initialX) + initialX;
+      }
+
+      // Slow glide
+      setTimeout(() => {
+        elem.style.transition = `all 45s linear`;
+          elem.style.top = finalY + 'px';
+          elem.style.left = finalX + 'px';
+      }, 1000)
     })
   }
 }
