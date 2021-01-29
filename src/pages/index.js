@@ -11,6 +11,10 @@ import styled from 'styled-components';
 import IntroSection from '../components/Intro';
 import Footer from '../components/Footer';
 import Overlay from '../components/Overlay';
+import ModalOne from '../components/Modals/ModalOne';
+import ModalTwo from '../components/Modals/ModalTwo';
+import ModalThree from '../components/Modals/ModalThree';
+import useModal from '../utils/useModal';
 
 import { initLineDrop, initImageZoom } from '../utils/effect';
 
@@ -65,6 +69,9 @@ export default function HomePage() {
     initLineDrop(pTags);
     initImageZoom(images);
   }, []);
+
+  // Modal
+  const { isVisible, toggleModal } = useModal();
 
   return (
     <Layout greenBg>
@@ -260,7 +267,7 @@ export default function HomePage() {
         </div>
 
         {/* 0.2 Poem */}
-        <section className="flex flex-col my-12">
+        <section className="flex flex-col my-12 relative">
           <div className="space-y-2 pb-12 leading-loose">
             <p className="">Weeds,</p>
             <p className="ml-12">
@@ -270,8 +277,14 @@ export default function HomePage() {
             <p className="pt-24 ml-12">Is a weed</p>
             <p className="ml-32">A pioneer</p>
             {/* Modal 1 */}
-            <p className="underline text-right sm:text-left sm:ml-32">
-              <Link to="">An opportunistic germinator</Link>
+            <p className="underline text-right sm:text-left sm:ml-32 relative">
+              <button
+                onClick={toggleModal}
+                className="underline text-right sm:text-left sm:ml-32"
+              >
+                An opportunistic germinator
+              </button>
+              <ModalOne isVisible={isVisible} hideModal={toggleModal} />
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -289,6 +302,13 @@ export default function HomePage() {
               <p className="sm:ml-28">
                 A history maker, a storyteller, a punctuator
               </p>
+            </div>
+            <div className="space-y-2">
+              <p>Is a weed</p>
+              <button onClick={toggleModal} className="underline ml-20">
+                A witness of TIME recording histories
+              </button>
+              <ModalTwo isVisible={isVisible} hideModal={toggleModal} />
             </div>
           </div>
         </section>
@@ -412,7 +432,7 @@ export default function HomePage() {
               A plant living in the urban human habitat
             </p>
             <p className="ml-24 md:pl-80">a landscape?</p>
-            {/* MODAL 2 */}
+            {/* MODAL 3 */}
             <p className="underline ml-36 md:pl-96">
               <Link to="/">A third landscape. </Link>
             </p>
