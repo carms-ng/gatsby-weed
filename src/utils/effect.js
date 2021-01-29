@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 export const initImagePosition = (images) => {
   images.forEach(image => {
     image.style.top = window.innerHeight / 2 - image.offsetHeight / 2 + 'px';
-    image.style.left = image.parentElement.offsetWidth / 2 - image.offsetWidth / 2 + 'px';
+    image.style.left = window.innerWidth / 2 - image.offsetWidth / 2 + 'px';
     image.style.transform = `translate(0, 0)`;
     image.style.transition = `all 1s ease-in-out`;
   })
@@ -17,18 +17,15 @@ export const explodeAndDrift = () => {
   const explodees = document.querySelectorAll(".explodee");
   if (explodees) {
     // Set window height
-    let pageHeight = 0;
-    explodees.forEach((elem) => {
-      pageHeight += elem.offsetHeight;
-    })
+    let pageHeight = [...explodees].map(elem => elem.offsetHeight).reduce((a, b) => a + b, 0);
     // PageHeight at least has to be 100vh;
     pageHeight = pageHeight < window.innerHeight ? window.innerHeight : pageHeight / 1.5;
 
-    explodees.forEach((elem) => {
+    explodees.forEach(elem => {
       // update transition property
       elem.style.transition = `all 0.8s ease-in-out`;
       const initialY = parseInt(elem.style.top, 10);
-      const initialX = parseInt(elem.style.left, 10)
+      const initialX = parseInt(elem.style.left, 10);
 
       // Set the canvas
       const maxX = window.innerWidth - elem.offsetWidth;
@@ -43,8 +40,8 @@ export const explodeAndDrift = () => {
       }, 100)
 
       // Calculate projected position
-      let finalX;
-      let finalY;
+      let finalY = y;
+      let finalX = x;
 
       if (x === initialX && y === initialY) {
         finalX = maxX;
