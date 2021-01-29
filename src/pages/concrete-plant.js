@@ -13,11 +13,7 @@ export default function SubPageTwo() {
             base
             childImageSharp {
               fluid(maxWidth: 2048, quality: 80) {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -32,8 +28,7 @@ export default function SubPageTwo() {
         <Img
           style={{
             position: 'absolute',
-            overflow: 'visible',
-            width: `${rand(70, 30)}vmin`,
+            width: `${rand(70, 40)}vmin`,
             zIndex: rand(20, 1),
           }}
           className="explodee"

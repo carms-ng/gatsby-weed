@@ -15,11 +15,7 @@ export default function SubPageThree() {
             base
             childImageSharp {
               fluid(maxWidth: 2048, quality: 80) {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -34,8 +30,7 @@ export default function SubPageThree() {
         <Img
           style={{
             position: 'absolute',
-            overflow: 'visible',
-            width: `${rand(70, 30)}vmin`,
+            width: `${rand(70, 40)}vmin`,
             zIndex: rand(20, 1),
           }}
           className="explodee"
@@ -47,8 +42,7 @@ export default function SubPageThree() {
       <Video
         style={{
           position: 'absolute',
-          overflow: 'visible',
-          width: `${rand(70, 30)}vmin`,
+          width: `${rand(70, 40)}vmin`,
           zIndex: rand(20, 1),
         }}
         className="explodee"
