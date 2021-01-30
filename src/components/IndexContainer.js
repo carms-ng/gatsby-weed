@@ -14,7 +14,7 @@ export default function IndexContainer({ header, columns }) {
     <Layout greenBg>
       <NavSubpage />
       <IndexContainerStyles>
-        <h1 className="pb-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="pb-6 text-3xl sm:text-4xl md:text-6xl xl:text-7xl">
           {header}
         </h1>
  
