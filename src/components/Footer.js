@@ -21,6 +21,9 @@ const FooterStyles = styled.nav`
   ul {
     list-style: none;
   }
+  a:hover {
+      text-decoration: underline;
+  }
 `;
 
 export default function Nav() {
@@ -56,35 +59,26 @@ export default function Nav() {
             <Link to="/index-furthermore">0.7 FURTHERMORE</Link>
           </li>
         </ul>
-        <ol>
-          <h6>footnotes</h6>
+        <ul>
           <li>
-            1. Johnnie Shand Kydd,
-            <a
-              href="https://www.nowness.com/series/great-gardens/trematon-castle-cornwall-julian-isabel-bannerman"
-              target="_blank"
-              rel="noreferrer"
-              className="text-green hover:underline"
-              id="foot"
-            >
-              “Great Gardens: Trematon Castle”
-            </a>
-            , Nowness, 2016.
+            <Link to="/amaranth">Amaranth</Link>
           </li>
           <li>
-            2. Tim Richardson,
-            <a
-              href="https://www.nytimes.com/2016/09/23/t-magazine/design/isabel-julian-bannerman-garden-designer-cornwall-norman-castle.html"
-              target="_blank"
-              rel="noreferrer"
-              className="text-green hover:underline"
-              id="foot"
-            >
-              “A Garden Sanctuary of Medieval Magic”
-            </a>
-            , New York Times, September 23 2016.
+            <Link to="/concrete-plant">Plants through Concrete</Link>
           </li>
-        </ol>
+          <li>
+            <Link to="/conditioned-nature">Negotiated Nature</Link>
+          </li>
+          <li>
+            <Link to="/body-landscape">Body In Landscape</Link>
+          </li>
+          <li>
+            <Link to="/fuki">Body As Landscape</Link>
+          </li>
+          <li>
+            <Link to="/roses">Wild Roses</Link>
+          </li>
+        </ul>
       </section>
     </FooterStyles>
   );
