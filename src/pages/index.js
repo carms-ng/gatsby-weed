@@ -621,6 +621,39 @@ export default function HomePage() {
           </div>
         </div>
       </FallingStyles>
+
+      {/* Footnotes */}
+      <section>
+        <ol className="space-y-2">
+            <h6 className="my-4 text-xl tracking-wide">FOOTNOTES</h6>
+            <li>
+              1. Johnnie Shand Kydd,
+              <a
+                href="https://www.nowness.com/series/great-gardens/trematon-castle-cornwall-julian-isabel-bannerman"
+                target="_blank"
+                rel="noreferrer"
+                className="text-green hover:underline"
+                id="foot"
+              >
+                “Great Gardens: Trematon Castle”
+              </a>
+              , Nowness, 2016.
+            </li>
+            <li>
+              2. Tim Richardson,
+              <a
+                href="https://www.nytimes.com/2016/09/23/t-magazine/design/isabel-julian-bannerman-garden-designer-cornwall-norman-castle.html"
+                target="_blank"
+                rel="noreferrer"
+                className="text-green hover:underline"
+                id="foot"
+              >
+                “A Garden Sanctuary of Medieval Magic”
+              </a>
+              , New York Times, September 23 2016.
+            </li>
+          </ol>
+        </section>
       <Footer />
     </Layout>
   );
