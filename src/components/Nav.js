@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
-  z-index: 99;
+  z-index: 39;
   position: absolute;
   top: 0;
   right: 0;
@@ -13,11 +13,9 @@ const NavStyles = styled.nav`
     display: flex;
     justify-content: flex-end;
   }
-
   .btn-lang {
     font-family: MonetaSans;
   }
-
 `;
 
 export default function Nav() {

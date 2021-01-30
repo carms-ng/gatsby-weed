@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
@@ -9,6 +9,36 @@ const ImageContainer = styled.div`
   overflow: hidden;
   max-width: 90vw;
   margin: auto;
+`;
+
+const LightboxStyles = styled.div`
+  justify-content: center;
+  align-items: center;
+  z-index: 48;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+
+  .modal-container {
+    width: 100%;
+    z-index: 49;
+  }
+  .lightbox__switch {
+    display: grid;
+    place-content: center center;
+    z-index: 50;
+    position: absolute;
+    padding: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    color: var(--rose-light);
+    line-height: 0.5;
+    font-size: 3rem;
+    /* background-color: black; */
+  }
 `;
 
 export default function SubPageOne() {
@@ -31,24 +61,55 @@ export default function SubPageOne() {
       }
     }
   `);
-
   const jpgs = data.allFile.edges;
-  console.log(jpgs);
+
+  const [isLightBoxOpen, setLightBox] = useState(false)
+  const openModal = (e) => {
+    // check if screen-size is mobile 
+    if (window.innerWidth <= 640) {
+      // querySelect lightbox
+      const container = document.querySelector('.lightbox__container');
+      // inject innerHTML into the modal
+      container.appendChild(e.target.cloneNode(true));
+      // open the lightBox;
+      setLightBox(true);
+    }
+  }
+
+  const closeModal = (e) => {
+    // clear the container
+    e.currentTarget.nextSibling.innerHTML = "";
+    // close the lightBox;
+    setLightBox(false);
+  }
 
   return (
     <Layout>
+      <LightboxStyles
+        className="lightbox"
+        style={{ display: (isLightBoxOpen? "flex": "none")}}
+      >
+        {/* eslint-disable-next-line */}
+        <div 
+          className="lightbox__switch"
+          onClick={closeModal}
+        >+</div>
+        <div className="lightbox__container" />
+      </LightboxStyles>
       <NavSubpage />
       <ImageContainer>
         {/* Row 1 */}
         <div className="container grid relative">
-          <div className="container w-1/2 absolute self-center z-10">
+          {/* eslint-disable-next-line */}
+          <div className="container w-1/2 absolute self-center z-10" onClick={openModal} > 
             <Img
               fluid={jpgs[0].node.childImageSharp.fluid}
               alt={jpgs[0].node.base.split('.')[0]}
               imgStyle={{ objectFit: 'contain', width: '100%' }}
             />
           </div>
-          <div className="container w-3/4 ml-auto mr-0">
+          {/* eslint-disable-next-line */}
+          <div className="container w-3/4 ml-auto mr-0" onClick={openModal}>
             <Img
               fluid={jpgs[1].node.childImageSharp.fluid}
               alt={jpgs[1].node.base.split('.')[0]}
