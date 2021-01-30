@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import PDF from '../assets/pdfs/What-is-a-Weed_FR.pdf';
 
 const NavStyles = styled.nav`
   z-index: 39;
@@ -40,10 +41,11 @@ export default function NavSubpage() {
         <button
           type="button"
           className="btn-lang p-2"
-          title="Télécharger le PDF"
-          href="#"
+          title="Téléchargez le PDF"
         >
+          <a href={PDF} download>
           FR
+          </a>
         </button>
       </div>
       <div className="home">
