@@ -295,35 +295,36 @@ export default function SubPageSix() {
             }}
           />
         </div>
-      </ImageContainer>
-      {/* Row 12 */}
 
-      <div className="container w-full mx-auto relative my-24">
-        <div className="container relative mx-auto max-w-3/4">
-          <Img
-            fluid={jpgs[9].node.childImageSharp.fluid}
-            alt={jpgs[9].node.base.split('.')[0]}
-            className="container"
-            imgStyle={{
-              objectFit: 'contain',
-              maxWidth: '75vw',
-            }}
-          />
-          <div className="container absolute max-w-1/4 top-6 md:top-12 right-0">
-            <Video style={{ width: '20vw' }} src={v_4} />
+        {/* Row 12 */}
+
+        <div className="container w-full mx-auto relative my-24">
+          <div className="container relative mx-auto max-w-3/4">
+            <Img
+              fluid={jpgs[9].node.childImageSharp.fluid}
+              alt={jpgs[9].node.base.split('.')[0]}
+              className="container"
+              imgStyle={{
+                objectFit: 'contain',
+                maxWidth: '75vw',
+              }}
+            />
+            <div className="container absolute max-w-1/4 top-6 md:top-12 right-0">
+              <Video style={{ maxWidth: '20vw' }} src={v_4} />
+            </div>
+          </div>
+          <div className="container absolute max-w-3/10 bottom-2 md:bottom-4 ml-0">
+            <Img
+              fluid={jpgs[10].node.childImageSharp.fluid}
+              alt={jpgs[10].node.base.split('.')[0]}
+              imgStyle={{
+                objectFit: 'contain',
+                maxWidth: '30vw',
+              }}
+            />
           </div>
         </div>
-        <div className="container absolute max-w-3/10 bottom-2 md:bottom-4 ml-0">
-          <Img
-            fluid={jpgs[10].node.childImageSharp.fluid}
-            alt={jpgs[10].node.base.split('.')[0]}
-            imgStyle={{
-              objectFit: 'contain',
-              width: '30vw',
-            }}
-          />
-        </div>
-      </div>
+      </ImageContainer>
     </Layout>
   );
 }
