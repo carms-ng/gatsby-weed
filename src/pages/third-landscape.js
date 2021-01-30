@@ -14,11 +14,7 @@ export default function SubPageFour() {
             base
             childImageSharp {
               fluid(maxWidth: 2048, quality: 80) {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -33,8 +29,7 @@ export default function SubPageFour() {
         <Img
           style={{
             position: 'absolute',
-            overflow: 'visible',
-            width: `${rand(70, 30)}vmin`,
+            width: `${rand(70, 40)}vmin`,
             zIndex: rand(20, 1),
           }}
           className="explodee"
@@ -48,8 +43,7 @@ export default function SubPageFour() {
         alt="Third Landscape"
         style={{
           position: 'absolute',
-          overflow: 'visible',
-          width: `${rand(70, 30)}vmin`,
+          width: `${rand(70, 40)}vmin`,
           zIndex: rand(20, 1),
         }}
         className="explodee"
