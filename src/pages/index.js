@@ -275,12 +275,15 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
-            <div>
+            <div className="img-container">
+              <a href="https://www.npr.org/2011/07/07/137550209/weeds-in-defense-of-botanys-cockroach" target="_blank">
               <Img
                 fluid={jpgs[2].node.childImageSharp.fluid}
                 alt={jpgs[2].node.base.split('.')[0]}
                 className="animate-zoom"
               />
+              <Overlay />
+              </a>
             </div>
             <div className="space-y-2 pb-0 leading-loose place-self-end text-right sm:text-left sm:place-self-center">
               <p className="">Is a weed</p>
@@ -328,11 +331,14 @@ export default function HomePage() {
             <p>Is a weed the song we sing when we settle to sleep</p>
           </div>
           <div className="img-container mx-auto max-w-3/4">
+            <a href="https://www.nowness.com/series/great-gardens/trematon-castle-cornwall-julian-isabel-bannerman" target="_blank">
             <Img
               fluid={jpgs[3].node.childImageSharp.fluid}
               alt={jpgs[3].node.base.split('.')[0]}
               className="animate-zoom"
             />
+            <Overlay />
+            </a>
           </div>
           <div className="grid lg:grid-cols-4 gap-6 py-12">
             <div className="space-y-2 self-center lg:col-span-2 lg:self-auto">
@@ -344,11 +350,14 @@ export default function HomePage() {
             </div>
 
             <div className="img-container max-w-2/5 lg:max-w-1/2 order-first ml-auto mr-12 lg:mx-auto lg:order-3">
+              <a href="https://www.cca.qc.ca/en/articles/issues/19/the-planet-is-the-client/32771/the-third-landscape" target="_blank">
               <Img
                 fluid={jpgs[4].node.childImageSharp.fluid}
                 alt={jpgs[4].node.base.split('.')[0]}
                 className="animate-zoom"
               />
+              <Overlay />
+              </a>
             </div>
 
             <div className="space-y-8 self-center text-right lg:text-left pt-12 lg:pt-32 lg:pb-12 order-4">
@@ -600,14 +609,16 @@ export default function HomePage() {
               </div>
             </Link>
           </div>
-          <Link to="roses" className="img-container mr-0 ml-auto max-w-2/5">
-            <Img
-              fluid={jpgs[7].node.childImageSharp.fluid}
-              alt={jpgs[7].node.base.split('.')[0]}
-              className="animate-zoom"
-            />
-            <Overlay />
-          </Link>
+          <div className="img-container mr-0 ml-auto max-w-2/5">
+            <Link to="roses">
+              <Img
+                fluid={jpgs[7].node.childImageSharp.fluid}
+                alt={jpgs[7].node.base.split('.')[0]}
+                className="animate-zoom"
+              />
+              <Overlay />
+            </Link>
+          </div>
         </div>
       </FallingStyles>
       <Footer />
