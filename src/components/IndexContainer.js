@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 import Layout from './Layout';
 import IndexColumn from './IndexColumn';
@@ -12,9 +13,12 @@ const IndexContainerStyles = styled.div`
 export default function IndexContainer({ header, columns }) {
   return (
     <Layout greenBg>
+      <Helmet>
+        <title>{header} | What is a Weed?</title>
+      </Helmet>
       <NavSubpage />
       <IndexContainerStyles>
-        <h1 className="pb-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="pb-6 text-3xl sm:text-4xl md:text-6xl xl:text-7xl">
           {header}
         </h1>
  

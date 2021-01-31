@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React, { useEffect, useState } from 'react';
+import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_3 from '../assets/gifs/003_roses.gif';
@@ -64,6 +65,9 @@ export default function SubPageSeven() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Wild Roses | What is a Weed?</title>
+      </Helmet>
       <LightBox isLightBoxOpen={isLightBoxOpen} setLightBox={setLightBox} />
       <NavSubpage />
       <ImageContainer className="lightbox-able">
@@ -86,6 +90,25 @@ export default function SubPageSeven() {
             grow in third landscapes, now that they've taken over native plants,
             now they've defied control, they've been declared a weed.
           </p>
+          <div className="container relative mt-6">
+              <Img
+                fluid={jpgs[18].node.childImageSharp.fluid}
+                alt={jpgs[18].node.base.split('.')[0]}
+              />
+            <a 
+              href="https://www.oardc.ohio-state.edu/weedguide/single_weed.php?id=87" 
+              target="_blank" 
+              rel="noreferrer"
+              className="w-full bg-green bg-opacity-80 absolute bottom-0"
+            >
+              <div className="p-2 text-white text-sm opacity-80 hover:opacity-100">
+              <p>Ohio Weedguide</p> 
+              <p className="pb-1">Rose Family (Rosaceae), Japanese rose, rambler rose, wild rose.</p>
+              <hr />
+              <p className="text-xs pt-1">Ohio State University</p>
+              </div>
+            </a>
+          </div>
         </div>
 
         {/* Row 2 */}
@@ -274,7 +297,7 @@ export default function SubPageSeven() {
           </div>
           <div className="max-w-md space-y-6 text-sm lg:text-base">
             <p>
-              Multiflora rose is an exotic invasive perennial shrub native to
+              "Multiflora rose is an exotic invasive perennial shrub native to
               China, Japan, and Korea (Zheng et al 2006; Dirr, 1998; Amrine and
               Stasny, 1993). Introduced into the United States in the 1860s
               (Dryer, 1996), multiflora rose was used in the horticultural
@@ -308,8 +331,27 @@ export default function SubPageSeven() {
               Midwest, northeast, and elsewhere. It has escaped cultivation
               spreading into private and public lands, and as a result has been
               classified as a noxious weed in many states. (Dryer, 1996;
-              Symonds, 1963; Munger, 2002)
+              Symonds, 1963; Munger, 2002)""
             </p>
+            <div className="container relative mt-6">
+              <Img
+                fluid={jpgs[19].node.childImageSharp.fluid}
+                alt={jpgs[19].node.base.split('.')[0]}
+              />
+            <a 
+              href="https://www.ecolandscaping.org/07/landscape-challenges/invasive-plants/multiflora-rose-an-exotic-invasive-plant-fact-sheet/" 
+              target="_blank" 
+              rel="noreferrer"
+              className="w-full bg-green bg-opacity-80 absolute bottom-0"
+            >
+              <div className="p-2 text-white text-sm opacity-80 hover:opacity-100">
+              <p>Multiflora Rose: An Exotic Invasive Plant Fact Sheet</p> 
+              <p className="pb-1">by Bruce Wenning</p>
+              <hr />
+              <p className="text-xs pt-1">Ecological Landscape Alliance</p>
+              </div>
+            </a>
+          </div>
           </div>
         </div>
       </ImageContainer>
