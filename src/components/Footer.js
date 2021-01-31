@@ -75,6 +75,9 @@ export default function Nav() {
             <Link to="/conditioned-nature">Negotiated Nature</Link>
           </li>
           <li>
+            <Link to="/third-landscape">Third Landscape</Link>
+          </li>
+          <li>
             <Link to="/body-landscape">Body In Landscape</Link>
           </li>
           <li>
