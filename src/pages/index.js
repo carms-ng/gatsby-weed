@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from "react-helmet";
 import Layout from '../components/Layout';
 import Nav from '../components/Nav';
 import { useStaticQuery, graphql, Link } from 'gatsby';
@@ -68,6 +69,9 @@ export default function HomePage() {
 
   return (
     <Layout greenBg>
+      <Helmet>
+        <title>Home | What is a Weed?</title>
+      </Helmet>
       <Nav />
       <img
         src={line_drawing}
