@@ -43,7 +43,7 @@ export default function NavSubpage() {
           className="btn-lang p-2"
           title="Téléchargez le PDF"
         >
-          <a href={PDF} download>
+          <a href={PDF} target="_blank">
           FR
           </a>
         </button>
