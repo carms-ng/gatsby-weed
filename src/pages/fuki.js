@@ -82,7 +82,7 @@ export default function SubPageSix() {
         {/* Row 1 */}
         <div className="relative mb-24">
           <div className="relative">
-            <Video style={{ maxHeight: '80vh' }} src={v_0} />
+            <Video style={{ maxHeight: '80vh' }} src={v_2} />
             <div className="absolute w-1/4 bottom-2 left-2 lg:bottom-8 lg:left-4">
               <Img
                 fluid={jpgs[0].node.childImageSharp.fluid}
@@ -247,7 +247,7 @@ export default function SubPageSix() {
         {/* Row 8 */}
 
         <div className=" max-w-3/10 my-24">
-          <Video src={v_2} />
+          <Video src={v_0} />
         </div>
 
         {/* Row 9 */}
