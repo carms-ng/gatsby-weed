@@ -31,6 +31,11 @@ export default function Nav() {
     <FooterStyles>
       <hr />
       <section className="md:flex mt-2 mx-0 md:m-4">
+        <h6 className="pr-16">
+          <Link to="/">
+            Home
+          </Link>
+        </h6>
         <ul className="md:mr-24 xl:mr-36">
           <h6>overview</h6>
           <li>
@@ -59,7 +64,7 @@ export default function Nav() {
             <Link to="/index-furthermore">0.7 FURTHERMORE</Link>
           </li>
         </ul>
-        <ul>
+        <ul className="mt-14">
           <li>
             <Link to="/amaranth">Amaranth</Link>
           </li>
