@@ -42,7 +42,7 @@ export default function Nav() {
           className="btn-lang p-2"
           title="Téléchargez le PDF"
         >
-          <a href={PDF} target="_blank">
+          <a href={PDF} target="_blank" rel="noreferrer">
           FR
           </a>
         </button>
