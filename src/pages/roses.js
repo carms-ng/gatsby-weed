@@ -1,10 +1,14 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+import React, { useEffect, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_3 from '../assets/gifs/003_roses.gif';
 import Layout from '../components/Layout';
 import NavSubpage from '../components/NavSubpage';
 import styled from 'styled-components';
+import LightBox, { prepLightBox } from '../components/LightBox';
 
 const ImageContainer = styled.div`
   overflow: hidden;
@@ -23,7 +27,7 @@ export default function SubPageSeven() {
           node {
             base
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 2048, quality: 80) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -32,13 +36,37 @@ export default function SubPageSeven() {
       }
     }
   `);
-
   const jpgs = data.allFile.edges;
+
+  // implement lightbox
+  const [isLightBoxOpen, setLightBox] = useState(false);
+
+  const openLightBox = (e) => {
+    const elem = e.target.cloneNode(true);
+    prepLightBox(elem)
+    setLightBox(true);
+  }
+
+  useEffect(() => {
+    if (window.innerWidth <= 640) {
+      const area = document.querySelector('.lightbox-able');
+      const lightBoxAbles = area.querySelectorAll("img, video");
+      lightBoxAbles.forEach(elem => {
+        elem.addEventListener('click', openLightBox);
+      })
+      return () => {
+        lightBoxAbles.forEach(elem => {
+          elem.removeEventListener('click', openLightBox);
+        })
+      }
+    }
+  }, [])
 
   return (
     <Layout>
+      <LightBox isLightBoxOpen={isLightBoxOpen} setLightBox={setLightBox} />
       <NavSubpage />
-      <ImageContainer>
+      <ImageContainer className="lightbox-able">
         {/* Row 1 */}
         <div className="max-w-lg text-justify text-sm lg:text-base">
           <p>Even Roses can “become” a weed.</p>
@@ -81,8 +109,7 @@ export default function SubPageSeven() {
           <img
             src={gif_3}
             alt="Roses"
-            className="absolute w-1/4 top-6 right-6 md:top-12 md:right-12"
-          />
+            className="absolute w-1/4 top-6 right-6 md:top-12 md:right-12"/>
           <div className="absolute w-1/4 bottom-6 left-12 md:bottom-12 md:left-24">
             <Img
               fluid={jpgs[2].node.childImageSharp.fluid}
@@ -153,7 +180,7 @@ export default function SubPageSeven() {
           <Img
             fluid={jpgs[10].node.childImageSharp.fluid}
             alt={jpgs[10].node.base.split('.')[0]}
-            className="container "
+            className="container"
             imgStyle={{
               objectFit: 'contain',
               maxHeight: '50vh',
@@ -223,7 +250,7 @@ export default function SubPageSeven() {
             <Img
               fluid={jpgs[16].node.childImageSharp.fluid}
               alt={jpgs[16].node.base.split('.')[0]}
-              className="container md:w-1/2 "
+              className="container md:w-1/2"
               imgStyle={{
                 objectFit: 'contain',
                 maxHeight: '70vh',
@@ -239,10 +266,8 @@ export default function SubPageSeven() {
             <Img
               fluid={jpgs[17].node.childImageSharp.fluid}
               alt={jpgs[17].node.base.split('.')[0]}
-              className=""
               imgStyle={{
                 objectFit: 'contain',
-                // maxHeight: 'vh',
                 width: 'auto',
               }}
             />
