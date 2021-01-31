@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     --beige: #FFFAF3;
     --green: #006400;
     --green-dark: #1F381F;
+    --green-light: #CCD1B8;
     --pink: #f08080;
     --brown: #67504F;
     --rose: #AE6F84;

@@ -13,7 +13,7 @@ const LightboxStyles = styled.div`
   background-color: rgb(0, 0, 0);
   position: fixed;
 
-  .modal-container {
+  .lightbox__container {
     width: 100%;
     z-index: 49;
   }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from "react-helmet";
 import Layout from '../components/Layout';
 import Nav from '../components/Nav';
@@ -14,6 +14,7 @@ import Footer from '../components/Footer';
 import Overlay from '../components/Overlay';
 
 import { initLineDrop, initImageZoom } from '../utils/effect';
+import Modal, { initModalPositions } from '../components/Modal';
 
 const FallingStyles = styled.div`
   @keyframes zoomin {
@@ -58,6 +59,12 @@ export default function HomePage() {
   // Gatsby image
   const jpgs = data.allFile.edges;
 
+  // initialize modal
+  const modalIds = ['modal-germinator', 'modal-time', 'modal-third', 'modal-spirit'];
+  const initialVisibility = {}
+  modalIds.forEach(id => initialVisibility[id] = false);
+  const [ isVisible, setVisibility ] = useState(initialVisibility);
+  
   // Scroll effects
   useEffect(() => {
     const area = document.querySelector('#scrollArea');
@@ -65,10 +72,44 @@ export default function HomePage() {
     const images = area.querySelectorAll('.animate-zoom img');
     initLineDrop(pTags);
     initImageZoom(images);
+    initModalPositions();
   }, []);
+
+  const toggleModal = (e) => {
+    const modalId = e.target.dataset.modal;
+    const updatedVisibility = Object.assign({}, isVisible)
+    updatedVisibility[modalId] = !isVisible[modalId];
+    setVisibility(updatedVisibility);
+  }
 
   return (
     <Layout greenBg>
+      <Modal id="modal-germinator" isVisible={isVisible} setVisibility={setVisibility}>
+        <p>
+          Plants opportunistically reclaim spaces. Thinking through this notion, plants become active survivors in urbanity—animate matter that thrives and adapts in artificial habitats.
+        </p>
+      </Modal>
+      <Modal id="modal-time" isVisible={isVisible} setVisibility={setVisibility}>
+        <p>
+          In the artist book And Yet My Mask is Powerful, Basel Abbas and Ruanne Abou-Rahme try to trace back routes leading to the sites of destroyed Palestinian villages. They finally find their way by following the vegetation growing there: “wild fennel leads us to what remains of the village.” (2017)
+        </p>
+        <p>
+          We learn to marvel in front of man-made edifices, towers, castles, homes. Yet, ultimately, they are bound to a slow dying process, slowly decaying, unless actively maintained, preserved, restored. We learn to value monuments made of stone, not only the building or the object in itself, but also as a proof of history. A history whose representation is fixed, frozen, singular, rather than constantly fluctuating and shifting, to be written and spoken from multiple points of entry. A first step towards decolonization, to move history into the plural form: histories.
+        </p>
+        <p>
+          Going back to the wild fennel growing in the erased Palestinian villages, what remains after all marks of the constructions that once stood there are gone, is the resisting, persistant and persisting local vegetation. Nature remains the only testament of that history. It is our witness, there long before we came, and finding ways to remain long after we depart. Histories are carried through its flux, never finite, as it grows and dies and gets reborn again.
+        </p>
+      </Modal>
+      <Modal id="modal-third" isVisible={isVisible} setVisibility={setVisibility}>
+        <p>
+          The term third landscape, conceived by French writer/gardener Gilles Clément (Manifeste du Tiers paysage, 2004), describes the abandoned lots of land within the urban environment. These spaces can be understood as the ‘spruits’ that meander through the city, the transitional spaces between one place and another, roadsides and road islands, neglected lots of land dotted around the city, disused mine dumps, railroad embankments, and planned buffer zones. It defines miniature gaps between the pavement and the wall, the gutter clogged with organic debris, mangled sidewalks exposing soil for opportunistic plants to grow. Clément considers these plants to be claiming and creating a third space within the city, a physical and metaphorical landscape that is the genetic petri dish for urban ecology. He calls this the third landscape. But if that is the third landscape, what is the first landscape?
+        </p>
+      </Modal>
+      <Modal id="modal-spirit" isVisible={isVisible} setVisibility={setVisibility}>
+        <p>
+          British gardener and writer Richard Mabey recalls becoming enraptured with the abandoned plot of land nearby his work, where weeds were left to grow and proliferate at ease : “[...] this kind of post-industrial wasteland was actually producing this growth. It seemed to say something about the obstinacy and resilience of nature.” (Weeds: In Defense of Nature's Most Unloved Plants, 2011)
+        </p>
+      </Modal>
       <Helmet>
         <title>Home | What is a Weed?</title>
       </Helmet>
@@ -97,7 +138,7 @@ export default function HomePage() {
       </section>
       <FallingStyles id="scrollArea">
         <section className="grid pt-8">
-          <Link to="amaranth" className="img-container max-w-3/4 mx-auto">
+          <Link to="/amaranth" className="img-container max-w-3/4 mx-auto">
             <Img
               fluid={jpgs[0].node.childImageSharp.fluid}
               alt={jpgs[0].node.base.split('.')[0]}
@@ -125,7 +166,7 @@ export default function HomePage() {
         <div className="w-11/12 mx-auto mt-12">
           {/* 0.1 Title Mobile */}
           <div className="text-rose md:hidden">
-            <Link to="index-concrete-plant">
+            <Link to="/index-concrete-plant">
               <h2 className="text-5xl md:text-7xl">0.1</h2>
               <h3 className="text-xl uppercase  tracking-wide  md:hidden">
                 Concrete & Plant Relationships
@@ -137,7 +178,7 @@ export default function HomePage() {
         {/* 0.1 Title Desktop */}
         <div className="title hidden md:block whitespace-nowrap">
           <h3 className="title-width">Concrete & Plant Relationships</h3>
-          <Link to="index-concrete-plant">
+          <Link to="/index-concrete-plant">
             <h2 className="ml-24">0.1</h2>
             <div className="subtitle">
               <h3>Concrete & Plant Relationships</h3>
@@ -160,7 +201,7 @@ export default function HomePage() {
               <p className="ml-48">Is a weed</p>
             </div>
             <Link
-              to="concrete-plant"
+              to="/concrete-plant"
               className="img-container self-end md:justify-self-center mx-4 max-w-1/2 md:max-w-3/10"
             >
               <Img
@@ -216,7 +257,7 @@ export default function HomePage() {
                     className="img-container max-w-1/2 self-start overflow-hidden"
                     style={{ width: 'auto' }}
                   >
-                    <Link to="conditioned-nature">
+                    <Link to="/conditioned-nature">
                       <img src={gif_2} alt="" />
                       <Overlay />
                     </Link>
@@ -243,7 +284,7 @@ export default function HomePage() {
         <div className="mx-auto">
           {/* 0.2 Title Mobile */}
           <div className="w-11/12 mx-auto text-rose md:hidden">
-            <Link to="index-conditioned-nature">
+            <Link to="/index-conditioned-nature">
               <h2 className="text-5xl md:text-7xl">0.2</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
                 Conditioned Nature
@@ -254,7 +295,7 @@ export default function HomePage() {
           {/* 0.2 Title Desktop */}
           <div className="title hidden md:block whitespace-nowrap">
             <h3 className="title-width">Conditioned Nature</h3>
-            <Link to="index-conditioned-nature">
+            <Link to="/index-conditioned-nature">
               <h2 className="ml-24">0.2</h2>
               <div className="subtitle">
                 <h3>Conditioned Nature</h3>
@@ -264,7 +305,7 @@ export default function HomePage() {
         </div>
 
         {/* 0.2 Poem */}
-        <section className="flex flex-col my-12">
+        <section className="flex flex-col my-12 relative">
           <div className="space-y-2 pb-12 leading-loose">
             <p className="">Weeds,</p>
             <p className="ml-12">
@@ -274,8 +315,14 @@ export default function HomePage() {
             <p className="pt-24 ml-12">Is a weed</p>
             <p className="ml-32">A pioneer</p>
             {/* Modal 1 */}
-            <p className="underline text-right sm:text-left sm:ml-32">
-              <Link to="">An opportunistic germinator</Link>
+            <p className="underline text-right sm:text-left sm:ml-32 relative">
+              <button
+                data-modal="modal-germinator"
+                onClick={toggleModal}
+                className="underline text-right sm:text-left sm:ml-32 text-green"
+              >
+                An opportunistic germinator
+              </button>
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -297,13 +344,22 @@ export default function HomePage() {
                 A history maker, a storyteller, a punctuator
               </p>
             </div>
+            <div className="space-y-2">
+              <p>Is a weed</p>
+              <button
+                data-modal="modal-time"
+                onClick={toggleModal} 
+                className="underline ml-20 text-green">
+                A witness of TIME recording histories
+              </button>
+            </div>
           </div>
         </section>
 
         <div className="w-11/12 mx-auto">
           {/* 0.3 Title Mobile */}
           <div className="text-rose text-right md:hidden">
-            <Link to="index-plants-witness">
+            <Link to="/index-plants-witness">
               <h2 className="text-5xl md:text-7xl">0.3</h2>
               <h3 className="text-xl uppercase tracking-wide md:hidden">
                 Plants as Witnesses
@@ -315,7 +371,7 @@ export default function HomePage() {
         {/* 0.3 Title Desktop */}
         <div className="title hidden md:block float-right mb-12 text-right whitespace-nowrap">
           <h3 className="title-width">Plants as Witnesses</h3>
-          <Link to="index-plants-witness">
+          <Link to="/index-plants-witness">
             <h2 className="mr-48">0.3</h2>
             <div className="subtitle">
               <h3 className="right">Plants as Witnesses</h3>
@@ -379,7 +435,7 @@ export default function HomePage() {
         {/* 0.4 Title Mobile */}
         <div className="mx-auto w-11/12 mb-12">
           <div className="text-right text-rose md:hidden">
-            <Link to="index-third-landscape">
+            <Link to="/index-third-landscape">
               <h2 className="text-5xl md:text-7xl">0.4</h2>
               <h3 className="text-xl uppercase tracking-wide md:hidden">
                 Third Landscape
@@ -401,7 +457,7 @@ export default function HomePage() {
           {/* 0.4 Title Desktop */}
           <div className="title hidden md:block justify-self-end text-right whitespace-nowrap">
             <h3 className="title-width">Third Landscape</h3>
-            <Link to="index-third-landscape">
+            <Link to="/index-third-landscape">
               <h2 className="mr-48">0.4</h2>
               <div className="subtitle">
                 <h3 className="right nowrap">Third Landscape</h3>
@@ -425,14 +481,20 @@ export default function HomePage() {
               A plant living in the urban human habitat
             </p>
             <p className="ml-24 md:pl-80">a landscape?</p>
-            {/* MODAL 2 */}
+            {/* MODAL 3 */}
             <p className="underline ml-36 md:pl-96">
-              <Link to="/">A third landscape. </Link>
+              <button
+                data-modal="modal-third"
+                onClick={toggleModal}
+                className="underline text-green"
+              >
+                A third landscape. 
+              </button>
             </p>
           </div>
           <div className="grid md:grid-cols-2">
             <div className="img-container mr-0 ml-auto max-w-1/2 md:max-w-2/5 lg:max-w-1/4 lg:mr-auto">
-              <Link to="third-landscape">
+              <Link to="/third-landscape">
                 <Img
                   fluid={jpgs[5].node.childImageSharp.fluid}
                   alt={jpgs[5].node.base.split('.')[0]}
@@ -464,7 +526,7 @@ export default function HomePage() {
         {/* 0.5 Title Mobile */}
         <div className="mx-auto">
           <div className="w-11/12 mx-auto mb-6 text-rose md:hidden">
-            <Link to="index-displace-migrate">
+            <Link to="/index-displace-migrate">
               <h2 className="text-5xl md:text-7xl">0.5</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
                 Displacement / Migration
@@ -479,7 +541,7 @@ export default function HomePage() {
             className="img-container my-12 mr-6 md:mr-0 md:ml-12 max-w-1/2 self-start overflow-hidden"
             style={{ width: 'auto' }}
           >
-            <Link to="body-landscape">
+            <Link to="/body-landscape">
               {/* insert gif for 007 */}
               <img src={gif_7} alt="Body Is/As Landscape" />
               <Overlay />
@@ -496,7 +558,7 @@ export default function HomePage() {
           </div>
           {/* 0.5 Title Desktop */}
           <div className="title hidden md:inline-block my-auto ml-0 mr-auto xl:whitespace-nowrap">
-            <Link to="index-displace-migrate">
+            <Link to="/index-displace-migrate">
               <h3 className="title-width">Displacement / Migration</h3>
               <h2 className="mx-40">0.5</h2>
               <div className="subtitle">
@@ -507,12 +569,16 @@ export default function HomePage() {
         </div>
         <section className="my-12 mx-auto max-w-3/4">
           <p className="pb-12">Is a weed</p>
-          {/* MODAL 3 */}
-          <Link to="/">
-            <p className="underline ml-28 pb-12">
+          {/* MODAL 4 */}
+          <p className="underline ml-28 pb-12">
+            <button 
+              data-modal="modal-spirit" 
+              onClick={toggleModal}
+              className="underline text-green"
+            >
               The vegetal most akin to the human spirit
-            </p>
-          </Link>
+            </button>
+          </p>
           <p className="pb-12">
             Weeds, testimonies of resilience and adaptability — their numerous
             seeds remaining dormant for many years, waiting for the right
@@ -529,7 +595,7 @@ export default function HomePage() {
         {/* 0.6 Title Mobile */}
         <div className="mx-auto mb-12">
           <div className="w-11/12 mx-auto text-rose md:hidden">
-            <Link to="index-body-landscape">
+            <Link to="/index-body-landscape">
               <h2 className="text-5xl md:text-7xl">0.6</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
                 Body in / as Landscape
@@ -543,7 +609,7 @@ export default function HomePage() {
           {/* 0.6 Title Desktop */}
           <div className="title hidden md:block">
             <h3 className="title-width">Body in / as Landscape</h3>
-            <Link to="index-body-landscape">
+            <Link to="/index-body-landscape">
               <h2 className="float-right mr-24">0.6</h2>
               <div className="subtitle">
                 <h3 className="">Body in / as Landscape</h3>
@@ -573,7 +639,7 @@ export default function HomePage() {
               Teaching the body how to become its own landscape
             </p>
             <div className="img-container lg:max-w-3/4">
-              <Link to="fuki">
+              <Link to="/fuki">
                 <Img
                   fluid={jpgs[6].node.childImageSharp.fluid}
                   alt={jpgs[6].node.base.split('.')[0]}
@@ -595,7 +661,7 @@ export default function HomePage() {
         <div className="grid grid-cols-2 mr-12 md:mr-24">
           {/* 0.7 Title Mobile */}
           <div className="ml-4 text-rose md:hidden">
-            <Link to="index-furthermore">
+            <Link to="/index-furthermore">
               <h2 className="text-5xl md:text-7xl">0.7</h2>
               <h3 className="md:text-4xl lg:text-xl uppercase tracking-wide md:hidden">
                 Furthermore
@@ -605,7 +671,7 @@ export default function HomePage() {
           {/* 0.7 Title Desktop */}
           <div className="title hidden md:block min-w-0">
             <h3 className="title-width">Furthermore</h3>
-            <Link to="index-furthermore">
+            <Link to="/index-furthermore">
               <h2 className="ml-24">0.7</h2>
 
               <div className="subtitle">
@@ -614,7 +680,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="img-container mr-0 ml-auto max-w-2/5">
-            <Link to="roses">
+            <Link to="/roses">
               <Img
                 fluid={jpgs[7].node.childImageSharp.fluid}
                 alt={jpgs[7].node.base.split('.')[0]}
