@@ -129,10 +129,9 @@ export default function SubPageSeven() {
             alt={jpgs[1].node.base.split('.')[0]}
             imgStyle={{ objectFit: 'contain' }}
           />
-          <img
-            src={gif_3}
-            alt="Roses"
-            className="absolute w-1/4 top-6 right-6 md:top-12 md:right-12"/>
+          <div className="absolute w-1/4 top-6 right-6 md:top-12 md:right-12">
+            <img src={gif_3} alt="Roses" />
+          </div>
           <div className="absolute w-1/4 bottom-6 left-12 md:bottom-12 md:left-24">
             <Img
               fluid={jpgs[2].node.childImageSharp.fluid}
