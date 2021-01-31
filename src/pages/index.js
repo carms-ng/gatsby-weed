@@ -410,6 +410,7 @@ export default function HomePage() {
             </div>
 
             <div className="img-container max-w-2/5 lg:max-w-1/2 order-first ml-auto mr-12 lg:mx-auto lg:order-3">
+              <div className="img-container">
               <a href="https://www.cca.qc.ca/en/articles/issues/19/the-planet-is-the-client/32771/the-third-landscape" target="_blank" rel="noreferrer">
               <Img
                 fluid={jpgs[4].node.childImageSharp.fluid}
@@ -418,6 +419,7 @@ export default function HomePage() {
               />
               <Overlay />
               </a>
+              </div>
             </div>
 
             <div className="space-y-8 self-center text-right lg:text-left pt-12 lg:pt-32 lg:pb-12 order-4">
