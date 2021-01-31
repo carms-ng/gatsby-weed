@@ -91,7 +91,7 @@ export default function SubPageSix() {
               />
             </div>
           </div>
-          <div className="lg:max-w-1/2 lg:absolute lg:top-20 lg:right-4 bg-white lg:px-4 py-4 text-xs">
+          <div className="lg:max-w-2/5 lg:absolute lg:top-20 lg:right-4 bg-white lg:px-4 py-4 text-xs">
             <p className="mb-4">
               En voiture à toute vitesse, arrêt abrupt en remarquant un
               amoncellement de majestueuses et gigantesques feuilles d'une
