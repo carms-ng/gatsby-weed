@@ -280,7 +280,7 @@ export default function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="img-container">
-              <a href="https://www.npr.org/2011/07/07/137550209/weeds-in-defense-of-botanys-cockroach" target="_blank">
+              <a href="https://www.npr.org/2011/07/07/137550209/weeds-in-defense-of-botanys-cockroach" target="_blank" rel="noreferrer">
               <Img
                 fluid={jpgs[2].node.childImageSharp.fluid}
                 alt={jpgs[2].node.base.split('.')[0]}
@@ -335,7 +335,7 @@ export default function HomePage() {
             <p>Is a weed the song we sing when we settle to sleep</p>
           </div>
           <div className="img-container mx-auto max-w-3/4">
-            <a href="https://www.nowness.com/series/great-gardens/trematon-castle-cornwall-julian-isabel-bannerman" target="_blank">
+            <a href="https://www.nowness.com/series/great-gardens/trematon-castle-cornwall-julian-isabel-bannerman" target="_blank" rel="noreferrer">
             <Img
               fluid={jpgs[3].node.childImageSharp.fluid}
               alt={jpgs[3].node.base.split('.')[0]}
@@ -354,7 +354,7 @@ export default function HomePage() {
             </div>
 
             <div className="img-container max-w-2/5 lg:max-w-1/2 order-first ml-auto mr-12 lg:mx-auto lg:order-3">
-              <a href="https://www.cca.qc.ca/en/articles/issues/19/the-planet-is-the-client/32771/the-third-landscape" target="_blank">
+              <a href="https://www.cca.qc.ca/en/articles/issues/19/the-planet-is-the-client/32771/the-third-landscape" target="_blank" rel="noreferrer">
               <Img
                 fluid={jpgs[4].node.childImageSharp.fluid}
                 alt={jpgs[4].node.base.split('.')[0]}
