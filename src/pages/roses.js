@@ -98,7 +98,7 @@ export default function SubPageSeven() {
             <a 
               href="https://www.oardc.ohio-state.edu/weedguide/single_weed.php?id=87" 
               target="_blank" 
-              rel="noopener"
+              rel="noreferrer"
               className="w-full bg-green bg-opacity-80 absolute bottom-0"
             >
               <div className="p-2 text-white text-sm opacity-80 hover:opacity-100">
@@ -341,7 +341,7 @@ export default function SubPageSeven() {
             <a 
               href="https://www.ecolandscaping.org/07/landscape-challenges/invasive-plants/multiflora-rose-an-exotic-invasive-plant-fact-sheet/" 
               target="_blank" 
-              rel="noopener"
+              rel="noreferrer"
               className="w-full bg-green bg-opacity-80 absolute bottom-0"
             >
               <div className="p-2 text-white text-sm opacity-80 hover:opacity-100">
