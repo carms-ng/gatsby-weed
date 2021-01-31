@@ -1,44 +1,18 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+import React, { useEffect, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import NavSubpage from '../components/NavSubpage';
 import styled from 'styled-components';
+import LightBox, { prepLightBox } from '../components/LightBox';
 
 const ImageContainer = styled.div`
   overflow: hidden;
   max-width: 90vw;
   margin: auto;
-`;
-
-const LightboxStyles = styled.div`
-  justify-content: center;
-  align-items: center;
-  z-index: 48;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.8);
-  position: fixed;
-
-  .modal-container {
-    width: 100%;
-    z-index: 49;
-  }
-  .lightbox__switch {
-    display: grid;
-    place-content: center center;
-    z-index: 50;
-    position: absolute;
-    padding: 1rem;
-    top: 0.5rem;
-    right: 0.5rem;
-    border-radius: 50%;
-    transform: rotate(45deg);
-    color: var(--rose-light);
-    line-height: 0.5;
-    font-size: 3rem;
-    /* background-color: black; */
-  }
 `;
 
 export default function SubPageOne() {
@@ -52,7 +26,7 @@ export default function SubPageOne() {
           node {
             base
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 2048, quality: 80) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -63,53 +37,45 @@ export default function SubPageOne() {
   `);
   const jpgs = data.allFile.edges;
 
-  const [isLightBoxOpen, setLightBox] = useState(false)
-  const openModal = (e) => {
-    // check if screen-size is mobile 
+  // implement lightbox
+  const [isLightBoxOpen, setLightBox] = useState(false);
+
+  const openLightBox = (e) => {
+    const elem = e.target.cloneNode(true);
+    prepLightBox(elem)
+    setLightBox(true);
+  }
+
+  useEffect(() => {
     if (window.innerWidth <= 640) {
-      // querySelect lightbox
-      const container = document.querySelector('.lightbox__container');
-      // inject innerHTML into the modal
-      container.appendChild(e.target.cloneNode(true));
-      // open the lightBox;
-      setLightBox(true);
+      const area = document.querySelector('.lightbox-able');
+      const lightBoxAbles = area.querySelectorAll("img, video");
+      lightBoxAbles.forEach(elem => {
+        elem.addEventListener('click', openLightBox);
+      })
+      return () => {
+        lightBoxAbles.forEach(elem => {
+          elem.removeEventListener('click', openLightBox);
+        })
+      }
     }
-  }
-
-  const closeModal = (e) => {
-    // clear the container
-    e.currentTarget.nextSibling.innerHTML = "";
-    // close the lightBox;
-    setLightBox(false);
-  }
-
+  }, [])
+  
   return (
     <Layout>
-      <LightboxStyles
-        className="lightbox"
-        style={{ display: (isLightBoxOpen? "flex": "none")}}
-      >
-        {/* eslint-disable-next-line */}
-        <div 
-          className="lightbox__switch"
-          onClick={closeModal}
-        >+</div>
-        <div className="lightbox__container" />
-      </LightboxStyles>
+      <LightBox isLightBoxOpen={isLightBoxOpen} setLightBox={setLightBox} />
       <NavSubpage />
-      <ImageContainer>
+      <ImageContainer className="lightbox-able">
         {/* Row 1 */}
         <div className="container grid relative">
-          {/* eslint-disable-next-line */}
-          <div className="container w-1/2 absolute self-center z-10" onClick={openModal} > 
+          <div className="container w-1/2 absolute self-center z-10"> 
             <Img
               fluid={jpgs[0].node.childImageSharp.fluid}
               alt={jpgs[0].node.base.split('.')[0]}
               imgStyle={{ objectFit: 'contain', width: '100%' }}
             />
           </div>
-          {/* eslint-disable-next-line */}
-          <div className="container w-3/4 ml-auto mr-0" onClick={openModal}>
+          <div className="container w-3/4 ml-auto mr-0">
             <Img
               fluid={jpgs[1].node.childImageSharp.fluid}
               alt={jpgs[1].node.base.split('.')[0]}

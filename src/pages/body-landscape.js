@@ -1,4 +1,7 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+import React, { useEffect, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Video from '../components/Video';
@@ -11,6 +14,7 @@ import v_5 from '../assets/videos/body_landscape/005_body-landscape.mp4';
 import Layout from '../components/Layout';
 import NavSubpage from '../components/NavSubpage';
 import styled from 'styled-components';
+import LightBox, { prepLightBox } from '../components/LightBox';
 
 const ImageContainer = styled.div`
   overflow: hidden;
@@ -40,11 +44,36 @@ export default function SubPageFive() {
   `);
 
   const jpgs = data.allFile.edges;
+  
+  // implement lightbox
+  const [isLightBoxOpen, setLightBox] = useState(false);
+  
+  const openLightBox = (e) => {
+    const elem = e.target.cloneNode(true);
+    prepLightBox(elem)
+    setLightBox(true);
+  }
+
+  useEffect(() => {
+    if (window.innerWidth <= 640) {
+      const area = document.querySelector('.lightbox-able');
+      const lightBoxAbles = area.querySelectorAll("img, video");
+      lightBoxAbles.forEach(elem => {
+        elem.addEventListener('click', openLightBox);
+      })
+      return () => {
+        lightBoxAbles.forEach(elem => {
+          elem.removeEventListener('click', openLightBox);
+        })
+      }
+    }
+  }, [])
 
   return (
     <Layout>
+      <LightBox isLightBoxOpen={isLightBoxOpen} setLightBox={setLightBox} />
       <NavSubpage />
-      <ImageContainer>
+      <ImageContainer className="lightbox-able">
         {/* Row 1 */}
         <div className="flex md:max-w-3/4 mb-24 md:my-24 space-x-6">
           <div className="container pt-32 md:pt-60">
@@ -83,7 +112,6 @@ export default function SubPageFive() {
             <Img
               fluid={jpgs[4].node.childImageSharp.fluid}
               alt={jpgs[4].node.base.split('.')[0]}
-              className=""
               imgStyle={{ height: '100%', width: 'auto' }}
             />
             <div className="absolute h-3/4 w-1/4 top-1/4 left-1/2">
