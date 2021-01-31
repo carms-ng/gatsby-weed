@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
-  z-index: 99;
+  z-index: 39;
   padding: 20px;
   .btns-lang {
     display: flex;

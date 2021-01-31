@@ -1,4 +1,7 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+import React, { useEffect, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Video from '../components/Video';
@@ -10,6 +13,7 @@ import v_4 from '../assets/videos/fuki/004_fuki.mp4';
 import Layout from '../components/Layout';
 import NavSubpage from '../components/NavSubpage';
 import styled from 'styled-components';
+import LightBox, { prepLightBox } from '../components/LightBox';
 
 const ImageContainer = styled.div`
   overflow: hidden;
@@ -30,7 +34,7 @@ export default function SubPageSix() {
           node {
             base
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 2048, quality: 80) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -41,12 +45,36 @@ export default function SubPageSix() {
   `);
 
   const jpgs = data.allFile.edges;
-  console.log(jpgs);
+
+  // implement lightbox
+  const [isLightBoxOpen, setLightBox] = useState(false);
+
+  const openLightBox = (e) => {
+    const elem = e.target.cloneNode(true);
+    prepLightBox(elem)
+    setLightBox(true);
+  }
+
+  useEffect(() => {
+    if (window.innerWidth <= 640) {
+      const area = document.querySelector('.lightbox-able');
+      const lightBoxAbles = area.querySelectorAll("img, video");
+      lightBoxAbles.forEach(elem => {
+        elem.addEventListener('click', openLightBox);
+      })
+      return () => {
+        lightBoxAbles.forEach(elem => {
+          elem.removeEventListener('click', openLightBox);
+        })
+      }
+    }
+  }, [])
 
   return (
     <Layout>
+      <LightBox isLightBoxOpen={isLightBoxOpen} setLightBox={setLightBox} />
       <NavSubpage />
-      <ImageContainer>
+      <ImageContainer className="lightbox-able">
         {/* Row 1 */}
         <div className="relative mb-24">
           <div className="relative">
@@ -261,42 +289,42 @@ export default function SubPageSix() {
           <Img
             fluid={jpgs[8].node.childImageSharp.fluid}
             alt={jpgs[8].node.base.split('.')[0]}
-            className=""
             imgStyle={{
               objectFit: 'contain',
               maxHeight: '90vh',
             }}
           />
         </div>
-      </ImageContainer>
-      {/* Row 12 */}
 
-      <div className="container w-full mx-auto relative my-24">
-        <div className="container relative mx-auto max-w-3/4">
-          <Img
-            fluid={jpgs[9].node.childImageSharp.fluid}
-            alt={jpgs[9].node.base.split('.')[0]}
-            className="container"
-            imgStyle={{
-              objectFit: 'contain',
-              maxWidth: '75vw',
-            }}
-          />
-          <div className="container absolute max-w-1/4 top-6 md:top-12 right-0">
-            <Video style={{ width: '20vw' }} src={v_4} />
+        {/* Row 12 */}
+
+        <div className="container w-full mx-auto relative my-24">
+          <div className="container relative mx-auto max-w-3/4">
+            <Img
+              fluid={jpgs[9].node.childImageSharp.fluid}
+              alt={jpgs[9].node.base.split('.')[0]}
+              className="container"
+              imgStyle={{
+                objectFit: 'contain',
+                maxWidth: '75vw',
+              }}
+            />
+            <div className="container absolute max-w-1/4 top-6 md:top-12 right-0">
+              <Video style={{ maxWidth: '20vw' }} src={v_4} />
+            </div>
+          </div>
+          <div className="container absolute max-w-3/10 bottom-2 md:bottom-4 ml-0">
+            <Img
+              fluid={jpgs[10].node.childImageSharp.fluid}
+              alt={jpgs[10].node.base.split('.')[0]}
+              imgStyle={{
+                objectFit: 'contain',
+                maxWidth: '30vw',
+              }}
+            />
           </div>
         </div>
-        <div className="container absolute max-w-3/10 bottom-2 md:bottom-4 ml-0">
-          <Img
-            fluid={jpgs[10].node.childImageSharp.fluid}
-            alt={jpgs[10].node.base.split('.')[0]}
-            imgStyle={{
-              objectFit: 'contain',
-              width: '30vw',
-            }}
-          />
-        </div>
-      </div>
+      </ImageContainer>
     </Layout>
   );
 }

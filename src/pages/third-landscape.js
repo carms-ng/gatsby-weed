@@ -1,51 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import Layout from '../components/Layout';
-import Nav from '../components/Nav';
 import gif_45 from '../assets/gifs/045_third-landscape.gif';
-import styled from 'styled-components';
 import { rand } from '../utils/helper';
-import { explode } from '../utils/effect';
-
-const ExplodeStyles = styled.div`
-  overflow: hidden;
-  padding: 100px;
-  .explodee {
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    transition: all 1s ease-in-out;
-  }
-  .floating {
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-  @keyframes floating {
-    10%,
-    90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    20%,
-    80% {
-      transform: translate3d(2px, 0, 0);
-    }
-    30%,
-    50%,
-    70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-    40%,
-    60% {
-      transform: translate3d(4px, 0, 0);
-    }
-  }
-`;
+import ExplodeContainer from '../components/ExplodeContainer';
 
 export default function SubPageFour() {
   const data = useStaticQuery(graphql`
@@ -56,11 +14,7 @@ export default function SubPageFour() {
             base
             childImageSharp {
               fluid(maxWidth: 2048, quality: 80) {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -70,34 +24,30 @@ export default function SubPageFour() {
   `);
 
   return (
-    <Layout>
-      <Nav />
-      <ExplodeStyles onClick={explode}>
-        {data.allFile.edges.map(({ node }) => (
-          <Img
-            style={{
-              position: 'absolute',
-              overflow: 'visible',
-              width: `${rand(70, 30)}vmin`,
-              zIndex: rand(20, 1),
-            }}
-            className="explodee"
-            fluid={node.childImageSharp.fluid}
-            key={node.base}
-            alt={node.base.split('.')[0]}
-          />
-        ))}
-        <img
-          src={gif_45}
-          alt="Third Landscape"
+    <ExplodeContainer>
+      {data.allFile.edges.map(({ node }) => (
+        <Img
           style={{
-            width: '20%',
-            margin: '20rem auto 0',
+            position: 'absolute',
+            width: `${rand(70, 40)}vmin`,
             zIndex: rand(20, 1),
           }}
           className="explodee"
+          fluid={node.childImageSharp.fluid}
+          key={node.base}
+          alt={node.base.split('.')[0]}
         />
-      </ExplodeStyles>
-    </Layout>
+      ))}
+      <img
+        src={gif_45}
+        alt="Third Landscape"
+        style={{
+          position: 'absolute',
+          width: `${rand(70, 40)}vmin`,
+          zIndex: rand(20, 1),
+        }}
+        className="explodee"
+      />
+    </ExplodeContainer>
   );
 }
