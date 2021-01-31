@@ -2,6 +2,9 @@ module.exports = {
   pathPrefix: `/gatsby-weed`,
   siteMetadata: {
     title: "What is a weed?",
+    description:
+    "A collaborative online project co-created by Eve Tagny and Io Makandal.",
+    image: "/images/what-is-a-weed.jpg",
   },
   plugins: [
     "gatsby-plugin-styled-components",
