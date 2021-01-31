@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React, { useEffect, useState } from 'react';
+import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_3 from '../assets/gifs/003_roses.gif';
@@ -64,6 +65,9 @@ export default function SubPageSeven() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Wild Roses | What is a Weed?</title>
+      </Helmet>
       <LightBox isLightBoxOpen={isLightBoxOpen} setLightBox={setLightBox} />
       <NavSubpage />
       <ImageContainer className="lightbox-able">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Video from '../components/Video';
@@ -26,6 +27,9 @@ export default function SubPageThree() {
 
   return (
     <ExplodeContainer>
+      <Helmet>
+        <title>Negotiated Nature | What is a Weed?</title>
+      </Helmet>
       {data.allFile.edges.map(({ node }) => (
         <Img
           style={{

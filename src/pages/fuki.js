@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React, { useEffect, useState } from 'react';
+import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Video from '../components/Video';
@@ -72,6 +73,9 @@ export default function SubPageSix() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Body As Landscape | What is a Weed?</title>
+      </Helmet>
       <LightBox isLightBoxOpen={isLightBoxOpen} setLightBox={setLightBox} />
       <NavSubpage />
       <ImageContainer className="lightbox-able">
