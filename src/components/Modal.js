@@ -35,17 +35,36 @@ const ModalStyles = styled.div`
   }
 `;
 
-export default function Modal({ id, children, isVisible, setVisibility}) {
+export const initModalPositions = () => {
+  const modalBtns = document.querySelectorAll("button[data-modal]");
+  modalBtns.forEach(btn => {
+    const modalId = btn.dataset.modal;
+    const modal = document.getElementById(modalId);
+    // set modal position
+    const btnBottom = btn.getBoundingClientRect().bottom + window.scrollY;
+    modal.style.top = btnBottom + 'px';
+
+    // ideal position
+    const btnLeft = btn.getBoundingClientRect().left;
+    if (btnLeft + modal.offsetWidth > window.innerWidth) {
+      modal.style.left = window.innerWidth - modal.offsetWidth - 20 + 'px';
+    } else {
+      modal.style.left = btnLeft + 'px';
+    }
+  })
+}
+
+export default function Modal({ id, children, isVisible, setVisibility }) {
   const closeModal = () => {
     const updatedVisibility = Object.assign({}, isVisible)
     updatedVisibility[id] = false;
     setVisibility(updatedVisibility);
   }
+
   return (
     <ModalStyles 
       id={id} 
       style={{visibility: isVisible[id] ? 'visible' : 'hidden' }}
-      
     >
       <div className="modal__switch" onClick={closeModal}>+</div>
       {children}

@@ -13,7 +13,7 @@ import Footer from '../components/Footer';
 import Overlay from '../components/Overlay';
 
 import { initLineDrop, initImageZoom } from '../utils/effect';
-import Modal from '../components/Modal';
+import Modal, { initModalPositions } from '../components/Modal';
 
 const FallingStyles = styled.div`
   @keyframes zoomin {
@@ -63,28 +63,7 @@ export default function HomePage() {
   const initialVisibility = {}
   modalIds.forEach(id => initialVisibility[id] = false);
   const [ isVisible, setVisibility ] = useState(initialVisibility);
-  console.log(isVisible, initialVisibility);
   
-  const initModalPositions = () => {
-    const modalBtns = document.querySelectorAll("button[data-modal]");
-    modalBtns.forEach(btn => {
-      const modalId = btn.dataset.modal;
-      const modal = document.getElementById(modalId);
-      // set modal position
-      const btnBottom = btn.getBoundingClientRect().bottom + window.scrollY;
-      modal.style.top = btnBottom + 'px';
-
-      // ideal position
-      const btnLeft = btn.getBoundingClientRect().left;
-      if (btnLeft + modal.offsetWidth > window.innerWidth) {
-        modal.style.left = window.innerWidth - modal.offsetWidth - 20 + 'px';
-        console.log('overflow');
-      } else {
-        modal.style.left = btnLeft + 'px';
-      }
-    })
-  }
-
   // Scroll effects
   useEffect(() => {
     const area = document.querySelector('#scrollArea');
@@ -95,11 +74,7 @@ export default function HomePage() {
     initModalPositions();
   }, []);
 
-
-
-
   const toggleModal = (e) => {
-    // console.log(document.documentElement.scrollTop);
     const modalId = e.target.dataset.modal;
     const updatedVisibility = Object.assign({}, isVisible)
     updatedVisibility[modalId] = !isVisible[modalId];
