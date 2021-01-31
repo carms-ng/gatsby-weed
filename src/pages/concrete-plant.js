@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { rand } from '../utils/helper';
@@ -24,6 +25,9 @@ export default function SubPageTwo() {
 
   return (
     <ExplodeContainer>
+      <Helmet>
+        <title>Plants through Concrete | What is a Weed?</title>
+      </Helmet>
       {data.allFile.edges.map(({ node }) => (
         <Img
           style={{

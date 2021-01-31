@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import gif_45 from '../assets/gifs/045_third-landscape.gif';
@@ -25,6 +26,9 @@ export default function SubPageFour() {
 
   return (
     <ExplodeContainer>
+      <Helmet>
+        <title>Third Landscape | What is a Weed?</title>
+      </Helmet>
       {data.allFile.edges.map(({ node }) => (
         <Img
           style={{
