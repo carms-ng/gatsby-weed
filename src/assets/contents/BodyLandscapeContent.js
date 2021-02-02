@@ -40,7 +40,7 @@ export default [
         name: "Hosted by The Jan van Eyck Academie",
         title: "Environmental Identities #5: A Thread Between Two Mountains, from Ararat to Cîlo",
         date: "2020",
-        description: "A conversation about the correlation between the natural environment, colonial military presence, political violence, creeds, myths that have shaped Kurdish And Armenian identities.",
+        description: "A conversation about the correlation between the natural environment, colonial military presence, political violence, creeds, myths that have shaped Kurdish and Armenian identities.",
         url: "https://www.janvaneyck.nl/calendar/a-thread-between-two-mountains",
       }
     ]
