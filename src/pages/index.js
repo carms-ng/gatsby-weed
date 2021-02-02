@@ -127,7 +127,7 @@ export default function HomePage() {
         <p className="mb-4 italic">
           "What is a weed?
           <br />
-          What is a weed?"
+          Oh, what is a weed?"
         </p>
         <p className="italic">
           - Julian Bannerman, Great Gardens: Trematon Castle, Nowness
