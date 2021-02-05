@@ -27,7 +27,7 @@ ssh ${username}@${server}
 3. Go to the directory
 
 ```
-cd /var/wwww/html/what-is-a-weed
+cd /var/www/html/what-is-a-weed
 ```
 4. Remove the existing files
 ```
