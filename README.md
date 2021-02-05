@@ -48,7 +48,7 @@ gatsby clean
 ```
 gatsby build --prefix-paths
 ```
-8. Push code to server
+8. Push files to server
 ```
 scp -r ${path}/gatsby-weed/public/* ${username}@${server}:/var/www/html/what-is-a-weed
 ```
