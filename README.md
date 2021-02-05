@@ -16,7 +16,7 @@
 
 ### Instruction to deploy to Concordia Server
 
-1. Connect to VPN (usernae & password required)
+1. Connect to VPN (username & password required)
 
 2. Connect to server (username & password required)
 
