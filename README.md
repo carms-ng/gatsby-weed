@@ -33,7 +33,7 @@ cd /var/www/html/what-is-a-weed
 ```
 rm -rf *
 ```
-5. [Ensure path-prefix is set](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)
+5. [Set path-prefix](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)
 ```
 # gatsby-config.js
 module.exports = {
