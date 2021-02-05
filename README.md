@@ -9,10 +9,10 @@
 
 ### Framework
 
-- (Gatsby.js)[https://www.gatsbyjs.com/]
-- (Tailwind CSS)[https://tailwindcss.com/]
-- (styled-components)[https://styled-components.com/]
-- (AOS)[https://michalsnik.github.io/aos/]
+- [Gatsby.js](https://www.gatsbyjs.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [styled-components](https://styled-components.com/)
+- [AOS](https://michalsnik.github.io/aos/)
 
 ### Instruction to deploy to Concordia Server
 
@@ -33,7 +33,7 @@ cd /var/wwww/html/what-is-a-weed
 ```
 rm -rf *
 ```
-5. (Ensure path-prefix is set)[https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/]
+5. [Ensure path-prefix is set](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)
 ```
 # gatsby-config.js
 module.exports = {
@@ -52,4 +52,3 @@ gatsby build --prefix-paths
 ```
 scp -r ${path}/gatsby-weed/public/* ${username}@${server}:/var/www/html/what-is-a-weed
 ```
-
